@@ -10,10 +10,12 @@
 		808DDF1C21E159E8005046B5 /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808DDF1B21E159E8005046B5 /* Blog.swift */; };
 		CDDD22070EB51F959CAE86A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDDD2E0B19AA74F1974FB46C /* Main.storyboard */; };
 		CDDD246E77840A1E52DE7BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2B6F3C21D2E1815A62D0 /* AppDelegate.swift */; };
+		CDDD2522015056D10FF46CE8 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDDD2807411F59A7D471641E /* LICENSE.txt */; };
 		CDDD25C96BE7A8FB6D581692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDDD2DF093C7172083428412 /* Assets.xcassets */; };
 		CDDD2637B1552E4303E8B92D /* StarTappedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD29B71C301A15441FEF11 /* StarTappedUITests.swift */; };
 		CDDD2C2B4743C1D5F3B7A2B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2957A784FA21B53FAA80 /* ViewController.swift */; };
 		CDDD2D84EFA176CB216CC8F2 /* StarTappedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD239F3A388B1DAD751618 /* StarTappedTests.swift */; };
+		CDDD2EAEE6152889A7F8326B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CDDD296BEBE82F09CF7F4CAF /* README.md */; };
 		CDDD2EC6AE87403310FD7C2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDDD25E9A99AA347D37DAC98 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +44,10 @@
 		CDDD23DCDCF7DC0CFA92809D /* StarTappedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarTappedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDD2670545863E42AC9689C /* StarTappedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarTappedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDD277E3681026874E58C86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CDDD2807411F59A7D471641E /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		CDDD28748399F2B918FB5979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		CDDD2957A784FA21B53FAA80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = StarTapped/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		CDDD296BEBE82F09CF7F4CAF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CDDD29B71C301A15441FEF11 /* StarTappedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTappedUITests.swift; sourceTree = "<group>"; };
 		CDDD2A8C5A2946E4E33F31EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		CDDD2AAEB6C4FACA289864A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				CDDD27EA580D901660CA2083 /* StarTapped */,
 				CDDD2601924DF10D62548014 /* StarTappedTests */,
 				CDDD2F7DF80E07CCFA5B4A06 /* StarTappedUITests */,
+				CDDD296BEBE82F09CF7F4CAF /* README.md */,
+				CDDD2807411F59A7D471641E /* LICENSE.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -278,6 +284,7 @@
 				CDDD25C96BE7A8FB6D581692 /* Assets.xcassets in Resources */,
 				CDDD2EC6AE87403310FD7C2D /* LaunchScreen.storyboard in Resources */,
 				CDDD22070EB51F959CAE86A1 /* Main.storyboard in Resources */,
+				CDDD2522015056D10FF46CE8 /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +314,7 @@
 				808DDF1C21E159E8005046B5 /* Blog.swift in Sources */,
 				CDDD246E77840A1E52DE7BFB /* AppDelegate.swift in Sources */,
 				CDDD2C2B4743C1D5F3B7A2B1 /* ViewController.swift in Sources */,
+				CDDD2EAEE6152889A7F8326B /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
