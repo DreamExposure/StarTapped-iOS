@@ -17,6 +17,9 @@
 		80EB1A0A21E1D314000A51A2 /* ImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0921E1D314000A51A2 /* ImagePost.swift */; };
 		80EB1A0C21E1D434000A51A2 /* AudioPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0B21E1D434000A51A2 /* AudioPost.swift */; };
 		80EB1A0E21E1D4C2000A51A2 /* VideoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0D21E1D4C2000A51A2 /* VideoPost.swift */; };
+		80EB1A1221E26858000A51A2 /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A1121E26858000A51A2 /* TaskType.swift */; };
+		80EB1A1521E26A5B000A51A2 /* NetworkCallStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A1421E26A5B000A51A2 /* NetworkCallStatus.swift */; };
+		80EB1A1721E26C91000A51A2 /* TaskCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A1621E26C91000A51A2 /* TaskCallback.swift */; };
 		CDDD22070EB51F959CAE86A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDDD2E0B19AA74F1974FB46C /* Main.storyboard */; };
 		CDDD246384DAD19A817380C2 /* GroupBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2C1B26CDDDE7A9AC4226 /* GroupBlog.swift */; };
 		CDDD246E77840A1E52DE7BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2B6F3C21D2E1815A62D0 /* AppDelegate.swift */; };
@@ -24,10 +27,13 @@
 		CDDD2522015056D10FF46CE8 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDDD2807411F59A7D471641E /* LICENSE.txt */; };
 		CDDD25C96BE7A8FB6D581692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDDD2DF093C7172083428412 /* Assets.xcassets */; };
 		CDDD2637B1552E4303E8B92D /* StarTappedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD29B71C301A15441FEF11 /* StarTappedUITests.swift */; };
+		CDDD2738A0F45486BF1EABC6 /* AsyncTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2C42978BF2DEFAE3B6D0 /* AsyncTask.swift */; };
 		CDDD29329F28278CCC31B4B3 /* PersonalBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD24E9C3A24587B156424E /* PersonalBlog.swift */; };
 		CDDD29719B46F347C861D561 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD222CD0228473949E3DB9 /* Account.swift */; };
 		CDDD29E22B13C2D38E5F770F /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD203B6E0736BD9CD55386 /* Blog.swift */; };
+		CDDD2C093AEC4826F10BBCE7 /* LoginTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD274F81ABDE2FC18C9891 /* LoginTask.swift */; };
 		CDDD2C2B4743C1D5F3B7A2B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2957A784FA21B53FAA80 /* ViewController.swift */; };
+		CDDD2D3D5A1DF16F9A8A1C08 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2648F0B6093ADB2A7211 /* NetworkTask.swift */; };
 		CDDD2D84EFA176CB216CC8F2 /* StarTappedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD239F3A388B1DAD751618 /* StarTappedTests.swift */; };
 		CDDD2EAEE6152889A7F8326B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CDDD296BEBE82F09CF7F4CAF /* README.md */; };
 		CDDD2EC6AE87403310FD7C2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDDD25E9A99AA347D37DAC98 /* LaunchScreen.storyboard */; };
@@ -66,6 +72,9 @@
 		80EB1A0921E1D314000A51A2 /* ImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePost.swift; sourceTree = "<group>"; };
 		80EB1A0B21E1D434000A51A2 /* AudioPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPost.swift; sourceTree = "<group>"; };
 		80EB1A0D21E1D4C2000A51A2 /* VideoPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPost.swift; sourceTree = "<group>"; };
+		80EB1A1121E26858000A51A2 /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
+		80EB1A1421E26A5B000A51A2 /* NetworkCallStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCallStatus.swift; sourceTree = "<group>"; };
+		80EB1A1621E26C91000A51A2 /* TaskCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCallback.swift; sourceTree = "<group>"; };
 		AB41B7EA209269D765B4C061 /* Pods_StarTappedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarTappedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDD203B6E0736BD9CD55386 /* Blog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
 		CDDD222CD0228473949E3DB9 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = StarTapped/Objects/Account/Account.swift; sourceTree = SOURCE_ROOT; };
@@ -73,7 +82,9 @@
 		CDDD239F3A388B1DAD751618 /* StarTappedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTappedTests.swift; sourceTree = "<group>"; };
 		CDDD23DCDCF7DC0CFA92809D /* StarTappedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarTappedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDD24E9C3A24587B156424E /* PersonalBlog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalBlog.swift; sourceTree = "<group>"; };
+		CDDD2648F0B6093ADB2A7211 /* NetworkTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 		CDDD2670545863E42AC9689C /* StarTappedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarTappedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDDD274F81ABDE2FC18C9891 /* LoginTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTask.swift; sourceTree = "<group>"; };
 		CDDD277E3681026874E58C86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDDD2807411F59A7D471641E /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		CDDD28748399F2B918FB5979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +98,7 @@
 		CDDD2B8FA52FFFD1508C5D76 /* PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostType.swift; sourceTree = "<group>"; };
 		CDDD2BE740ECFB7B205FE439 /* StarTapped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarTapped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDD2C1B26CDDDE7A9AC4226 /* GroupBlog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupBlog.swift; sourceTree = "<group>"; };
+		CDDD2C42978BF2DEFAE3B6D0 /* AsyncTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTask.swift; sourceTree = "<group>"; };
 		CDDD2DF093C7172083428412 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F607EC0C33FEE7B17FADD069 /* Pods-StarTappedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTappedUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarTappedUITests/Pods-StarTappedUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F8F11554B442D2106A4E6237 /* Pods_StarTapped.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarTapped.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +171,7 @@
 				808DDF1F21E15FF1005046B5 /* Blog */,
 				808DDF1E21E15FE9005046B5 /* Auth */,
 				808DDF1D21E15FDA005046B5 /* Account */,
+				CDDD2920FCC6B14A75FC7527 /* Task */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -209,11 +222,28 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		80EB1A1321E26A4A000A51A2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				80EB1A1421E26A5B000A51A2 /* NetworkCallStatus.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CDDD246928DED1512E524E22 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CDDD267E87CFF9820F0A8C8F /* Auth */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		CDDD2566157C267F76102853 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
 				CDDD2A61C28CD1C2451DACE3 /* BlogType.swift */,
 				CDDD2B8FA52FFFD1508C5D76 /* PostType.swift */,
+				80EB1A1121E26858000A51A2 /* TaskType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -241,6 +271,14 @@
 			path = StarTappedTests;
 			sourceTree = "<group>";
 		};
+		CDDD267E87CFF9820F0A8C8F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CDDD274F81ABDE2FC18C9891 /* LoginTask.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		CDDD27EA580D901660CA2083 /* StarTapped */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,8 +291,20 @@
 				CDDD2DF093C7172083428412 /* Assets.xcassets */,
 				CDDD2B6F3C21D2E1815A62D0 /* AppDelegate.swift */,
 				CDDD2957A784FA21B53FAA80 /* ViewController.swift */,
+				CDDD246928DED1512E524E22 /* Network */,
 			);
 			path = StarTapped;
+			sourceTree = "<group>";
+		};
+		CDDD2920FCC6B14A75FC7527 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				80EB1A1321E26A4A000A51A2 /* Network */,
+				CDDD2C42978BF2DEFAE3B6D0 /* AsyncTask.swift */,
+				CDDD2648F0B6093ADB2A7211 /* NetworkTask.swift */,
+				80EB1A1621E26C91000A51A2 /* TaskCallback.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 		CDDD2932F03FB80C29F53A72 /* Products */ = {
@@ -464,12 +514,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StarTapped/Pods-StarTapped-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,14 +582,20 @@
 				80EB1A0C21E1D434000A51A2 /* AudioPost.swift in Sources */,
 				CDDD2EAEE6152889A7F8326B /* README.md in Sources */,
 				80EB1A0E21E1D4C2000A51A2 /* VideoPost.swift in Sources */,
+				80EB1A1521E26A5B000A51A2 /* NetworkCallStatus.swift in Sources */,
 				CDDD29719B46F347C861D561 /* Account.swift in Sources */,
 				CDDD29E22B13C2D38E5F770F /* Blog.swift in Sources */,
+				80EB1A1721E26C91000A51A2 /* TaskCallback.swift in Sources */,
+				80EB1A1221E26858000A51A2 /* TaskType.swift in Sources */,
 				CDDD24F5F72C0EF8C76CECFA /* BlogType.swift in Sources */,
 				CDDD2ED84BF8C162EBE0374E /* PostType.swift in Sources */,
 				CDDD29329F28278CCC31B4B3 /* PersonalBlog.swift in Sources */,
 				CDDD246384DAD19A817380C2 /* GroupBlog.swift in Sources */,
 				80EB1A0821E1D2B5000A51A2 /* TextPost.swift in Sources */,
 				80EB1A0A21E1D314000A51A2 /* ImagePost.swift in Sources */,
+				CDDD2738A0F45486BF1EABC6 /* AsyncTask.swift in Sources */,
+				CDDD2D3D5A1DF16F9A8A1C08 /* NetworkTask.swift in Sources */,
+				CDDD2C093AEC4826F10BBCE7 /* LoginTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
