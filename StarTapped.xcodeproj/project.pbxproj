@@ -7,16 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		808DDF1C21E159E8005046B5 /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808DDF1B21E159E8005046B5 /* Blog.swift */; };
+		0C5B0CEB7B4ED5B0E0F6CB9C /* Pods_StarTappedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0BE1CA3E02FCE0E8C1F292 /* Pods_StarTappedTests.framework */; };
+		191D827EB6D48A0F209484E1 /* Pods_StarTapped.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F11554B442D2106A4E6237 /* Pods_StarTapped.framework */; };
+		6D476EFA877B2B16073FF404 /* Pods_StarTappedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB41B7EA209269D765B4C061 /* Pods_StarTappedUITests.framework */; };
+		80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64C21E19576008675BC /* AccountAuthentication.swift */; };
+		80C6D65021E197C1008675BC /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64F21E197C1008675BC /* TimeUtils.swift */; };
+		80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0521E1C4FD000A51A2 /* Post.swift */; };
+		80EB1A0821E1D2B5000A51A2 /* TextPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0721E1D2B5000A51A2 /* TextPost.swift */; };
+		80EB1A0A21E1D314000A51A2 /* ImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0921E1D314000A51A2 /* ImagePost.swift */; };
+		80EB1A0C21E1D434000A51A2 /* AudioPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0B21E1D434000A51A2 /* AudioPost.swift */; };
+		80EB1A0E21E1D4C2000A51A2 /* VideoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0D21E1D4C2000A51A2 /* VideoPost.swift */; };
 		CDDD22070EB51F959CAE86A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDDD2E0B19AA74F1974FB46C /* Main.storyboard */; };
+		CDDD246384DAD19A817380C2 /* GroupBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2C1B26CDDDE7A9AC4226 /* GroupBlog.swift */; };
 		CDDD246E77840A1E52DE7BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2B6F3C21D2E1815A62D0 /* AppDelegate.swift */; };
+		CDDD24F5F72C0EF8C76CECFA /* BlogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2A61C28CD1C2451DACE3 /* BlogType.swift */; };
 		CDDD2522015056D10FF46CE8 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CDDD2807411F59A7D471641E /* LICENSE.txt */; };
 		CDDD25C96BE7A8FB6D581692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDDD2DF093C7172083428412 /* Assets.xcassets */; };
 		CDDD2637B1552E4303E8B92D /* StarTappedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD29B71C301A15441FEF11 /* StarTappedUITests.swift */; };
+		CDDD29329F28278CCC31B4B3 /* PersonalBlog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD24E9C3A24587B156424E /* PersonalBlog.swift */; };
+		CDDD29719B46F347C861D561 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD222CD0228473949E3DB9 /* Account.swift */; };
+		CDDD29E22B13C2D38E5F770F /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD203B6E0736BD9CD55386 /* Blog.swift */; };
 		CDDD2C2B4743C1D5F3B7A2B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2957A784FA21B53FAA80 /* ViewController.swift */; };
 		CDDD2D84EFA176CB216CC8F2 /* StarTappedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD239F3A388B1DAD751618 /* StarTappedTests.swift */; };
 		CDDD2EAEE6152889A7F8326B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CDDD296BEBE82F09CF7F4CAF /* README.md */; };
 		CDDD2EC6AE87403310FD7C2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDDD25E9A99AA347D37DAC98 /* LaunchScreen.storyboard */; };
+		CDDD2ED84BF8C162EBE0374E /* PostType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2B8FA52FFFD1508C5D76 /* PostType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +52,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00E16CA059F87C408748EED7 /* Pods-StarTappedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTappedUITests.release.xcconfig"; path = "Target Support Files/Pods-StarTappedUITests/Pods-StarTappedUITests.release.xcconfig"; sourceTree = "<group>"; };
+		01100F17B25DE282A5408811 /* Pods-StarTapped.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTapped.debug.xcconfig"; path = "Target Support Files/Pods-StarTapped/Pods-StarTapped.debug.xcconfig"; sourceTree = "<group>"; };
+		10D57B117DC6C4E3E814921E /* Pods-StarTapped.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTapped.release.xcconfig"; path = "Target Support Files/Pods-StarTapped/Pods-StarTapped.release.xcconfig"; sourceTree = "<group>"; };
+		260D6363F27CBD911BB58F0F /* Pods-StarTappedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTappedTests.release.xcconfig"; path = "Target Support Files/Pods-StarTappedTests/Pods-StarTappedTests.release.xcconfig"; sourceTree = "<group>"; };
+		3E0BE1CA3E02FCE0E8C1F292 /* Pods_StarTappedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarTappedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44AEF73B41A4088C7CD5E11E /* Pods-StarTappedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTappedTests.debug.xcconfig"; path = "Target Support Files/Pods-StarTappedTests/Pods-StarTappedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		808DDF1721E14163005046B5 /* StarTapped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarTapped.entitlements; sourceTree = "<group>"; };
-		808DDF1B21E159E8005046B5 /* Blog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
+		80C6D64C21E19576008675BC /* AccountAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAuthentication.swift; sourceTree = "<group>"; };
+		80C6D64F21E197C1008675BC /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
+		80EB1A0521E1C4FD000A51A2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		80EB1A0721E1D2B5000A51A2 /* TextPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPost.swift; sourceTree = "<group>"; };
+		80EB1A0921E1D314000A51A2 /* ImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePost.swift; sourceTree = "<group>"; };
+		80EB1A0B21E1D434000A51A2 /* AudioPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPost.swift; sourceTree = "<group>"; };
+		80EB1A0D21E1D4C2000A51A2 /* VideoPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPost.swift; sourceTree = "<group>"; };
+		AB41B7EA209269D765B4C061 /* Pods_StarTappedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarTappedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDDD203B6E0736BD9CD55386 /* Blog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
+		CDDD222CD0228473949E3DB9 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = StarTapped/Objects/Account/Account.swift; sourceTree = SOURCE_ROOT; };
 		CDDD229A3445D01E19277DF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		CDDD239F3A388B1DAD751618 /* StarTappedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTappedTests.swift; sourceTree = "<group>"; };
 		CDDD23DCDCF7DC0CFA92809D /* StarTappedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarTappedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDDD24E9C3A24587B156424E /* PersonalBlog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalBlog.swift; sourceTree = "<group>"; };
 		CDDD2670545863E42AC9689C /* StarTappedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarTappedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDD277E3681026874E58C86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDDD2807411F59A7D471641E /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -49,11 +80,16 @@
 		CDDD2957A784FA21B53FAA80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = StarTapped/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		CDDD296BEBE82F09CF7F4CAF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CDDD29B71C301A15441FEF11 /* StarTappedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTappedUITests.swift; sourceTree = "<group>"; };
+		CDDD2A61C28CD1C2451DACE3 /* BlogType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogType.swift; sourceTree = "<group>"; };
 		CDDD2A8C5A2946E4E33F31EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		CDDD2AAEB6C4FACA289864A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDDD2B6F3C21D2E1815A62D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CDDD2B8FA52FFFD1508C5D76 /* PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostType.swift; sourceTree = "<group>"; };
 		CDDD2BE740ECFB7B205FE439 /* StarTapped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarTapped.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDDD2C1B26CDDDE7A9AC4226 /* GroupBlog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupBlog.swift; sourceTree = "<group>"; };
 		CDDD2DF093C7172083428412 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F607EC0C33FEE7B17FADD069 /* Pods-StarTappedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTappedUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarTappedUITests/Pods-StarTappedUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8F11554B442D2106A4E6237 /* Pods_StarTapped.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarTapped.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				191D827EB6D48A0F209484E1 /* Pods_StarTapped.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C5B0CEB7B4ED5B0E0F6CB9C /* Pods_StarTappedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +113,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D476EFA877B2B16073FF404 /* Pods_StarTappedUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10C1EC0C39B5C6C111A9F56F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01100F17B25DE282A5408811 /* Pods-StarTapped.debug.xcconfig */,
+				10D57B117DC6C4E3E814921E /* Pods-StarTapped.release.xcconfig */,
+				44AEF73B41A4088C7CD5E11E /* Pods-StarTappedTests.debug.xcconfig */,
+				260D6363F27CBD911BB58F0F /* Pods-StarTappedTests.release.xcconfig */,
+				F607EC0C33FEE7B17FADD069 /* Pods-StarTappedUITests.debug.xcconfig */,
+				00E16CA059F87C408748EED7 /* Pods-StarTappedUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5471B5B3716BD271BDBB7BC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8F11554B442D2106A4E6237 /* Pods_StarTapped.framework */,
+				3E0BE1CA3E02FCE0E8C1F292 /* Pods_StarTappedTests.framework */,
+				AB41B7EA209269D765B4C061 /* Pods_StarTappedUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		808DDF1821E14F5B005046B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,17 +155,67 @@
 		808DDF1921E159AD005046B5 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				808DDF1A21E159BA005046B5 /* Blog */,
+				808DDF2021E15FFC005046B5 /* Post */,
+				808DDF1F21E15FF1005046B5 /* Blog */,
+				808DDF1E21E15FE9005046B5 /* Auth */,
+				808DDF1D21E15FDA005046B5 /* Account */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
 		};
-		808DDF1A21E159BA005046B5 /* Blog */ = {
+		808DDF1D21E15FDA005046B5 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				808DDF1B21E159E8005046B5 /* Blog.swift */,
+				CDDD222CD0228473949E3DB9 /* Account.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		808DDF1E21E15FE9005046B5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				80C6D64C21E19576008675BC /* AccountAuthentication.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		808DDF1F21E15FF1005046B5 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				CDDD203B6E0736BD9CD55386 /* Blog.swift */,
+				CDDD24E9C3A24587B156424E /* PersonalBlog.swift */,
+				CDDD2C1B26CDDDE7A9AC4226 /* GroupBlog.swift */,
 			);
 			path = Blog;
+			sourceTree = "<group>";
+		};
+		808DDF2021E15FFC005046B5 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				80EB1A0521E1C4FD000A51A2 /* Post.swift */,
+				80EB1A0721E1D2B5000A51A2 /* TextPost.swift */,
+				80EB1A0921E1D314000A51A2 /* ImagePost.swift */,
+				80EB1A0B21E1D434000A51A2 /* AudioPost.swift */,
+				80EB1A0D21E1D4C2000A51A2 /* VideoPost.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		80C6D64E21E197B1008675BC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				80C6D64F21E197C1008675BC /* TimeUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CDDD2566157C267F76102853 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				CDDD2A61C28CD1C2451DACE3 /* BlogType.swift */,
+				CDDD2B8FA52FFFD1508C5D76 /* PostType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		CDDD257D38F2D87DE89A5F50 = {
@@ -115,6 +227,8 @@
 				CDDD2F7DF80E07CCFA5B4A06 /* StarTappedUITests */,
 				CDDD296BEBE82F09CF7F4CAF /* README.md */,
 				CDDD2807411F59A7D471641E /* LICENSE.txt */,
+				10C1EC0C39B5C6C111A9F56F /* Pods */,
+				5471B5B3716BD271BDBB7BC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +244,8 @@
 		CDDD27EA580D901660CA2083 /* StarTapped */ = {
 			isa = PBXGroup;
 			children = (
+				CDDD2566157C267F76102853 /* Enums */,
+				80C6D64E21E197B1008675BC /* Utils */,
 				808DDF1921E159AD005046B5 /* Objects */,
 				808DDF1821E14F5B005046B5 /* Views */,
 				808DDF1721E14163005046B5 /* StarTapped.entitlements */,
@@ -167,9 +283,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDDD2474A70F32010760B2EC /* Build configuration list for PBXNativeTarget "StarTapped" */;
 			buildPhases = (
+				C5E33008C0968F31312F4F94 /* [CP] Check Pods Manifest.lock */,
 				CDDD275A06D7C9ECD1CF4671 /* Sources */,
 				CDDD2223230736DFCBE03216 /* Frameworks */,
 				CDDD2CB7816B0B41F8F8D4B9 /* Resources */,
+				BFA00C558FF6EF6541464ED4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +302,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDDD2B281EDDCCC51DA7CF8A /* Build configuration list for PBXNativeTarget "StarTappedUITests" */;
 			buildPhases = (
+				0E3F78579D0950A049AE4FE3 /* [CP] Check Pods Manifest.lock */,
 				CDDD220368DAC8039D67B8AA /* Sources */,
 				CDDD2CBCAE27145FA389953A /* Frameworks */,
 				CDDD21D1A395B57897CC37AE /* Resources */,
@@ -202,6 +321,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDDD25E33DC5B3CB841A5144 /* Build configuration list for PBXNativeTarget "StarTappedTests" */;
 			buildPhases = (
+				67DB2E990078E318D1CF2181 /* [CP] Check Pods Manifest.lock */,
 				CDDD205CB21A420CD092F020 /* Sources */,
 				CDDD2CB75428C4605669633A /* Frameworks */,
 				CDDD24098ACF987B6050192B /* Resources */,
@@ -290,6 +410,97 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E3F78579D0950A049AE4FE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StarTappedUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67DB2E990078E318D1CF2181 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StarTappedTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFA00C558FF6EF6541464ED4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarTapped/Pods-StarTapped-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarTapped/Pods-StarTapped-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5E33008C0968F31312F4F94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StarTapped-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CDDD205CB21A420CD092F020 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -311,10 +522,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				808DDF1C21E159E8005046B5 /* Blog.swift in Sources */,
+				80C6D65021E197C1008675BC /* TimeUtils.swift in Sources */,
+				80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */,
 				CDDD246E77840A1E52DE7BFB /* AppDelegate.swift in Sources */,
+				80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */,
 				CDDD2C2B4743C1D5F3B7A2B1 /* ViewController.swift in Sources */,
+				80EB1A0C21E1D434000A51A2 /* AudioPost.swift in Sources */,
 				CDDD2EAEE6152889A7F8326B /* README.md in Sources */,
+				80EB1A0E21E1D4C2000A51A2 /* VideoPost.swift in Sources */,
+				CDDD29719B46F347C861D561 /* Account.swift in Sources */,
+				CDDD29E22B13C2D38E5F770F /* Blog.swift in Sources */,
+				CDDD24F5F72C0EF8C76CECFA /* BlogType.swift in Sources */,
+				CDDD2ED84BF8C162EBE0374E /* PostType.swift in Sources */,
+				CDDD29329F28278CCC31B4B3 /* PersonalBlog.swift in Sources */,
+				CDDD246384DAD19A817380C2 /* GroupBlog.swift in Sources */,
+				80EB1A0821E1D2B5000A51A2 /* TextPost.swift in Sources */,
+				80EB1A0A21E1D314000A51A2 /* ImagePost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +613,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -444,6 +668,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -470,6 +695,7 @@
 		};
 		CDDD250DCAC1AF27350A5494 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10D57B117DC6C4E3E814921E /* Pods-StarTapped.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -488,6 +714,7 @@
 		};
 		CDDD27A0D4CBE1B80A8BBC7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 260D6363F27CBD911BB58F0F /* Pods-StarTappedTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StarTapped.app/StarTapped";
 				INFOPLIST_FILE = StarTappedTests/Info.plist;
@@ -502,6 +729,7 @@
 		};
 		CDDD28E8566B7B313FF8EE89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00E16CA059F87C408748EED7 /* Pods-StarTappedUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = StarTappedUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -515,6 +743,7 @@
 		};
 		CDDD2B5A61A7F0A0993CB44A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F607EC0C33FEE7B17FADD069 /* Pods-StarTappedUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = StarTappedUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -528,6 +757,7 @@
 		};
 		CDDD2CB3F291D71724FCD640 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01100F17B25DE282A5408811 /* Pods-StarTapped.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -546,6 +776,7 @@
 		};
 		CDDD2D282B6AB34397B109C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44AEF73B41A4088C7CD5E11E /* Pods-StarTappedTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StarTapped.app/StarTapped";
 				INFOPLIST_FILE = StarTappedTests/Info.plist;
