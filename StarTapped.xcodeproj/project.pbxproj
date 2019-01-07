@@ -11,6 +11,9 @@
 		191D827EB6D48A0F209484E1 /* Pods_StarTapped.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F11554B442D2106A4E6237 /* Pods_StarTapped.framework */; };
 		6D476EFA877B2B16073FF404 /* Pods_StarTappedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB41B7EA209269D765B4C061 /* Pods_StarTappedUITests.framework */; };
 		8078782C21E3BFDB0011BF9D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782B21E3BFDB0011BF9D /* Settings.swift */; };
+		8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782D21E3E27C0011BF9D /* RegisterTask.swift */; };
+		8078783021E3E5700011BF9D /* LogoutTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782F21E3E5700011BF9D /* LogoutTask.swift */; };
+		8078783221E3E6130011BF9D /* TokenRefreshTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078783121E3E6130011BF9D /* TokenRefreshTask.swift */; };
 		80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64C21E19576008675BC /* AccountAuthentication.swift */; };
 		80C6D65021E197C1008675BC /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64F21E197C1008675BC /* TimeUtils.swift */; };
 		80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0521E1C4FD000A51A2 /* Post.swift */; };
@@ -66,6 +69,9 @@
 		3E0BE1CA3E02FCE0E8C1F292 /* Pods_StarTappedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarTappedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AEF73B41A4088C7CD5E11E /* Pods-StarTappedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTappedTests.debug.xcconfig"; path = "Target Support Files/Pods-StarTappedTests/Pods-StarTappedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8078782B21E3BFDB0011BF9D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		8078782D21E3E27C0011BF9D /* RegisterTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTask.swift; sourceTree = "<group>"; };
+		8078782F21E3E5700011BF9D /* LogoutTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTask.swift; sourceTree = "<group>"; };
+		8078783121E3E6130011BF9D /* TokenRefreshTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefreshTask.swift; sourceTree = "<group>"; };
 		808DDF1721E14163005046B5 /* StarTapped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarTapped.entitlements; sourceTree = "<group>"; };
 		80C6D64C21E19576008675BC /* AccountAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAuthentication.swift; sourceTree = "<group>"; };
 		80C6D64F21E197C1008675BC /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
@@ -278,6 +284,9 @@
 			isa = PBXGroup;
 			children = (
 				CDDD274F81ABDE2FC18C9891 /* LoginTask.swift */,
+				8078782D21E3E27C0011BF9D /* RegisterTask.swift */,
+				8078782F21E3E5700011BF9D /* LogoutTask.swift */,
+				8078783121E3E6130011BF9D /* TokenRefreshTask.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -583,12 +592,14 @@
 				80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */,
 				CDDD246E77840A1E52DE7BFB /* AppDelegate.swift in Sources */,
 				80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */,
+				8078783221E3E6130011BF9D /* TokenRefreshTask.swift in Sources */,
 				CDDD2C2B4743C1D5F3B7A2B1 /* ViewController.swift in Sources */,
 				80EB1A0C21E1D434000A51A2 /* AudioPost.swift in Sources */,
 				CDDD2EAEE6152889A7F8326B /* README.md in Sources */,
 				80EB1A0E21E1D4C2000A51A2 /* VideoPost.swift in Sources */,
 				8078782C21E3BFDB0011BF9D /* Settings.swift in Sources */,
 				80EB1A1521E26A5B000A51A2 /* NetworkCallStatus.swift in Sources */,
+				8078783021E3E5700011BF9D /* LogoutTask.swift in Sources */,
 				CDDD29719B46F347C861D561 /* Account.swift in Sources */,
 				CDDD29E22B13C2D38E5F770F /* Blog.swift in Sources */,
 				80EB1A1721E26C91000A51A2 /* TaskCallback.swift in Sources */,
@@ -600,6 +611,7 @@
 				80EB1A0821E1D2B5000A51A2 /* TextPost.swift in Sources */,
 				80EB1A0A21E1D314000A51A2 /* ImagePost.swift in Sources */,
 				CDDD2738A0F45486BF1EABC6 /* AsyncTask.swift in Sources */,
+				8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */,
 				CDDD2D3D5A1DF16F9A8A1C08 /* NetworkTask.swift in Sources */,
 				CDDD2C093AEC4826F10BBCE7 /* LoginTask.swift in Sources */,
 			);

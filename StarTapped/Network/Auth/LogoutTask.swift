@@ -1,39 +1,32 @@
 //
-// Created by Nova Maday on 2019-01-06.
-// Copyright (c) 2019 DreamExposure Studios. All rights reserved.
+//  LogoutTask.swift
+//  StarTapped
+//
+//  Created by Nova Maday on 1/7/19.
+//  Copyright © 2019 DreamExposure Studios. All rights reserved.
 //
 
 import Foundation
 import SwiftyJSON
 import Alamofire
 
-class LoginTask: NetworkTask {
-
+class LogoutTask: NetworkTask {
     var callback: TaskCallback
 
-    let email: String
-    let password: String
-    let gcap: String
-
-    init(callback: TaskCallback, email: String, password: String, gcap: String) {
+    init(callback: TaskCallback) {
         self.callback = callback
-        self.email = email
-        self.password = password
-        self.gcap = gcap
     }
 
     func execute() {
         let headers = [
-            "Content-Type": "application/json"
-        ]
-        
-        let params = [
-            "email": email,
-            "password": password,
-            "gcap": gcap
+            "Content-Type": "application/json",
+            "Authorization_Access": Settings().getAuthentication().getAccessToken(),
+            "Authorization_Refresh": Settings().getAuthentication().getRefreshToken()
         ]
 
-        Alamofire.request("https://api.startapped.com/v1/account/login", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+        let params: [String: String] = [:]
+
+        Alamofire.request("https://api.startapped.com/v1/account/logout", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { response in
                     let code: Int = (response.response?.statusCode)!
                     switch (response.result) {
@@ -44,7 +37,7 @@ class LoginTask: NetworkTask {
                             //Get body
                             var json: JSON = JSON(response.result.value!)
 
-                            let status = NetworkCallStatus(failure: false, success: true, type: TaskType.AUTH_LOGIN).setCode(code: code).setBody(body: json).setMessage(message: json["message"].stringValue)
+                            let status = NetworkCallStatus(failure: false, success: true, type: TaskType.AUTH_LOGOUT).setCode(code: code).setBody(body: json).setMessage(message: json["message"].stringValue)
 
                             self.onComplete(status: status)
                         }
@@ -53,10 +46,10 @@ class LoginTask: NetworkTask {
                         //This is an internal error, NOT a 400 or 500 status code.
                         print("Failure : \(String(describing: response.result.error))")
 
-                        let status = NetworkCallStatus(failure: true, success: false, type: TaskType.AUTH_LOGIN)
+                        let status = NetworkCallStatus(failure: true, success: false, type: TaskType.AUTH_LOGOUT)
 
                         self.onComplete(status: status)
-                        
+
                         break
                     }
                 }

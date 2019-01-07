@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class NetworkCallStatus {
+    let failure: Bool
     let success: Bool
     let type: TaskType
     var code: Int = 0
@@ -17,12 +18,17 @@ class NetworkCallStatus {
 
     var body: JSON = []
 
-    init(success: Bool, type: TaskType) {
+    init(failure: Bool, success: Bool, type: TaskType) {
+        self.failure = failure
         self.success = success
         self.type = type
     }
 
     //Getters
+    func isFailure() -> Bool {
+        return failure
+    }
+    
     func isSuccess() -> Bool {
         return success
     }
