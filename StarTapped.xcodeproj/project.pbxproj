@@ -10,6 +10,7 @@
 		0C5B0CEB7B4ED5B0E0F6CB9C /* Pods_StarTappedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0BE1CA3E02FCE0E8C1F292 /* Pods_StarTappedTests.framework */; };
 		191D827EB6D48A0F209484E1 /* Pods_StarTapped.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F11554B442D2106A4E6237 /* Pods_StarTapped.framework */; };
 		6D476EFA877B2B16073FF404 /* Pods_StarTappedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB41B7EA209269D765B4C061 /* Pods_StarTappedUITests.framework */; };
+		8078782C21E3BFDB0011BF9D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782B21E3BFDB0011BF9D /* Settings.swift */; };
 		80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64C21E19576008675BC /* AccountAuthentication.swift */; };
 		80C6D65021E197C1008675BC /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64F21E197C1008675BC /* TimeUtils.swift */; };
 		80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0521E1C4FD000A51A2 /* Post.swift */; };
@@ -64,6 +65,7 @@
 		260D6363F27CBD911BB58F0F /* Pods-StarTappedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTappedTests.release.xcconfig"; path = "Target Support Files/Pods-StarTappedTests/Pods-StarTappedTests.release.xcconfig"; sourceTree = "<group>"; };
 		3E0BE1CA3E02FCE0E8C1F292 /* Pods_StarTappedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarTappedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AEF73B41A4088C7CD5E11E /* Pods-StarTappedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTappedTests.debug.xcconfig"; path = "Target Support Files/Pods-StarTappedTests/Pods-StarTappedTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8078782B21E3BFDB0011BF9D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		808DDF1721E14163005046B5 /* StarTapped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarTapped.entitlements; sourceTree = "<group>"; };
 		80C6D64C21E19576008675BC /* AccountAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAuthentication.swift; sourceTree = "<group>"; };
 		80C6D64F21E197C1008675BC /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				808DDF1E21E15FE9005046B5 /* Auth */,
 				808DDF1D21E15FDA005046B5 /* Account */,
 				CDDD2920FCC6B14A75FC7527 /* Task */,
+				8078782B21E3BFDB0011BF9D /* Settings.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StarTapped/Pods-StarTapped-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -522,6 +526,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +587,7 @@
 				80EB1A0C21E1D434000A51A2 /* AudioPost.swift in Sources */,
 				CDDD2EAEE6152889A7F8326B /* README.md in Sources */,
 				80EB1A0E21E1D4C2000A51A2 /* VideoPost.swift in Sources */,
+				8078782C21E3BFDB0011BF9D /* Settings.swift in Sources */,
 				80EB1A1521E26A5B000A51A2 /* NetworkCallStatus.swift in Sources */,
 				CDDD29719B46F347C861D561 /* Account.swift in Sources */,
 				CDDD29E22B13C2D38E5F770F /* Blog.swift in Sources */,
