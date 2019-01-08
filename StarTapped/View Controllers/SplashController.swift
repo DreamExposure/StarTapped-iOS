@@ -22,13 +22,12 @@ class SplashController: UIViewController, TaskCallback {
         let auth = Settings().getAuthentication()
 
         if auth.getRefreshToken() == "Unassigned" || auth.getAccessToken() == "Unassigned" {
-            //TODO: Send to login/register
             goToAuth()
         } else if (auth.getExpire() <= TimeUtils().getCurrentMillis()) {
             //TODO: attempt reauth and go to hub or auth
 
         } else {
-            //Something unkown was reached, default to making the user login...
+            //Something unknown was reached, default to making the user login...
             goToAuth()
         }
     }

@@ -41,4 +41,30 @@ class Settings {
         KeychainSwift().delete("access")
         KeychainSwift().delete("expire")
     }
+
+    func saveAccount(account: Account) {
+        KeychainSwift().set(account.isSafeSearch(), forKey: "safe_search", withAccess: .accessibleAfterFirstUnlock)
+        KeychainSwift().set(account.getPhoneNumber(), forKey: "phone_number", withAccess: .accessibleAfterFirstUnlock)
+        KeychainSwift().set(account.getBirthday(), forKey: "birthday", withAccess: .accessibleAfterFirstUnlock)
+    }
+
+    func getAccount() -> Account {
+        let account = Account()
+
+        let safeSearch: Bool = KeychainSwift().getBool("safe_search") ?? false
+        let phone: String = KeychainSwift().get("phone_number") ?? "000.000.0000"
+        let birthday: String = KeychainSwift().get("birthday") ?? "1970-01-01"
+
+        account.setSafeSearch(safe: safeSearch)
+        account.setPhoneNumber(number: phone)
+        account.setBirthday(birthday: birthday)
+
+        return account
+    }
+
+    func deleteAccount() {
+        KeychainSwift().delete("safe_search")
+        KeychainSwift().delete("phone_number")
+        KeychainSwift().delete("birthday")
+    }
 }

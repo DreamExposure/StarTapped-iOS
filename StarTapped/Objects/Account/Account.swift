@@ -12,7 +12,7 @@ class Account {
     var username: String = "Unassigned"
     var email: String = "Unassigned"
     var phoneNumber: String = "000.000.0000"
-    var birthday: String = "1970-1-1"
+    var birthday: String = "1970-01-01"
 
     var safeSearch: Bool = false
 
@@ -73,6 +73,10 @@ class Account {
 
     func setPhoneNumber(number: String) {
         self.phoneNumber = number
+    }
+
+    func setBirthday(birthday: String) {
+        self.birthday = birthday
     }
 
     func setSafeSearch(safe: Bool) {
