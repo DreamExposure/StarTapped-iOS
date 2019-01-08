@@ -14,6 +14,9 @@
 		8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782D21E3E27C0011BF9D /* RegisterTask.swift */; };
 		8078783021E3E5700011BF9D /* LogoutTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782F21E3E5700011BF9D /* LogoutTask.swift */; };
 		8078783221E3E6130011BF9D /* TokenRefreshTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078783121E3E6130011BF9D /* TokenRefreshTask.swift */; };
+		8078783521E4232F0011BF9D /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078783421E4232F0011BF9D /* SplashController.swift */; };
+		8078783721E426A00011BF9D /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8078783621E426A00011BF9D /* Auth.storyboard */; };
+		80AFA5CE21E428D20072A227 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5CD21E428D20072A227 /* AuthController.swift */; };
 		80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64C21E19576008675BC /* AccountAuthentication.swift */; };
 		80C6D65021E197C1008675BC /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64F21E197C1008675BC /* TimeUtils.swift */; };
 		80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0521E1C4FD000A51A2 /* Post.swift */; };
@@ -36,7 +39,6 @@
 		CDDD29719B46F347C861D561 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD222CD0228473949E3DB9 /* Account.swift */; };
 		CDDD29E22B13C2D38E5F770F /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD203B6E0736BD9CD55386 /* Blog.swift */; };
 		CDDD2C093AEC4826F10BBCE7 /* LoginTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD274F81ABDE2FC18C9891 /* LoginTask.swift */; };
-		CDDD2C2B4743C1D5F3B7A2B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2957A784FA21B53FAA80 /* ViewController.swift */; };
 		CDDD2D3D5A1DF16F9A8A1C08 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2648F0B6093ADB2A7211 /* NetworkTask.swift */; };
 		CDDD2D84EFA176CB216CC8F2 /* StarTappedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD239F3A388B1DAD751618 /* StarTappedTests.swift */; };
 		CDDD2EAEE6152889A7F8326B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CDDD296BEBE82F09CF7F4CAF /* README.md */; };
@@ -72,7 +74,10 @@
 		8078782D21E3E27C0011BF9D /* RegisterTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTask.swift; sourceTree = "<group>"; };
 		8078782F21E3E5700011BF9D /* LogoutTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTask.swift; sourceTree = "<group>"; };
 		8078783121E3E6130011BF9D /* TokenRefreshTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefreshTask.swift; sourceTree = "<group>"; };
+		8078783421E4232F0011BF9D /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		8078783621E426A00011BF9D /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		808DDF1721E14163005046B5 /* StarTapped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarTapped.entitlements; sourceTree = "<group>"; };
+		80AFA5CD21E428D20072A227 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		80C6D64C21E19576008675BC /* AccountAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAuthentication.swift; sourceTree = "<group>"; };
 		80C6D64F21E197C1008675BC /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
 		80EB1A0521E1C4FD000A51A2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -96,7 +101,6 @@
 		CDDD277E3681026874E58C86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDDD2807411F59A7D471641E /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		CDDD28748399F2B918FB5979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		CDDD2957A784FA21B53FAA80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = StarTapped/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		CDDD296BEBE82F09CF7F4CAF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CDDD29B71C301A15441FEF11 /* StarTappedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTappedUITests.swift; sourceTree = "<group>"; };
 		CDDD2A61C28CD1C2451DACE3 /* BlogType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogType.swift; sourceTree = "<group>"; };
@@ -163,11 +167,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8078783321E422A90011BF9D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8078783421E4232F0011BF9D /* SplashController.swift */,
+				80AFA5CD21E428D20072A227 /* AuthController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		808DDF1821E14F5B005046B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				CDDD25E9A99AA347D37DAC98 /* LaunchScreen.storyboard */,
 				CDDD2E0B19AA74F1974FB46C /* Main.storyboard */,
+				8078783621E426A00011BF9D /* Auth.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +308,7 @@
 		CDDD27EA580D901660CA2083 /* StarTapped */ = {
 			isa = PBXGroup;
 			children = (
+				8078783321E422A90011BF9D /* View Controllers */,
 				CDDD2566157C267F76102853 /* Enums */,
 				80C6D64E21E197B1008675BC /* Utils */,
 				808DDF1921E159AD005046B5 /* Objects */,
@@ -302,7 +317,6 @@
 				CDDD229A3445D01E19277DF7 /* Info.plist */,
 				CDDD2DF093C7172083428412 /* Assets.xcassets */,
 				CDDD2B6F3C21D2E1815A62D0 /* AppDelegate.swift */,
-				CDDD2957A784FA21B53FAA80 /* ViewController.swift */,
 				CDDD246928DED1512E524E22 /* Network */,
 			);
 			path = StarTapped;
@@ -407,6 +421,7 @@
 				ORGANIZATIONNAME = "DreamExposure Studios";
 				TargetAttributes = {
 					CDDD20F913BEEB55939C043F = {
+						DevelopmentTeam = UJ6Z2S37BA;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.AccessWiFi = {
@@ -465,6 +480,7 @@
 			files = (
 				CDDD25C96BE7A8FB6D581692 /* Assets.xcassets in Resources */,
 				CDDD2EC6AE87403310FD7C2D /* LaunchScreen.storyboard in Resources */,
+				8078783721E426A00011BF9D /* Auth.storyboard in Resources */,
 				CDDD22070EB51F959CAE86A1 /* Main.storyboard in Resources */,
 				CDDD2522015056D10FF46CE8 /* LICENSE.txt in Resources */,
 			);
@@ -592,8 +608,8 @@
 				80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */,
 				CDDD246E77840A1E52DE7BFB /* AppDelegate.swift in Sources */,
 				80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */,
+				80AFA5CE21E428D20072A227 /* AuthController.swift in Sources */,
 				8078783221E3E6130011BF9D /* TokenRefreshTask.swift in Sources */,
-				CDDD2C2B4743C1D5F3B7A2B1 /* ViewController.swift in Sources */,
 				80EB1A0C21E1D434000A51A2 /* AudioPost.swift in Sources */,
 				CDDD2EAEE6152889A7F8326B /* README.md in Sources */,
 				80EB1A0E21E1D4C2000A51A2 /* VideoPost.swift in Sources */,
@@ -614,6 +630,7 @@
 				8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */,
 				CDDD2D3D5A1DF16F9A8A1C08 /* NetworkTask.swift in Sources */,
 				CDDD2C093AEC4826F10BBCE7 /* LoginTask.swift in Sources */,
+				8078783521E4232F0011BF9D /* SplashController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,9 +793,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UJ6Z2S37BA;
 				INFOPLIST_FILE = StarTapped/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.dreamexposure.StarTapped;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -838,9 +855,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UJ6Z2S37BA;
 				INFOPLIST_FILE = StarTapped/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.dreamexposure.StarTapped;
 				PRODUCT_NAME = "$(TARGET_NAME)";

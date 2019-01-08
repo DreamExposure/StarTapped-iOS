@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1tx-E9-4KX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Register-->
+        <scene sceneID="hF1-6d-8oF">
+            <objects>
+                <viewController storyboardIdentifier="Register-Controller" title="Register" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kqa-Uw-4tI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="APF-71-isL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xZX-2u-dZc"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Register" id="WSc-mY-Fad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yhs-Q5-iIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="109"/>
+        </scene>
+        <!--Sign In-->
+        <scene sceneID="Wgg-5v-D1U">
+            <objects>
+                <viewController storyboardIdentifier="sign-in-controller" title="Sign In" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nC7-yI-d8H" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ab6-Pm-676">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="c3u-hn-Rap"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sign In" id="jhs-3r-mqX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HaA-SM-FUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="-555"/>
+        </scene>
+        <!--Auth-Controller-->
+        <scene sceneID="nWV-1p-YkR">
+            <objects>
+                <tabBarController storyboardIdentifier="auth-controller" title="Auth-Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1tx-E9-4KX" customClass="AuthController" customModule="StarTapped" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g9k-ED-9H8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nC7-yI-d8H" kind="relationship" relationship="viewControllers" id="tYN-M1-hED"/>
+                        <segue destination="kqa-Uw-4tI" kind="relationship" relationship="viewControllers" id="zSj-Nq-5BH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yYi-eR-PFX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-767" y="-223"/>
+        </scene>
+    </scenes>
+</document>
