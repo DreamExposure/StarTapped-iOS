@@ -6,6 +6,8 @@ target 'StarTapped' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'Alamofire', '~> 4.8.0'
   pod 'KeychainSwift', '~> 13.0'
+  pod 'Guitar'
+  pod 'SwiftMoment'
 end
 
 target 'StarTappedTests' do

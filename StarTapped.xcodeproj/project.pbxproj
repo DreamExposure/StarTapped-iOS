@@ -47,6 +47,7 @@
 		CDDD29E22B13C2D38E5F770F /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD203B6E0736BD9CD55386 /* Blog.swift */; };
 		CDDD2AEEF6BA25EF15A5FCB3 /* GetBlogViewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD27FEA60925F7197AEAA3 /* GetBlogViewTask.swift */; };
 		CDDD2B295F4DA9A22FF1663F /* GetFollowingBlogsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2F75E9240D447491A89B /* GetFollowingBlogsTask.swift */; };
+		CDDD2B7B13A554F76F083AF0 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD281FD34CCEA14F12DB54 /* Validator.swift */; };
 		CDDD2C093AEC4826F10BBCE7 /* LoginTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD274F81ABDE2FC18C9891 /* LoginTask.swift */; };
 		CDDD2D3D5A1DF16F9A8A1C08 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2648F0B6093ADB2A7211 /* NetworkTask.swift */; };
 		CDDD2D84EFA176CB216CC8F2 /* StarTappedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD239F3A388B1DAD751618 /* StarTappedTests.swift */; };
@@ -117,6 +118,7 @@
 		CDDD277E3681026874E58C86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDDD27FEA60925F7197AEAA3 /* GetBlogViewTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBlogViewTask.swift; sourceTree = "<group>"; };
 		CDDD2807411F59A7D471641E /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		CDDD281FD34CCEA14F12DB54 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		CDDD28748399F2B918FB5979 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		CDDD2962CF930FF2A5CBD505 /* UpdateBlogTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateBlogTask.swift; sourceTree = "<group>"; };
 		CDDD296BEBE82F09CF7F4CAF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				80C6D64F21E197C1008675BC /* TimeUtils.swift */,
+				CDDD281FD34CCEA14F12DB54 /* Validator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -624,7 +627,9 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StarTapped/Pods-StarTapped-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Guitar/Guitar.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMoment/SwiftMoment.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -632,7 +637,9 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Guitar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMoment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,6 +730,7 @@
 				CDDD23E0A55789F0206D8F62 /* UnfollowBlogTask.swift in Sources */,
 				CDDD2B295F4DA9A22FF1663F /* GetFollowingBlogsTask.swift in Sources */,
 				CDDD21C7BAB37DDC019A47F0 /* GetFollowersAccountTask.swift in Sources */,
+				CDDD2B7B13A554F76F083AF0 /* Validator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
