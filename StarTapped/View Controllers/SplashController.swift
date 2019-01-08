@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class SplashController: UIViewController, TaskCallback {
 
@@ -34,11 +35,37 @@ class SplashController: UIViewController, TaskCallback {
 
     func goToAuth() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Auth", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "auth-controller") as! AuthController
+        let newViewController = storyBoard
+            .instantiateViewController(withIdentifier: "auth-controller") as! AuthController
+        self.present(newViewController, animated: false, completion: nil)
+    }
+    
+    func goToHub() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Hub", bundle: nil)
+        let newViewController = storyBoard
+            .instantiateViewController(withIdentifier: "hub-controller") as! AuthController
         self.present(newViewController, animated: false, completion: nil)
     }
 
     func onCallBack(status: NetworkCallStatus) {
-
+        switch status.getType() {
+        case .AUTH_TOKEN_REAUTH:
+            if (status.isSuccess()) {
+                if (status.getCode() == 200) {
+                    //Save new credentials
+                    Settings().deleteAuthentication()
+                    let cred = JSON(status.getBody()["credentials"].stringValue)
+                    let auth = AccountAuthentication().fromJson(json: cred)
+                    Settings().saveAuthentication(auth: auth)
+                }
+                //TODO: Go to hub
+            } else {
+                goToAuth()
+            }
+            break
+        default:
+            //Unsupported action, ignore
+            break
+        }
     }
 }
