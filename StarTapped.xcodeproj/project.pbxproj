@@ -20,6 +20,8 @@
 		80AFA5D321E442C00072A227 /* GetAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D221E442C00072A227 /* GetAccountTask.swift */; };
 		80AFA5D521E444960072A227 /* UpdateAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D421E444960072A227 /* UpdateAccountTask.swift */; };
 		80AFA5D721E4476F0072A227 /* GetAccountForBlogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D621E4476F0072A227 /* GetAccountForBlogView.swift */; };
+		80AFA5DB21E504010072A227 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5DA21E504010072A227 /* FileUtils.swift */; };
+		80AFA5DD21E508580072A227 /* MimeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5DC21E508580072A227 /* MimeTypes.swift */; };
 		80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64C21E19576008675BC /* AccountAuthentication.swift */; };
 		80C6D65021E197C1008675BC /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64F21E197C1008675BC /* TimeUtils.swift */; };
 		80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0521E1C4FD000A51A2 /* Post.swift */; };
@@ -93,6 +95,8 @@
 		80AFA5D221E442C00072A227 /* GetAccountTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountTask.swift; sourceTree = "<group>"; };
 		80AFA5D421E444960072A227 /* UpdateAccountTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountTask.swift; sourceTree = "<group>"; };
 		80AFA5D621E4476F0072A227 /* GetAccountForBlogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountForBlogView.swift; sourceTree = "<group>"; };
+		80AFA5DA21E504010072A227 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		80AFA5DC21E508580072A227 /* MimeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeTypes.swift; sourceTree = "<group>"; };
 		80C6D64C21E19576008675BC /* AccountAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAuthentication.swift; sourceTree = "<group>"; };
 		80C6D64F21E197C1008675BC /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
 		80EB1A0521E1C4FD000A51A2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -285,6 +289,8 @@
 			children = (
 				80C6D64F21E197C1008675BC /* TimeUtils.swift */,
 				CDDD281FD34CCEA14F12DB54 /* Validator.swift */,
+				80AFA5DA21E504010072A227 /* FileUtils.swift */,
+				80AFA5DC21E508580072A227 /* MimeTypes.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -711,9 +717,11 @@
 				80EB1A1721E26C91000A51A2 /* TaskCallback.swift in Sources */,
 				80AFA5D321E442C00072A227 /* GetAccountTask.swift in Sources */,
 				80EB1A1221E26858000A51A2 /* TaskType.swift in Sources */,
+				80AFA5DB21E504010072A227 /* FileUtils.swift in Sources */,
 				CDDD24F5F72C0EF8C76CECFA /* BlogType.swift in Sources */,
 				CDDD2ED84BF8C162EBE0374E /* PostType.swift in Sources */,
 				CDDD29329F28278CCC31B4B3 /* PersonalBlog.swift in Sources */,
+				80AFA5DD21E508580072A227 /* MimeTypes.swift in Sources */,
 				CDDD246384DAD19A817380C2 /* GroupBlog.swift in Sources */,
 				80EB1A0821E1D2B5000A51A2 /* TextPost.swift in Sources */,
 				80EB1A0A21E1D314000A51A2 /* ImagePost.swift in Sources */,
