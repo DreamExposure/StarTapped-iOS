@@ -39,6 +39,17 @@ class TimeUtils {
         return false
     }
     
+    func dateToDatabaseFormat(date: Date) -> String {
+        let calendar = Calendar.current
+        let dateComp = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        
+        let dateYear: String = "\(dateComp.year ?? 1970)"
+        let dateMonth: String = "\(dateComp.month ?? 01)"
+        let dateDay: String = "\(dateComp.day ?? 01)"
+        
+        return "\(dateYear)-\(dateMonth)-\(dateDay)" //ex 1970-01-01
+    }
+    
     func calculatAge(ageString: String) -> Int {
         let DATE_FORMAT = "yyyy-MM-dd"
         

@@ -8,6 +8,8 @@ target 'StarTapped' do
   pod 'KeychainSwift', '~> 13.0'
   pod 'Guitar'
   pod 'SwiftMoment'
+  pod 'Toast-Swift', '~> 4.0.0'
+  pod "ReCaptcha"
 end
 
 target 'StarTappedTests' do

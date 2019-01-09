@@ -32,12 +32,11 @@ class GetAccountTask: NetworkTask {
                     switch (response.result) {
                     case .success(_):
                         if response.result.value != nil {
-                            print("success response : \(String(describing: response.result.value))")
-
                             //Get body
                             var json: JSON = JSON(response.result.value!)
+                            let success = NetworkUtils().determineSuccess(code: code)
 
-                            let status = NetworkCallStatus(failure: false, success: true, type: TaskType.ACCOUNT_GET_SELF).setCode(code: code).setBody(body: json).setMessage(message: json["message"].stringValue)
+                            let status = NetworkCallStatus(failure: false, success: success, type: TaskType.ACCOUNT_GET_SELF).setCode(code: code).setBody(body: json).setMessage(message: json["message"].stringValue)
 
                             self.onComplete(status: status)
                         }

@@ -18,10 +18,12 @@ class TokenRefreshTask: NetworkTask {
     }
 
     func execute() {
+        let auth = Settings().getAuthentication()
+        
         let headers = [
             "Content-Type": "application/json",
-            "Authorization_Access": Settings().getAuthentication().getAccessToken(),
-            "Authorization_Refresh": Settings().getAuthentication().getRefreshToken()
+            "Authorization_Access": auth.getAccessToken(),
+            "Authorization_Refresh": auth.getRefreshToken()
         ]
 
         let params: [String: String] = [:]
@@ -32,12 +34,11 @@ class TokenRefreshTask: NetworkTask {
                     switch (response.result) {
                     case .success(_):
                         if response.result.value != nil {
-                            print("success response : \(String(describing: response.result.value))")
-
                             //Get body
                             var json: JSON = JSON(response.result.value!)
+                            let success = NetworkUtils().determineSuccess(code: code)
 
-                            let status = NetworkCallStatus(failure: false, success: true, type: TaskType.AUTH_TOKEN_REAUTH).setCode(code: code).setBody(body: json).setMessage(message: json["message"].stringValue)
+                            let status = NetworkCallStatus(failure: false, success: success, type: TaskType.AUTH_TOKEN_REAUTH).setCode(code: code).setBody(body: json).setMessage(message: json["message"].stringValue)
 
                             self.onComplete(status: status)
                         }

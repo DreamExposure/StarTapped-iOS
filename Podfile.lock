@@ -2,31 +2,41 @@ PODS:
   - Alamofire (4.8.0)
   - Guitar (0.5.0)
   - KeychainSwift (13.0.0)
+  - ReCaptcha (1.4.2):
+    - ReCaptcha/Core (= 1.4.2)
+  - ReCaptcha/Core (1.4.2)
   - SwiftMoment (0.7)
   - SwiftyJSON (4.2.0)
+  - Toast-Swift (4.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.0)
   - Guitar
   - KeychainSwift (~> 13.0)
+  - ReCaptcha
   - SwiftMoment
   - SwiftyJSON (~> 4.0)
+  - Toast-Swift (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Guitar
     - KeychainSwift
+    - ReCaptcha
     - SwiftMoment
     - SwiftyJSON
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   Guitar: 84256d4716829d44c0c5f1c029bd8c146bdcc957
   KeychainSwift: 23d6c16cbc33f20fafa30c3d783241b4b87d998c
+  ReCaptcha: bc0a66b13541f4ac749389c6e3c918117956a9e8
   SwiftMoment: dc6dd27012e267819104cbb03f74ff9192dd0b42
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
 
-PODFILE CHECKSUM: f9831c4cd676b5c829d90d303bbd66fbd28760e7
+PODFILE CHECKSUM: f921748cfebbeeaf9868969c7c0a1755219de5a3
 
 COCOAPODS: 1.6.0.beta.2

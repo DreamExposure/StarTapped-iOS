@@ -23,28 +23,16 @@ class SplashController: UIViewController, TaskCallback {
         let auth = Settings().getAuthentication()
 
         if auth.getRefreshToken() == "Unassigned" || auth.getAccessToken() == "Unassigned" {
-            goToAuth()
+            ViewUtils().goToAuth(view: self, anim: false)
         } else if (auth.getExpire() <= TimeUtils().getCurrentMillis()) {
-            //TODO: attempt reauth and go to hub or auth
-
+            //attempt reauth and go to hub or auth
+            
+            let trt = TokenRefreshTask(callback: self)
+            
+            trt.execute()
         } else {
-            //Something unknown was reached, default to making the user login...
-            goToAuth()
+            ViewUtils().goToHub(view: self, anim: false)
         }
-    }
-
-    func goToAuth() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Auth", bundle: nil)
-        let newViewController = storyBoard
-            .instantiateViewController(withIdentifier: "auth-controller") as! AuthController
-        self.present(newViewController, animated: false, completion: nil)
-    }
-    
-    func goToHub() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Hub", bundle: nil)
-        let newViewController = storyBoard
-            .instantiateViewController(withIdentifier: "hub-controller") as! AuthController
-        self.present(newViewController, animated: false, completion: nil)
     }
 
     func onCallBack(status: NetworkCallStatus) {
@@ -54,13 +42,13 @@ class SplashController: UIViewController, TaskCallback {
                 if (status.getCode() == 200) {
                     //Save new credentials
                     Settings().deleteAuthentication()
-                    let cred = JSON(status.getBody()["credentials"].stringValue)
+                    let cred = JSON(status.getBody()["credentials"])
                     let auth = AccountAuthentication().fromJson(json: cred)
                     Settings().saveAuthentication(auth: auth)
                 }
-                //TODO: Go to hub
+                ViewUtils().goToHub(view: self, anim: false)
             } else {
-                goToAuth()
+                ViewUtils().goToAuth(view: self, anim: false)
             }
             break
         default:

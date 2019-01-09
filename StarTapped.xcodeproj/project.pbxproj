@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C5B0CEB7B4ED5B0E0F6CB9C /* Pods_StarTappedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0BE1CA3E02FCE0E8C1F292 /* Pods_StarTappedTests.framework */; };
-		191D827EB6D48A0F209484E1 /* Pods_StarTapped.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F11554B442D2106A4E6237 /* Pods_StarTapped.framework */; };
+		191D827EB6D48A0F209484E1 /* Pods_StarTapped.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F11554B442D2106A4E6237 /* Pods_StarTapped.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6D476EFA877B2B16073FF404 /* Pods_StarTappedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB41B7EA209269D765B4C061 /* Pods_StarTappedUITests.framework */; };
 		8078782C21E3BFDB0011BF9D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782B21E3BFDB0011BF9D /* Settings.swift */; };
 		8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782D21E3E27C0011BF9D /* RegisterTask.swift */; };
@@ -24,6 +24,10 @@
 		80AFA5DD21E508580072A227 /* MimeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5DC21E508580072A227 /* MimeTypes.swift */; };
 		80AFA5DF21E50CDA0072A227 /* Hub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80AFA5DE21E50CDA0072A227 /* Hub.storyboard */; };
 		80AFA5E121E50D410072A227 /* HubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5E021E50D410072A227 /* HubController.swift */; };
+		80AFA5E421E5470E0072A227 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5E321E5470E0072A227 /* SignInViewController.swift */; };
+		80AFA5E621E551CB0072A227 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5E521E551CB0072A227 /* NetworkUtils.swift */; };
+		80AFA5E821E55F6A0072A227 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5E721E55F6A0072A227 /* RegisterViewController.swift */; };
+		80AFA5EA21E5A8AF0072A227 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5E921E5A8AF0072A227 /* ViewUtils.swift */; };
 		80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64C21E19576008675BC /* AccountAuthentication.swift */; };
 		80C6D65021E197C1008675BC /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64F21E197C1008675BC /* TimeUtils.swift */; };
 		80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0521E1C4FD000A51A2 /* Post.swift */; };
@@ -101,6 +105,10 @@
 		80AFA5DC21E508580072A227 /* MimeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeTypes.swift; sourceTree = "<group>"; };
 		80AFA5DE21E50CDA0072A227 /* Hub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hub.storyboard; sourceTree = "<group>"; };
 		80AFA5E021E50D410072A227 /* HubController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubController.swift; sourceTree = "<group>"; };
+		80AFA5E321E5470E0072A227 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		80AFA5E521E551CB0072A227 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		80AFA5E721E55F6A0072A227 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		80AFA5E921E5A8AF0072A227 /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		80C6D64C21E19576008675BC /* AccountAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAuthentication.swift; sourceTree = "<group>"; };
 		80C6D64F21E197C1008675BC /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
 		80EB1A0521E1C4FD000A51A2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -202,6 +210,7 @@
 		8078783321E422A90011BF9D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				80AFA5E221E5388C0072A227 /* Auth */,
 				8078783421E4232F0011BF9D /* SplashController.swift */,
 				80AFA5CD21E428D20072A227 /* AuthController.swift */,
 				80AFA5E021E50D410072A227 /* HubController.swift */,
@@ -290,6 +299,15 @@
 			path = Self;
 			sourceTree = "<group>";
 		};
+		80AFA5E221E5388C0072A227 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				80AFA5E321E5470E0072A227 /* SignInViewController.swift */,
+				80AFA5E721E55F6A0072A227 /* RegisterViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		80C6D64E21E197B1008675BC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +315,8 @@
 				CDDD281FD34CCEA14F12DB54 /* Validator.swift */,
 				80AFA5DA21E504010072A227 /* FileUtils.swift */,
 				80AFA5DC21E508580072A227 /* MimeTypes.swift */,
+				80AFA5E521E551CB0072A227 /* NetworkUtils.swift */,
+				80AFA5E921E5A8AF0072A227 /* ViewUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -642,8 +662,10 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Guitar/Guitar.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReCaptcha/ReCaptcha.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMoment/SwiftMoment.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -652,8 +674,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Guitar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReCaptcha.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMoment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -728,10 +752,13 @@
 				CDDD24F5F72C0EF8C76CECFA /* BlogType.swift in Sources */,
 				CDDD2ED84BF8C162EBE0374E /* PostType.swift in Sources */,
 				CDDD29329F28278CCC31B4B3 /* PersonalBlog.swift in Sources */,
+				80AFA5E421E5470E0072A227 /* SignInViewController.swift in Sources */,
 				80AFA5DD21E508580072A227 /* MimeTypes.swift in Sources */,
 				CDDD246384DAD19A817380C2 /* GroupBlog.swift in Sources */,
+				80AFA5EA21E5A8AF0072A227 /* ViewUtils.swift in Sources */,
 				80EB1A0821E1D2B5000A51A2 /* TextPost.swift in Sources */,
 				80EB1A0A21E1D314000A51A2 /* ImagePost.swift in Sources */,
+				80AFA5E621E551CB0072A227 /* NetworkUtils.swift in Sources */,
 				CDDD2738A0F45486BF1EABC6 /* AsyncTask.swift in Sources */,
 				8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */,
 				CDDD2D3D5A1DF16F9A8A1C08 /* NetworkTask.swift in Sources */,
@@ -739,6 +766,7 @@
 				8078783521E4232F0011BF9D /* SplashController.swift in Sources */,
 				CDDD2E032FF9DE99A828A185 /* CreateBlogTask.swift in Sources */,
 				CDDD2DF1E9AF8CB833129803 /* GetBlogsSelfTask.swift in Sources */,
+				80AFA5E821E55F6A0072A227 /* RegisterViewController.swift in Sources */,
 				CDDD2162E9FF00B6ADEC0F4B /* UpdateBlogTask.swift in Sources */,
 				80AFA5E121E50D410072A227 /* HubController.swift in Sources */,
 				CDDD2AEEF6BA25EF15A5FCB3 /* GetBlogViewTask.swift in Sources */,
