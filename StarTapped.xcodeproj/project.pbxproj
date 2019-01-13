@@ -10,6 +10,12 @@
 		0C5B0CEB7B4ED5B0E0F6CB9C /* Pods_StarTappedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E0BE1CA3E02FCE0E8C1F292 /* Pods_StarTappedTests.framework */; };
 		191D827EB6D48A0F209484E1 /* Pods_StarTapped.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F11554B442D2106A4E6237 /* Pods_StarTapped.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6D476EFA877B2B16073FF404 /* Pods_StarTappedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB41B7EA209269D765B4C061 /* Pods_StarTappedUITests.framework */; };
+		800D9F6121E851690036DC41 /* HubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D9F6021E851690036DC41 /* HubViewController.swift */; };
+		800D9F6621E905C70036DC41 /* YourBlogsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D9F6521E905C70036DC41 /* YourBlogsController.swift */; };
+		800D9F6921E94B280036DC41 /* BlogForSelfList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800D9F6821E94B280036DC41 /* BlogForSelfList.xib */; };
+		800D9F6C21EA3D470036DC41 /* BlogForSelfListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */; };
+		800D9F6F21EA56B60036DC41 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D9F6E21EA56B60036DC41 /* UIViewExtension.swift */; };
+		80540EE221EC037A00EE265D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80540EE121EC037A00EE265D /* UIColorExtension.swift */; };
 		8078782C21E3BFDB0011BF9D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782B21E3BFDB0011BF9D /* Settings.swift */; };
 		8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782D21E3E27C0011BF9D /* RegisterTask.swift */; };
 		8078783021E3E5700011BF9D /* LogoutTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782F21E3E5700011BF9D /* LogoutTask.swift */; };
@@ -30,6 +36,7 @@
 		80AFA5EA21E5A8AF0072A227 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5E921E5A8AF0072A227 /* ViewUtils.swift */; };
 		80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64C21E19576008675BC /* AccountAuthentication.swift */; };
 		80C6D65021E197C1008675BC /* TimeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6D64F21E197C1008675BC /* TimeUtils.swift */; };
+		80DC61BB21EBE9C800B79E4F /* DownloadImageTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC61BA21EBE9C800B79E4F /* DownloadImageTask.swift */; };
 		80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0521E1C4FD000A51A2 /* Post.swift */; };
 		80EB1A0821E1D2B5000A51A2 /* TextPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0721E1D2B5000A51A2 /* TextPost.swift */; };
 		80EB1A0A21E1D314000A51A2 /* ImagePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A0921E1D314000A51A2 /* ImagePost.swift */; };
@@ -90,6 +97,12 @@
 		260D6363F27CBD911BB58F0F /* Pods-StarTappedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTappedTests.release.xcconfig"; path = "Target Support Files/Pods-StarTappedTests/Pods-StarTappedTests.release.xcconfig"; sourceTree = "<group>"; };
 		3E0BE1CA3E02FCE0E8C1F292 /* Pods_StarTappedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarTappedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AEF73B41A4088C7CD5E11E /* Pods-StarTappedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTappedTests.debug.xcconfig"; path = "Target Support Files/Pods-StarTappedTests/Pods-StarTappedTests.debug.xcconfig"; sourceTree = "<group>"; };
+		800D9F6021E851690036DC41 /* HubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubViewController.swift; sourceTree = "<group>"; };
+		800D9F6521E905C70036DC41 /* YourBlogsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourBlogsController.swift; sourceTree = "<group>"; };
+		800D9F6821E94B280036DC41 /* BlogForSelfList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogForSelfList.xib; sourceTree = "<group>"; };
+		800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogForSelfListContainer.swift; sourceTree = "<group>"; };
+		800D9F6E21EA56B60036DC41 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		80540EE121EC037A00EE265D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8078782B21E3BFDB0011BF9D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8078782D21E3E27C0011BF9D /* RegisterTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTask.swift; sourceTree = "<group>"; };
 		8078782F21E3E5700011BF9D /* LogoutTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTask.swift; sourceTree = "<group>"; };
@@ -111,6 +124,7 @@
 		80AFA5E921E5A8AF0072A227 /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		80C6D64C21E19576008675BC /* AccountAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAuthentication.swift; sourceTree = "<group>"; };
 		80C6D64F21E197C1008675BC /* TimeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtils.swift; sourceTree = "<group>"; };
+		80DC61BA21EBE9C800B79E4F /* DownloadImageTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageTask.swift; sourceTree = "<group>"; };
 		80EB1A0521E1C4FD000A51A2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		80EB1A0721E1D2B5000A51A2 /* TextPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPost.swift; sourceTree = "<group>"; };
 		80EB1A0921E1D314000A51A2 /* ImagePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePost.swift; sourceTree = "<group>"; };
@@ -207,9 +221,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		800D9F5F21E8514F0036DC41 /* Hub */ = {
+			isa = PBXGroup;
+			children = (
+				800D9F6021E851690036DC41 /* HubViewController.swift */,
+				800D9F6521E905C70036DC41 /* YourBlogsController.swift */,
+			);
+			path = Hub;
+			sourceTree = "<group>";
+		};
+		800D9F6721E94AF80036DC41 /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				800D9F6821E94B280036DC41 /* BlogForSelfList.xib */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		800D9F6A21EA3D310036DC41 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		800D9F6D21EA56A80036DC41 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				800D9F6E21EA56B60036DC41 /* UIViewExtension.swift */,
+				80540EE121EC037A00EE265D /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8078783321E422A90011BF9D /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				800D9F6A21EA3D310036DC41 /* Container */,
+				800D9F5F21E8514F0036DC41 /* Hub */,
 				80AFA5E221E5388C0072A227 /* Auth */,
 				8078783421E4232F0011BF9D /* SplashController.swift */,
 				80AFA5CD21E428D20072A227 /* AuthController.swift */,
@@ -221,6 +271,7 @@
 		808DDF1821E14F5B005046B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				800D9F6721E94AF80036DC41 /* Containers */,
 				CDDD25E9A99AA347D37DAC98 /* LaunchScreen.storyboard */,
 				CDDD2E0B19AA74F1974FB46C /* Main.storyboard */,
 				8078783621E426A00011BF9D /* Auth.storyboard */,
@@ -321,6 +372,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		80DC61B921EBE9BA00B79E4F /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				80DC61BA21EBE9C800B79E4F /* DownloadImageTask.swift */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
 		80EB1A1321E26A4A000A51A2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +409,7 @@
 		CDDD246928DED1512E524E22 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				80DC61B921EBE9BA00B79E4F /* Download */,
 				80AFA5D821E448D70072A227 /* Blog */,
 				CDDD267E87CFF9820F0A8C8F /* Auth */,
 				CDDD204AB55DF8552C9E59F4 /* Account */,
@@ -405,6 +465,7 @@
 		CDDD27EA580D901660CA2083 /* StarTapped */ = {
 			isa = PBXGroup;
 			children = (
+				800D9F6D21EA56A80036DC41 /* Extensions */,
 				8078783321E422A90011BF9D /* View Controllers */,
 				CDDD2566157C267F76102853 /* Enums */,
 				80C6D64E21E197B1008675BC /* Utils */,
@@ -595,6 +656,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDDD25C96BE7A8FB6D581692 /* Assets.xcassets in Resources */,
+				800D9F6921E94B280036DC41 /* BlogForSelfList.xib in Resources */,
 				CDDD2EC6AE87403310FD7C2D /* LaunchScreen.storyboard in Resources */,
 				8078783721E426A00011BF9D /* Auth.storyboard in Resources */,
 				CDDD22070EB51F959CAE86A1 /* Main.storyboard in Resources */,
@@ -660,9 +722,19 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StarTapped/Pods-StarTapped-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Guitar/Guitar.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
+				"${BUILT_PRODUCTS_DIR}/Popover/Popover.framework",
 				"${BUILT_PRODUCTS_DIR}/ReCaptcha/ReCaptcha.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMoment/SwiftMoment.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
@@ -672,9 +744,19 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Guitar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReCaptcha.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMoment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
@@ -732,6 +814,7 @@
 				80C6D65021E197C1008675BC /* TimeUtils.swift in Sources */,
 				80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */,
 				80AFA5D521E444960072A227 /* UpdateAccountTask.swift in Sources */,
+				80DC61BB21EBE9C800B79E4F /* DownloadImageTask.swift in Sources */,
 				CDDD246E77840A1E52DE7BFB /* AppDelegate.swift in Sources */,
 				80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */,
 				80AFA5CE21E428D20072A227 /* AuthController.swift in Sources */,
@@ -747,7 +830,10 @@
 				CDDD29E22B13C2D38E5F770F /* Blog.swift in Sources */,
 				80EB1A1721E26C91000A51A2 /* TaskCallback.swift in Sources */,
 				80AFA5D321E442C00072A227 /* GetAccountTask.swift in Sources */,
+				80540EE221EC037A00EE265D /* UIColorExtension.swift in Sources */,
 				80EB1A1221E26858000A51A2 /* TaskType.swift in Sources */,
+				800D9F6121E851690036DC41 /* HubViewController.swift in Sources */,
+				800D9F6F21EA56B60036DC41 /* UIViewExtension.swift in Sources */,
 				80AFA5DB21E504010072A227 /* FileUtils.swift in Sources */,
 				CDDD24F5F72C0EF8C76CECFA /* BlogType.swift in Sources */,
 				CDDD2ED84BF8C162EBE0374E /* PostType.swift in Sources */,
@@ -758,6 +844,7 @@
 				80AFA5EA21E5A8AF0072A227 /* ViewUtils.swift in Sources */,
 				80EB1A0821E1D2B5000A51A2 /* TextPost.swift in Sources */,
 				80EB1A0A21E1D314000A51A2 /* ImagePost.swift in Sources */,
+				800D9F6C21EA3D470036DC41 /* BlogForSelfListContainer.swift in Sources */,
 				80AFA5E621E551CB0072A227 /* NetworkUtils.swift in Sources */,
 				CDDD2738A0F45486BF1EABC6 /* AsyncTask.swift in Sources */,
 				8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */,
@@ -774,6 +861,7 @@
 				CDDD23E0A55789F0206D8F62 /* UnfollowBlogTask.swift in Sources */,
 				CDDD2B295F4DA9A22FF1663F /* GetFollowingBlogsTask.swift in Sources */,
 				CDDD21C7BAB37DDC019A47F0 /* GetFollowersAccountTask.swift in Sources */,
+				800D9F6621E905C70036DC41 /* YourBlogsController.swift in Sources */,
 				CDDD2B7B13A554F76F083AF0 /* Validator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

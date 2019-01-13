@@ -58,6 +58,10 @@ class Blog {
     func getBackgroundColor() -> String {
         return backgroundColor
     }
+    
+    func getBackgroundUrl() -> String {
+        return backgroundUrl
+    }
 
     func doesAllowUnder18() -> Bool {
         return allowUnder18
