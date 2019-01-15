@@ -42,6 +42,90 @@
             </objects>
             <point key="canvasLocation" x="41" y="834"/>
         </scene>
+        <!--Blog View Controller-->
+        <scene sceneID="cHy-jj-eU0">
+            <objects>
+                <viewController storyboardIdentifier="blog-view" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QuF-uQ-NSi" customClass="BlogViewController" customModule="StarTapped" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X1A-od-NKt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJ7-xf-eRe">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Back Container" style="plain" id="x3b-9i-ZOP">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tH2-dm-Cc1" userLabel="Back Button" customClass="MDCButtonBarButton">
+                                            <rect key="frame" x="16" y="4" width="36" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="baseline_arrow_back_black_36pt">
+                                                <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onBackButtonClicked:" destination="QuF-uQ-NSi" eventType="touchUpInside" id="0LY-pq-q7P"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="blog-url" style="done" id="Thv-2m-QmE">
+                                        <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6Tg-11-Opx"/>
+                                    <barButtonItem title="Share Button Container" style="plain" id="Vug-9Z-QiC">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eoR-4n-Nrj" customClass="MDCButton">
+                                            <rect key="frame" x="287" y="4" width="36" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="share_36pt">
+                                                <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="shareButtonTapped:" destination="QuF-uQ-NSi" eventType="touchUpInside" id="hx9-a6-fCZ"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem title="More Button Container" style="plain" id="AOg-jl-YSP">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" restorationIdentifier="more-button" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7Cv-Mw-hFW" customClass="MDCButton">
+                                            <rect key="frame" x="323" y="4" width="36" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="baseline_more_vert_black_36pt"/>
+                                            <connections>
+                                                <action selector="moreButtonTapped:" destination="QuF-uQ-NSi" eventType="touchUpInside" id="LR9-XH-WrE"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="us4-kc-IAA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mJ7-xf-eRe" firstAttribute="leading" secondItem="7dm-0Y-TJf" secondAttribute="leading" id="C8s-DS-sfF"/>
+                            <constraint firstItem="mJ7-xf-eRe" firstAttribute="top" secondItem="7dm-0Y-TJf" secondAttribute="top" id="Ela-Rw-Zwz"/>
+                            <constraint firstItem="us4-kc-IAA" firstAttribute="leading" secondItem="7dm-0Y-TJf" secondAttribute="leading" id="Ffq-6V-sI8"/>
+                            <constraint firstItem="us4-kc-IAA" firstAttribute="bottom" secondItem="7dm-0Y-TJf" secondAttribute="bottom" id="NZ2-wF-AWe"/>
+                            <constraint firstItem="mJ7-xf-eRe" firstAttribute="trailing" secondItem="7dm-0Y-TJf" secondAttribute="trailing" id="UPl-QM-tEv"/>
+                            <constraint firstItem="us4-kc-IAA" firstAttribute="trailing" secondItem="7dm-0Y-TJf" secondAttribute="trailing" id="kYA-N3-oOh"/>
+                            <constraint firstItem="us4-kc-IAA" firstAttribute="top" secondItem="mJ7-xf-eRe" secondAttribute="bottom" id="kdl-m7-s3b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7dm-0Y-TJf"/>
+                    </view>
+                    <connections>
+                        <outlet property="moreButton" destination="7Cv-Mw-hFW" id="Q50-tN-uYf"/>
+                        <outlet property="scrollView" destination="us4-kc-IAA" id="83B-2M-hoy"/>
+                        <outlet property="shareButton" destination="eoR-4n-Nrj" id="fMP-ot-7Do"/>
+                        <outlet property="toolbar" destination="mJ7-xf-eRe" id="nLF-MH-24x"/>
+                        <outlet property="toolbarTitle" destination="Thv-2m-QmE" id="1Vl-P1-fev"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uN7-pg-6Ku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-969" y="-296"/>
+        </scene>
         <!--Hub-->
         <scene sceneID="uft-Ik-unr">
             <objects>
@@ -187,5 +271,6 @@
         <image name="baseline_arrow_back_black_36pt" width="36" height="36"/>
         <image name="baseline_more_vert_black_36pt" width="36" height="36"/>
         <image name="new_36pt" width="36" height="36"/>
+        <image name="share_36pt" width="36" height="36"/>
     </resources>
 </document>

@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-class GetAccountForBlogView: NetworkTask {
+class GetAccountForBlogViewTask: NetworkTask {
     var callback: TaskCallback
 
     let id: String

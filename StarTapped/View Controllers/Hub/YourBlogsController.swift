@@ -44,15 +44,9 @@ class YourBlogsController: UIViewController, TaskCallback {
         for jBlog in jBlogs {
             let blog = Blog().fromJson(json: jBlog)
             let blogCon: BlogForSelfListConainer = BlogForSelfListConainer()
+            blogCon.controller = self
             
-            blogCon.urlView.text = blog.getBaseUrl()
-            blogCon.blogTitle.text = blog.getName()
-            blogCon.blogDescription.text = blog.getDescription()
-            
-            DownloadImageTask(callback: self, url: blog.getIconUrl(), view: blogCon.iconImage).execute()
-            DownloadImageTask(callback: self, url: blog.getBackgroundUrl(), view: blogCon.backgroundImage).execute()
-            
-            blogCon.contentView.backgroundColor = ViewUtils().hexStringToUIColor(hex: blog.getBackgroundColor())
+            blogCon.configure(blog: blog, jBlog: jBlog)
             
             blogCon.fixTheStupid()
             

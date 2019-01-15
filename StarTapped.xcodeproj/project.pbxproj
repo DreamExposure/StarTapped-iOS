@@ -22,10 +22,14 @@
 		8078783221E3E6130011BF9D /* TokenRefreshTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078783121E3E6130011BF9D /* TokenRefreshTask.swift */; };
 		8078783521E4232F0011BF9D /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078783421E4232F0011BF9D /* SplashController.swift */; };
 		8078783721E426A00011BF9D /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8078783621E426A00011BF9D /* Auth.storyboard */; };
+		807C046A21EC45CB00AF1FAE /* BlogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807C046921EC45CB00AF1FAE /* BlogView.xib */; };
+		807C046C21EC45E000AF1FAE /* BlogViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C046B21EC45E000AF1FAE /* BlogViewContainer.swift */; };
+		807C046F21ECF9CB00AF1FAE /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C046E21ECF9CB00AF1FAE /* ViewType.swift */; };
+		807C047221ECFC4F00AF1FAE /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C047121ECFC4F00AF1FAE /* BlogViewController.swift */; };
 		80AFA5CE21E428D20072A227 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5CD21E428D20072A227 /* AuthController.swift */; };
 		80AFA5D321E442C00072A227 /* GetAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D221E442C00072A227 /* GetAccountTask.swift */; };
 		80AFA5D521E444960072A227 /* UpdateAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D421E444960072A227 /* UpdateAccountTask.swift */; };
-		80AFA5D721E4476F0072A227 /* GetAccountForBlogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D621E4476F0072A227 /* GetAccountForBlogView.swift */; };
+		80AFA5D721E4476F0072A227 /* GetAccountForBlogViewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D621E4476F0072A227 /* GetAccountForBlogViewTask.swift */; };
 		80AFA5DB21E504010072A227 /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5DA21E504010072A227 /* FileUtils.swift */; };
 		80AFA5DD21E508580072A227 /* MimeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5DC21E508580072A227 /* MimeTypes.swift */; };
 		80AFA5DF21E50CDA0072A227 /* Hub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80AFA5DE21E50CDA0072A227 /* Hub.storyboard */; };
@@ -109,11 +113,15 @@
 		8078783121E3E6130011BF9D /* TokenRefreshTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRefreshTask.swift; sourceTree = "<group>"; };
 		8078783421E4232F0011BF9D /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		8078783621E426A00011BF9D /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		807C046921EC45CB00AF1FAE /* BlogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogView.xib; sourceTree = "<group>"; };
+		807C046B21EC45E000AF1FAE /* BlogViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewContainer.swift; sourceTree = "<group>"; };
+		807C046E21ECF9CB00AF1FAE /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
+		807C047121ECFC4F00AF1FAE /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
 		808DDF1721E14163005046B5 /* StarTapped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarTapped.entitlements; sourceTree = "<group>"; };
 		80AFA5CD21E428D20072A227 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		80AFA5D221E442C00072A227 /* GetAccountTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountTask.swift; sourceTree = "<group>"; };
 		80AFA5D421E444960072A227 /* UpdateAccountTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountTask.swift; sourceTree = "<group>"; };
-		80AFA5D621E4476F0072A227 /* GetAccountForBlogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountForBlogView.swift; sourceTree = "<group>"; };
+		80AFA5D621E4476F0072A227 /* GetAccountForBlogViewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountForBlogViewTask.swift; sourceTree = "<group>"; };
 		80AFA5DA21E504010072A227 /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		80AFA5DC21E508580072A227 /* MimeTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeTypes.swift; sourceTree = "<group>"; };
 		80AFA5DE21E50CDA0072A227 /* Hub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Hub.storyboard; sourceTree = "<group>"; };
@@ -224,6 +232,7 @@
 		800D9F5F21E8514F0036DC41 /* Hub */ = {
 			isa = PBXGroup;
 			children = (
+				807C047021ECFC4300AF1FAE /* Blog */,
 				800D9F6021E851690036DC41 /* HubViewController.swift */,
 				800D9F6521E905C70036DC41 /* YourBlogsController.swift */,
 			);
@@ -234,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				800D9F6821E94B280036DC41 /* BlogForSelfList.xib */,
+				807C046921EC45CB00AF1FAE /* BlogView.xib */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -242,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */,
+				807C046B21EC45E000AF1FAE /* BlogViewContainer.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -266,6 +277,14 @@
 				80AFA5E021E50D410072A227 /* HubController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		807C047021ECFC4300AF1FAE /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				807C047121ECFC4F00AF1FAE /* BlogViewController.swift */,
+			);
+			path = Blog;
 			sourceTree = "<group>";
 		};
 		808DDF1821E14F5B005046B5 /* Views */ = {
@@ -401,7 +420,7 @@
 		CDDD214AD02AE718A4C401DC /* Blog */ = {
 			isa = PBXGroup;
 			children = (
-				80AFA5D621E4476F0072A227 /* GetAccountForBlogView.swift */,
+				80AFA5D621E4476F0072A227 /* GetAccountForBlogViewTask.swift */,
 			);
 			path = Blog;
 			sourceTree = "<group>";
@@ -424,6 +443,7 @@
 				CDDD2A61C28CD1C2451DACE3 /* BlogType.swift */,
 				CDDD2B8FA52FFFD1508C5D76 /* PostType.swift */,
 				80EB1A1121E26858000A51A2 /* TaskType.swift */,
+				807C046E21ECF9CB00AF1FAE /* ViewType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -659,6 +679,7 @@
 				800D9F6921E94B280036DC41 /* BlogForSelfList.xib in Resources */,
 				CDDD2EC6AE87403310FD7C2D /* LaunchScreen.storyboard in Resources */,
 				8078783721E426A00011BF9D /* Auth.storyboard in Resources */,
+				807C046A21EC45CB00AF1FAE /* BlogView.xib in Resources */,
 				CDDD22070EB51F959CAE86A1 /* Main.storyboard in Resources */,
 				80AFA5DF21E50CDA0072A227 /* Hub.storyboard in Resources */,
 				CDDD2522015056D10FF46CE8 /* LICENSE.txt in Resources */,
@@ -821,7 +842,7 @@
 				8078783221E3E6130011BF9D /* TokenRefreshTask.swift in Sources */,
 				80EB1A0C21E1D434000A51A2 /* AudioPost.swift in Sources */,
 				CDDD2EAEE6152889A7F8326B /* README.md in Sources */,
-				80AFA5D721E4476F0072A227 /* GetAccountForBlogView.swift in Sources */,
+				80AFA5D721E4476F0072A227 /* GetAccountForBlogViewTask.swift in Sources */,
 				80EB1A0E21E1D4C2000A51A2 /* VideoPost.swift in Sources */,
 				8078782C21E3BFDB0011BF9D /* Settings.swift in Sources */,
 				80EB1A1521E26A5B000A51A2 /* NetworkCallStatus.swift in Sources */,
@@ -834,6 +855,8 @@
 				80EB1A1221E26858000A51A2 /* TaskType.swift in Sources */,
 				800D9F6121E851690036DC41 /* HubViewController.swift in Sources */,
 				800D9F6F21EA56B60036DC41 /* UIViewExtension.swift in Sources */,
+				807C046C21EC45E000AF1FAE /* BlogViewContainer.swift in Sources */,
+				807C046F21ECF9CB00AF1FAE /* ViewType.swift in Sources */,
 				80AFA5DB21E504010072A227 /* FileUtils.swift in Sources */,
 				CDDD24F5F72C0EF8C76CECFA /* BlogType.swift in Sources */,
 				CDDD2ED84BF8C162EBE0374E /* PostType.swift in Sources */,
@@ -855,6 +878,7 @@
 				CDDD2DF1E9AF8CB833129803 /* GetBlogsSelfTask.swift in Sources */,
 				80AFA5E821E55F6A0072A227 /* RegisterViewController.swift in Sources */,
 				CDDD2162E9FF00B6ADEC0F4B /* UpdateBlogTask.swift in Sources */,
+				807C047221ECFC4F00AF1FAE /* BlogViewController.swift in Sources */,
 				80AFA5E121E50D410072A227 /* HubController.swift in Sources */,
 				CDDD2AEEF6BA25EF15A5FCB3 /* GetBlogViewTask.swift in Sources */,
 				CDDD26D7F5DB879E869154F3 /* FollowBlogTask.swift in Sources */,

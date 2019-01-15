@@ -29,7 +29,7 @@ class GroupBlog: Blog {
         return json
     }
 
-    override func fromJson(json: JSON) -> Blog {
+    override func fromJson(json: JSON) -> GroupBlog {
         super.fromJson(json: json)
 
         owners = json["owners"].arrayValue.map({ $0[].stringValue })

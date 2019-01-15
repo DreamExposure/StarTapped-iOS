@@ -1,8 +1,8 @@
 //
-//  BlogForSelfListContainer.swift
+//  BlogViewContainer.swift
 //  StarTapped
 //
-//  Created by Nova Maday on 1/12/19.
+//  Created by Nova Maday on 1/13/19.
 //  Copyright © 2019 DreamExposure Studios. All rights reserved.
 //
 
@@ -10,14 +10,11 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class BlogForSelfListConainer: UIView, TaskCallback {
+class BlogViewContainer: UIView, TaskCallback {
     @IBOutlet var contentView: UIView!
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var iconImage: UIImageView!
-    
-    @IBOutlet weak var edtButton: UIButton!
-    @IBOutlet weak var urlView: UIButton!
     
     @IBOutlet weak var blogTitle: UILabel!
     @IBOutlet weak var blogDescription: UILabel!
@@ -28,7 +25,6 @@ class BlogForSelfListConainer: UIView, TaskCallback {
     
     var blog: Blog!
     var jBlog: JSON!
-    var controller: UIViewController!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,16 +37,15 @@ class BlogForSelfListConainer: UIView, TaskCallback {
     }
     
     private func setupView() {
-        Bundle.main.loadNibNamed("BlogForSelfList", owner: self  , options: nil)
+        Bundle.main.loadNibNamed("BlogView", owner: self  , options: nil)
         self.addSubview(self.contentView)
     }
     
     func configure(blog: Blog, jBlog: JSON) {
         self.blog = blog
         self.jBlog = jBlog
-    
+        
         //Do all the shit yay!
-        self.urlView.setTitle(self.blog.getBaseUrl().lowercased(), for: .normal)
         self.blogTitle.text = self.blog.getName()
         self.blogDescription.text = self.blog.getDescription()
         
@@ -60,7 +55,7 @@ class BlogForSelfListConainer: UIView, TaskCallback {
         if (self.blog.getBlogType() == BlogType.PERSONAL) {
             let pBlog:PersonalBlog = PersonalBlog().fromJson(json: self.jBlog)
             if (pBlog.isDisplayAge()) {
-                self.ageBadge.text = "\(TimeUtils().calculatAge(ageString: Settings().getAccount().getBirthday()))"
+                GetAccountForBlogViewTask(callback: self, id: pBlog.getOwnerId()).execute()
                 self.ageBadge.isHidden = false
             } else {
                 self.ageBadge.isHidden = true
@@ -90,17 +85,11 @@ class BlogForSelfListConainer: UIView, TaskCallback {
         
         self.translatesAutoresizingMaskIntoConstraints = false
     }
-    @IBAction func onBlogUrlClick() {
-        //TODO: Load blog view...
-        ViewUtils().goToViewBlog(view: controller, anim: true, previous: .YOUR_BLOGS, blogId: blog.getBlogId())
-    }
-    
-    @IBAction func onEditButtonClick() {
-        //TODO: Load blog edit view
-    }
     
     func onCallBack(status: NetworkCallStatus) {
-        //Can savely ignore, its just for downloading images.
+        if (status.getType() == .ACCOUNT_GET_BLOG && status.isSuccess()) {
+            let acc = Account().fromJson(json: status.getBody()["account"])
+            self.ageBadge.text = "\(TimeUtils().calculatAge(ageString: acc.getBirthday()))"
+        }
     }
 }
-

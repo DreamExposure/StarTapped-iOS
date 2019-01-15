@@ -62,13 +62,11 @@ class TimeUtils {
             let calendar = Calendar.current
             let now = Date()
             
-            // Extract the components of the dates
-            let dateComp = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-            let nowComp = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
+            let ageComponents = calendar.dateComponents([.year], from: date, to: now)
+            let age = ageComponents.year
             
-            return (nowComp.year ?? 0) - (dateComp.year ?? 0)
+            return age ?? -1
         }
-        
         return -1
     }
 }

@@ -10,6 +10,22 @@ import Foundation
 import UIKit
 
 class ViewUtils {
+    func goTo(view: UIViewController, anim: Bool, viewType: ViewType) {
+        switch viewType {
+        case .AUTH:
+            goToAuth(view: view, anim: anim)
+            break
+        case .HUB:
+            goToHub(view: view, anim: anim)
+            break
+        case .YOUR_BLOGS:
+            goToYourBlogs(view: view, anim: anim)
+            break
+        default:
+            break
+        }
+    }
+    
     func goToAuth(view: UIViewController, anim: Bool) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Auth", bundle: nil)
         let newViewController = storyBoard
@@ -28,6 +44,17 @@ class ViewUtils {
         let storyboard: UIStoryboard = UIStoryboard(name: "Hub", bundle: nil)
         let newViewController = storyboard
             .instantiateViewController(withIdentifier: "your-blogs") as! YourBlogsController
+        view.present(newViewController, animated: anim, completion: nil)
+    }
+    
+    func goToViewBlog(view: UIViewController, anim: Bool, previous: ViewType, blogId: String) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Hub", bundle: nil)
+        let newViewController = storyboard
+            .instantiateViewController(withIdentifier: "blog-view") as! BlogViewController
+        
+        newViewController.previousView = previous
+        newViewController.blogId = blogId
+        
         view.present(newViewController, animated: anim, completion: nil)
     }
     

@@ -45,7 +45,7 @@ class PersonalBlog: Blog {
         return json
     }
 
-    override func fromJson(json: JSON) -> Blog {
+    override func fromJson(json: JSON) -> PersonalBlog {
         super.fromJson(json: json)
 
         ownerId = json["owner_id"].stringValue

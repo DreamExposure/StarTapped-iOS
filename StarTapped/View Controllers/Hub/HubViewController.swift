@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import MaterialComponents
 import Popover
+import SwiftyJSON
 
 class HubViewController: UIViewController, TaskCallback {
     
@@ -25,11 +26,12 @@ class HubViewController: UIViewController, TaskCallback {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        GetAccountTask(callback: self).execute()
     }
     
     @IBAction func moreButtonTapped(_ sender: UIButton) {
         let startPoint = CGPoint(x: self.view.frame.width - 60, y: 55)
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width / 2, height: 135))
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width / 2, height: CGFloat(42 * texts.count)))
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
@@ -38,7 +40,16 @@ class HubViewController: UIViewController, TaskCallback {
     }
     
     func onCallBack(status: NetworkCallStatus) {
-        
+        switch status.getType() {
+        case .ACCOUNT_GET_SELF:
+            if (status.isSuccess()) {
+                let acc = Account().fromJson(json: status.getBody()["account"])
+                Settings().deleteAccount()
+                Settings().saveAccount(account: acc)
+            }
+        default:
+            break;
+        }
     }
 }
 
