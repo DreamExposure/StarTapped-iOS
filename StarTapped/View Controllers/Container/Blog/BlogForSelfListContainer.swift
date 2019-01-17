@@ -91,8 +91,7 @@ class BlogForSelfListConainer: UIView, TaskCallback {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     @IBAction func onBlogUrlClick() {
-        //TODO: Load blog view...
-        ViewUtils().goToViewBlog(view: controller, anim: true, previous: .YOUR_BLOGS, blogId: blog.getBlogId())
+        ViewUtils().goToViewBlog(view: controller, anim: true, blogId: blog.getBlogId())
     }
     
     @IBAction func onEditButtonClick() {

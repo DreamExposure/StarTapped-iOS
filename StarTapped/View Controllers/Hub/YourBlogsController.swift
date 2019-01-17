@@ -31,7 +31,7 @@ class YourBlogsController: UIViewController, TaskCallback {
     }
     
     @IBAction func onBackButtonClicked(_ sender: UIButton) {
-         ViewUtils().goToHub(view: self, anim: true)
+         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onNewBlockButtonClicked(_ sender: UIButton) {

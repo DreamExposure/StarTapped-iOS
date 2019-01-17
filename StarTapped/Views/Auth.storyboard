@@ -89,8 +89,8 @@
                                     <action selector="onRegisterButtonClickWithButton:" destination="kqa-Uw-4tI" eventType="touchUpInside" id="b2H-oK-Xcz"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="recap-view" translatesAutoresizingMaskIntoConstraints="NO" id="AWq-t3-BEL">
-                                <rect key="frame" x="36" y="184" width="300" height="300"/>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="recap-view" translatesAutoresizingMaskIntoConstraints="NO" id="AWq-t3-BEL">
+                                <rect key="frame" x="36" y="184" width="300" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -155,8 +155,8 @@
                                     <action selector="onSignInButtonClickWithButton:" destination="nC7-yI-d8H" eventType="touchUpInside" id="1cP-XF-k4m"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="recap-view" translatesAutoresizingMaskIntoConstraints="NO" id="u6g-KW-mk3">
-                                <rect key="frame" x="36" y="184" width="300" height="300"/>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="recap-view" translatesAutoresizingMaskIntoConstraints="NO" id="u6g-KW-mk3">
+                                <rect key="frame" x="36" y="184" width="300" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>

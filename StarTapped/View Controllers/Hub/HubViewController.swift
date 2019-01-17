@@ -65,7 +65,7 @@ extension HubViewController: UITableViewDelegate {
             //TODO: Go to following
             break
         case 2:
-            //TODO: Got to settings
+            //TODO: Go to settings
             break
         default:
             //Unsupported action

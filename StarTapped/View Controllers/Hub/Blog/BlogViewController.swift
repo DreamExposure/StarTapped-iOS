@@ -22,7 +22,6 @@ class BlogViewController: UIViewController, TaskCallback {
     @IBOutlet weak var scrollView: UIScrollView!
     var stackView: UIStackView!
     
-    var previousView: ViewType!
     var blogId: String!
     
     fileprivate var popover: Popover!
@@ -47,7 +46,7 @@ class BlogViewController: UIViewController, TaskCallback {
     
     @IBAction func onBackButtonClicked(_ sender: UIButton) {
         //Go to previous view...
-        ViewUtils().goTo(view: self, anim: true, viewType: self.previousView)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func displayBlog(status: NetworkCallStatus) {

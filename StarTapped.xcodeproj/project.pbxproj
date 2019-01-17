@@ -15,6 +15,16 @@
 		800D9F6921E94B280036DC41 /* BlogForSelfList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800D9F6821E94B280036DC41 /* BlogForSelfList.xib */; };
 		800D9F6C21EA3D470036DC41 /* BlogForSelfListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */; };
 		800D9F6F21EA56B60036DC41 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D9F6E21EA56B60036DC41 /* UIViewExtension.swift */; };
+		8030898E21EF98E4008D81DD /* NsfwBlogBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8030898D21EF98E4008D81DD /* NsfwBlogBlock.xib */; };
+		8030899021EF990D008D81DD /* NsfwBlogBLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8030898F21EF990D008D81DD /* NsfwBlogBLock.swift */; };
+		8030899221EF9E44008D81DD /* AdultOnlyBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8030899121EF9E44008D81DD /* AdultOnlyBlock.xib */; };
+		8030899421EF9E5F008D81DD /* AdultOnlyBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8030899321EF9E5E008D81DD /* AdultOnlyBlock.swift */; };
+		8030899621EFA2F8008D81DD /* FollowingViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8030899521EFA2F8008D81DD /* FollowingViewContainer.swift */; };
+		8030899821EFA307008D81DD /* FollowingViewContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8030899721EFA307008D81DD /* FollowingViewContainer.xib */; };
+		803089A221EFB947008D81DD /* PostTextContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803089A121EFB947008D81DD /* PostTextContainer.xib */; };
+		803089A421EFB968008D81DD /* PostTextContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803089A321EFB968008D81DD /* PostTextContainer.swift */; };
+		803089A621EFDFA8008D81DD /* PostImageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803089A521EFDFA8008D81DD /* PostImageContainer.swift */; };
+		803089A921EFDFE0008D81DD /* PostImageContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803089A821EFDFE0008D81DD /* PostImageContainer.xib */; };
 		80540EE221EC037A00EE265D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80540EE121EC037A00EE265D /* UIColorExtension.swift */; };
 		8078782C21E3BFDB0011BF9D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782B21E3BFDB0011BF9D /* Settings.swift */; };
 		8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782D21E3E27C0011BF9D /* RegisterTask.swift */; };
@@ -26,6 +36,11 @@
 		807C046C21EC45E000AF1FAE /* BlogViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C046B21EC45E000AF1FAE /* BlogViewContainer.swift */; };
 		807C046F21ECF9CB00AF1FAE /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C046E21ECF9CB00AF1FAE /* ViewType.swift */; };
 		807C047221ECFC4F00AF1FAE /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C047121ECFC4F00AF1FAE /* BlogViewController.swift */; };
+		808A20D221EFF6A700F69A86 /* PostAudioContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20D121EFF6A700F69A86 /* PostAudioContainer.swift */; };
+		808A20D421EFF6DE00F69A86 /* PostAudioContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808A20D321EFF6DE00F69A86 /* PostAudioContainer.xib */; };
+		808A20D621F01F3C00F69A86 /* PostVideoContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808A20D521F01F3C00F69A86 /* PostVideoContainer.xib */; };
+		808A20D821F01F6300F69A86 /* PostVideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20D721F01F6300F69A86 /* PostVideoContainer.swift */; };
+		808A20DB21F0247100F69A86 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20DA21F0247100F69A86 /* VideoView.swift */; };
 		80AFA5CE21E428D20072A227 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5CD21E428D20072A227 /* AuthController.swift */; };
 		80AFA5D321E442C00072A227 /* GetAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D221E442C00072A227 /* GetAccountTask.swift */; };
 		80AFA5D521E444960072A227 /* UpdateAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D421E444960072A227 /* UpdateAccountTask.swift */; };
@@ -106,6 +121,16 @@
 		800D9F6821E94B280036DC41 /* BlogForSelfList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogForSelfList.xib; sourceTree = "<group>"; };
 		800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogForSelfListContainer.swift; sourceTree = "<group>"; };
 		800D9F6E21EA56B60036DC41 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		8030898D21EF98E4008D81DD /* NsfwBlogBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NsfwBlogBlock.xib; sourceTree = "<group>"; };
+		8030898F21EF990D008D81DD /* NsfwBlogBLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NsfwBlogBLock.swift; sourceTree = "<group>"; };
+		8030899121EF9E44008D81DD /* AdultOnlyBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdultOnlyBlock.xib; sourceTree = "<group>"; };
+		8030899321EF9E5E008D81DD /* AdultOnlyBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultOnlyBlock.swift; sourceTree = "<group>"; };
+		8030899521EFA2F8008D81DD /* FollowingViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewContainer.swift; sourceTree = "<group>"; };
+		8030899721EFA307008D81DD /* FollowingViewContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingViewContainer.xib; sourceTree = "<group>"; };
+		803089A121EFB947008D81DD /* PostTextContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTextContainer.xib; sourceTree = "<group>"; };
+		803089A321EFB968008D81DD /* PostTextContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextContainer.swift; sourceTree = "<group>"; };
+		803089A521EFDFA8008D81DD /* PostImageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageContainer.swift; sourceTree = "<group>"; };
+		803089A821EFDFE0008D81DD /* PostImageContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostImageContainer.xib; sourceTree = "<group>"; };
 		80540EE121EC037A00EE265D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8078782B21E3BFDB0011BF9D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8078782D21E3E27C0011BF9D /* RegisterTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTask.swift; sourceTree = "<group>"; };
@@ -117,6 +142,11 @@
 		807C046B21EC45E000AF1FAE /* BlogViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewContainer.swift; sourceTree = "<group>"; };
 		807C046E21ECF9CB00AF1FAE /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		807C047121ECFC4F00AF1FAE /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
+		808A20D121EFF6A700F69A86 /* PostAudioContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAudioContainer.swift; sourceTree = "<group>"; };
+		808A20D321EFF6DE00F69A86 /* PostAudioContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostAudioContainer.xib; sourceTree = "<group>"; };
+		808A20D521F01F3C00F69A86 /* PostVideoContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostVideoContainer.xib; sourceTree = "<group>"; };
+		808A20D721F01F6300F69A86 /* PostVideoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVideoContainer.swift; sourceTree = "<group>"; };
+		808A20DA21F0247100F69A86 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		808DDF1721E14163005046B5 /* StarTapped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarTapped.entitlements; sourceTree = "<group>"; };
 		80AFA5CD21E428D20072A227 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		80AFA5D221E442C00072A227 /* GetAccountTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountTask.swift; sourceTree = "<group>"; };
@@ -242,8 +272,10 @@
 		800D9F6721E94AF80036DC41 /* Containers */ = {
 			isa = PBXGroup;
 			children = (
-				800D9F6821E94B280036DC41 /* BlogForSelfList.xib */,
-				807C046921EC45CB00AF1FAE /* BlogView.xib */,
+				8030899C21EFB8BC008D81DD /* Post */,
+				8030899B21EFB65F008D81DD /* Account */,
+				8030899A21EFB62E008D81DD /* Blog */,
+				8030899921EFB60C008D81DD /* Blocks */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -251,8 +283,11 @@
 		800D9F6A21EA3D310036DC41 /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */,
-				807C046B21EC45E000AF1FAE /* BlogViewContainer.swift */,
+				808A20D921F0246100F69A86 /* Media */,
+				803089A021EFB927008D81DD /* Post */,
+				8030899F21EFB913008D81DD /* Blocks */,
+				8030899E21EFB8D2008D81DD /* Blog */,
+				8030899D21EFB8C7008D81DD /* Account */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -264,6 +299,80 @@
 				80540EE121EC037A00EE265D /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8030899921EFB60C008D81DD /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				8030898D21EF98E4008D81DD /* NsfwBlogBlock.xib */,
+				8030899121EF9E44008D81DD /* AdultOnlyBlock.xib */,
+			);
+			path = Blocks;
+			sourceTree = "<group>";
+		};
+		8030899A21EFB62E008D81DD /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				800D9F6821E94B280036DC41 /* BlogForSelfList.xib */,
+				807C046921EC45CB00AF1FAE /* BlogView.xib */,
+			);
+			path = Blog;
+			sourceTree = "<group>";
+		};
+		8030899B21EFB65F008D81DD /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				8030899721EFA307008D81DD /* FollowingViewContainer.xib */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		8030899C21EFB8BC008D81DD /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				803089A121EFB947008D81DD /* PostTextContainer.xib */,
+				803089A821EFDFE0008D81DD /* PostImageContainer.xib */,
+				808A20D321EFF6DE00F69A86 /* PostAudioContainer.xib */,
+				808A20D521F01F3C00F69A86 /* PostVideoContainer.xib */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		8030899D21EFB8C7008D81DD /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				8030899521EFA2F8008D81DD /* FollowingViewContainer.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		8030899E21EFB8D2008D81DD /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				807C046B21EC45E000AF1FAE /* BlogViewContainer.swift */,
+				800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */,
+			);
+			path = Blog;
+			sourceTree = "<group>";
+		};
+		8030899F21EFB913008D81DD /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				8030899321EF9E5E008D81DD /* AdultOnlyBlock.swift */,
+				8030898F21EF990D008D81DD /* NsfwBlogBLock.swift */,
+			);
+			path = Blocks;
+			sourceTree = "<group>";
+		};
+		803089A021EFB927008D81DD /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				803089A321EFB968008D81DD /* PostTextContainer.swift */,
+				803089A521EFDFA8008D81DD /* PostImageContainer.swift */,
+				808A20D121EFF6A700F69A86 /* PostAudioContainer.swift */,
+				808A20D721F01F6300F69A86 /* PostVideoContainer.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 		8078783321E422A90011BF9D /* View Controllers */ = {
@@ -285,6 +394,14 @@
 				807C047121ECFC4F00AF1FAE /* BlogViewController.swift */,
 			);
 			path = Blog;
+			sourceTree = "<group>";
+		};
+		808A20D921F0246100F69A86 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				808A20DA21F0247100F69A86 /* VideoView.swift */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 		808DDF1821E14F5B005046B5 /* Views */ = {
@@ -675,12 +792,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8030899221EF9E44008D81DD /* AdultOnlyBlock.xib in Resources */,
+				808A20D621F01F3C00F69A86 /* PostVideoContainer.xib in Resources */,
 				CDDD25C96BE7A8FB6D581692 /* Assets.xcassets in Resources */,
 				800D9F6921E94B280036DC41 /* BlogForSelfList.xib in Resources */,
 				CDDD2EC6AE87403310FD7C2D /* LaunchScreen.storyboard in Resources */,
 				8078783721E426A00011BF9D /* Auth.storyboard in Resources */,
+				803089A921EFDFE0008D81DD /* PostImageContainer.xib in Resources */,
 				807C046A21EC45CB00AF1FAE /* BlogView.xib in Resources */,
 				CDDD22070EB51F959CAE86A1 /* Main.storyboard in Resources */,
+				808A20D421EFF6DE00F69A86 /* PostAudioContainer.xib in Resources */,
+				8030899821EFA307008D81DD /* FollowingViewContainer.xib in Resources */,
+				803089A221EFB947008D81DD /* PostTextContainer.xib in Resources */,
+				8030898E21EF98E4008D81DD /* NsfwBlogBlock.xib in Resources */,
 				80AFA5DF21E50CDA0072A227 /* Hub.storyboard in Resources */,
 				CDDD2522015056D10FF46CE8 /* LICENSE.txt in Resources */,
 			);
@@ -846,23 +970,28 @@
 				80EB1A0E21E1D4C2000A51A2 /* VideoPost.swift in Sources */,
 				8078782C21E3BFDB0011BF9D /* Settings.swift in Sources */,
 				80EB1A1521E26A5B000A51A2 /* NetworkCallStatus.swift in Sources */,
+				808A20D221EFF6A700F69A86 /* PostAudioContainer.swift in Sources */,
 				8078783021E3E5700011BF9D /* LogoutTask.swift in Sources */,
 				CDDD29719B46F347C861D561 /* Account.swift in Sources */,
 				CDDD29E22B13C2D38E5F770F /* Blog.swift in Sources */,
 				80EB1A1721E26C91000A51A2 /* TaskCallback.swift in Sources */,
 				80AFA5D321E442C00072A227 /* GetAccountTask.swift in Sources */,
 				80540EE221EC037A00EE265D /* UIColorExtension.swift in Sources */,
+				8030899421EF9E5F008D81DD /* AdultOnlyBlock.swift in Sources */,
 				80EB1A1221E26858000A51A2 /* TaskType.swift in Sources */,
+				808A20D821F01F6300F69A86 /* PostVideoContainer.swift in Sources */,
 				800D9F6121E851690036DC41 /* HubViewController.swift in Sources */,
 				800D9F6F21EA56B60036DC41 /* UIViewExtension.swift in Sources */,
 				807C046C21EC45E000AF1FAE /* BlogViewContainer.swift in Sources */,
 				807C046F21ECF9CB00AF1FAE /* ViewType.swift in Sources */,
 				80AFA5DB21E504010072A227 /* FileUtils.swift in Sources */,
+				803089A621EFDFA8008D81DD /* PostImageContainer.swift in Sources */,
 				CDDD24F5F72C0EF8C76CECFA /* BlogType.swift in Sources */,
 				CDDD2ED84BF8C162EBE0374E /* PostType.swift in Sources */,
 				CDDD29329F28278CCC31B4B3 /* PersonalBlog.swift in Sources */,
 				80AFA5E421E5470E0072A227 /* SignInViewController.swift in Sources */,
 				80AFA5DD21E508580072A227 /* MimeTypes.swift in Sources */,
+				808A20DB21F0247100F69A86 /* VideoView.swift in Sources */,
 				CDDD246384DAD19A817380C2 /* GroupBlog.swift in Sources */,
 				80AFA5EA21E5A8AF0072A227 /* ViewUtils.swift in Sources */,
 				80EB1A0821E1D2B5000A51A2 /* TextPost.swift in Sources */,
@@ -871,15 +1000,18 @@
 				80AFA5E621E551CB0072A227 /* NetworkUtils.swift in Sources */,
 				CDDD2738A0F45486BF1EABC6 /* AsyncTask.swift in Sources */,
 				8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */,
+				8030899621EFA2F8008D81DD /* FollowingViewContainer.swift in Sources */,
 				CDDD2D3D5A1DF16F9A8A1C08 /* NetworkTask.swift in Sources */,
 				CDDD2C093AEC4826F10BBCE7 /* LoginTask.swift in Sources */,
 				8078783521E4232F0011BF9D /* SplashController.swift in Sources */,
 				CDDD2E032FF9DE99A828A185 /* CreateBlogTask.swift in Sources */,
+				8030899021EF990D008D81DD /* NsfwBlogBLock.swift in Sources */,
 				CDDD2DF1E9AF8CB833129803 /* GetBlogsSelfTask.swift in Sources */,
 				80AFA5E821E55F6A0072A227 /* RegisterViewController.swift in Sources */,
 				CDDD2162E9FF00B6ADEC0F4B /* UpdateBlogTask.swift in Sources */,
 				807C047221ECFC4F00AF1FAE /* BlogViewController.swift in Sources */,
 				80AFA5E121E50D410072A227 /* HubController.swift in Sources */,
+				803089A421EFB968008D81DD /* PostTextContainer.swift in Sources */,
 				CDDD2AEEF6BA25EF15A5FCB3 /* GetBlogViewTask.swift in Sources */,
 				CDDD26D7F5DB879E869154F3 /* FollowBlogTask.swift in Sources */,
 				CDDD23E0A55789F0206D8F62 /* UnfollowBlogTask.swift in Sources */,

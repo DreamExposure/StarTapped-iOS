@@ -21,6 +21,9 @@
                         <viewLayoutGuide key="safeArea" id="kAl-Zf-67V"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" id="GbZ-Mm-o7I"/>
+                    <connections>
+                        <segue destination="QuF-uQ-NSi" kind="show" identifier="explore-to-view-blog" id="4Lk-6J-Nji"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5eo-sY-RCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -37,6 +40,9 @@
                         <viewLayoutGuide key="safeArea" id="GSx-GX-Xel"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="0j1-rK-Ee6"/>
+                    <connections>
+                        <segue destination="QuF-uQ-NSi" kind="show" identifier="search-to-view-blog" id="ocV-XD-Drr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOK-kh-uPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uN7-pg-6Ku" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-969" y="-296"/>
+            <point key="canvasLocation" x="895" y="-134"/>
         </scene>
         <!--Hub-->
         <scene sceneID="uft-Ik-unr">
@@ -171,6 +177,7 @@
                     <tabBarItem key="tabBarItem" title="Hub" id="u1D-Mb-kMg"/>
                     <connections>
                         <segue destination="2NO-ws-Lb3" kind="show" identifier="hub-to-self-blog-list" id="Ptj-5c-c5b"/>
+                        <segue destination="QuF-uQ-NSi" kind="show" identifier="hub-to-view-blog" id="xZb-IZ-me2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeD-u3-uKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,11 +245,12 @@
                     <connections>
                         <outlet property="scrollView" destination="7qO-tA-BYI" id="X8i-ES-tQl"/>
                         <outlet property="toolbar" destination="39C-c3-LJW" id="S3W-oa-DEN"/>
+                        <segue destination="QuF-uQ-NSi" kind="show" identifier="self-blog-list-to-view-blog" id="961-28-4h9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I45-lF-37k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797.60000000000002" y="-960.2698650674663"/>
+            <point key="canvasLocation" x="1654" y="-884"/>
         </scene>
         <!--Hub Controller-->
         <scene sceneID="rjk-iw-f2e">
@@ -273,4 +281,7 @@
         <image name="new_36pt" width="36" height="36"/>
         <image name="share_36pt" width="36" height="36"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ocV-XD-Drr"/>
+    </inferredMetricsTieBreakers>
 </document>
