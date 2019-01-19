@@ -1,8 +1,8 @@
 //
-//  YourBlogsController.swift
+//  FollowingController.swift
 //  StarTapped
 //
-//  Created by Nova Maday on 1/11/19.
+//  Created by Nova Maday on 1/17/19.
 //  Copyright © 2019 DreamExposure Studios. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import UIKit
 import Toast_Swift
 import SwiftyJSON
 
-class YourBlogsController: UIViewController, TaskCallback {
+class FollowingController: UIViewController, TaskCallback {
     @IBOutlet weak var toolbar: UIToolbar!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -26,24 +26,20 @@ class YourBlogsController: UIViewController, TaskCallback {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let getBlogsTask = GetBlogsSelfTask(callback: self)
-        getBlogsTask.execute()
+        let gft = GetFollowingBlogsTask(callback: self)
+        gft.execute()
     }
     
     @IBAction func onBackButtonClicked(_ sender: UIButton) {
-         self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func onNewBlockButtonClicked(_ sender: UIButton) {
-        //TODO: Open view to create new blog
-    }
-    
-    func displayBlogs(status: NetworkCallStatus) {
+    func displayFollowing(status: NetworkCallStatus) {
         let jBlogs: [JSON] = status.getBody()["blogs"].arrayValue
         
         for jBlog in jBlogs {
             let blog = Blog().fromJson(json: jBlog)
-            let blogCon: BlogForSelfListConainer = BlogForSelfListConainer()
+            let blogCon: FollowingViewContainer = FollowingViewContainer()
             blogCon.controller = self
             
             blogCon.configure(blog: blog, jBlog: jBlog)
@@ -56,9 +52,9 @@ class YourBlogsController: UIViewController, TaskCallback {
     
     func onCallBack(status: NetworkCallStatus) {
         switch status.getType() {
-        case .BLOG_GET_SELF_ALL:
+        case .FOLLOW_GET_FOLLOWING:
             if (status.isSuccess()) {
-                self.displayBlogs(status: status)
+                self.displayFollowing(status: status)
             } else {
                 self.view.makeToast(status.getMessage())
             }

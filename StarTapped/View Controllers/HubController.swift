@@ -9,17 +9,8 @@
 import Foundation
 import UIKit
 
-class HubController: UITabBarController, TaskCallback {
-    
-    
-    
+class HubController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    
-    func onCallBack(status: NetworkCallStatus) {
-        
     }
 }

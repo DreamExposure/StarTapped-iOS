@@ -14,7 +14,6 @@ class SplashController: UIViewController, TaskCallback {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // Do any additional setup after loading the view, typically from a nib.
 
         checkAuthorization()
     }

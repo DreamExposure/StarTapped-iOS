@@ -1,8 +1,8 @@
 //
-//  HubViewController.swift
+//  SearchViewController.swift
 //  StarTapped
 //
-//  Created by Nova Maday on 1/10/19.
+//  Created by Nova Maday on 1/17/19.
 //  Copyright © 2019 DreamExposure Studios. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ import MaterialComponents
 import Popover
 import SwiftyJSON
 
-class HubViewController: UIViewController, TaskCallback {
+class SearchViewController: UIViewController, TaskCallback {
     
     @IBOutlet weak var moreButton: UIBarButtonItem!
     
@@ -25,8 +25,6 @@ class HubViewController: UIViewController, TaskCallback {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GetAccountTask(callback: self).execute()
     }
     
     @IBAction func moreButtonTapped(_ sender: UIButton) {
@@ -40,20 +38,11 @@ class HubViewController: UIViewController, TaskCallback {
     }
     
     func onCallBack(status: NetworkCallStatus) {
-        switch status.getType() {
-        case .ACCOUNT_GET_SELF:
-            if (status.isSuccess()) {
-                let acc = Account().fromJson(json: status.getBody()["account"])
-                Settings().deleteAccount()
-                Settings().saveAccount(account: acc)
-            }
-        default:
-            break;
-        }
+        //TODO: handle search callbacks.
     }
 }
 
-extension HubViewController: UITableViewDelegate {
+extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
@@ -74,7 +63,7 @@ extension HubViewController: UITableViewDelegate {
     }
 }
 
-extension HubViewController: UITableViewDataSource {
+extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return texts.count

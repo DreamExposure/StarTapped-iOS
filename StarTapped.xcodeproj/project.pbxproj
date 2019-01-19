@@ -41,6 +41,11 @@
 		808A20D621F01F3C00F69A86 /* PostVideoContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808A20D521F01F3C00F69A86 /* PostVideoContainer.xib */; };
 		808A20D821F01F6300F69A86 /* PostVideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20D721F01F6300F69A86 /* PostVideoContainer.swift */; };
 		808A20DB21F0247100F69A86 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20DA21F0247100F69A86 /* VideoView.swift */; };
+		808A20DD21F1672900F69A86 /* FollowingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20DC21F1672900F69A86 /* FollowingController.swift */; };
+		808A20E021F16C1200F69A86 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20DF21F16C1200F69A86 /* SearchViewController.swift */; };
+		808A20E321F16D9300F69A86 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20E221F16D9300F69A86 /* ExploreViewController.swift */; };
+		808A20E621F2345500F69A86 /* TimeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20E521F2345500F69A86 /* TimeIndex.swift */; };
+		808A20E821F28DFF00F69A86 /* CreateBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20E721F28DFF00F69A86 /* CreateBlogViewController.swift */; };
 		80AFA5CE21E428D20072A227 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5CD21E428D20072A227 /* AuthController.swift */; };
 		80AFA5D321E442C00072A227 /* GetAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D221E442C00072A227 /* GetAccountTask.swift */; };
 		80AFA5D521E444960072A227 /* UpdateAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D421E444960072A227 /* UpdateAccountTask.swift */; };
@@ -147,6 +152,11 @@
 		808A20D521F01F3C00F69A86 /* PostVideoContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostVideoContainer.xib; sourceTree = "<group>"; };
 		808A20D721F01F6300F69A86 /* PostVideoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVideoContainer.swift; sourceTree = "<group>"; };
 		808A20DA21F0247100F69A86 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		808A20DC21F1672900F69A86 /* FollowingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingController.swift; sourceTree = "<group>"; };
+		808A20DF21F16C1200F69A86 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		808A20E221F16D9300F69A86 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		808A20E521F2345500F69A86 /* TimeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIndex.swift; sourceTree = "<group>"; };
+		808A20E721F28DFF00F69A86 /* CreateBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBlogViewController.swift; sourceTree = "<group>"; };
 		808DDF1721E14163005046B5 /* StarTapped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarTapped.entitlements; sourceTree = "<group>"; };
 		80AFA5CD21E428D20072A227 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		80AFA5D221E442C00072A227 /* GetAccountTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountTask.swift; sourceTree = "<group>"; };
@@ -262,9 +272,11 @@
 		800D9F5F21E8514F0036DC41 /* Hub */ = {
 			isa = PBXGroup;
 			children = (
+				808A20DE21F16BE700F69A86 /* Account */,
 				807C047021ECFC4300AF1FAE /* Blog */,
 				800D9F6021E851690036DC41 /* HubViewController.swift */,
-				800D9F6521E905C70036DC41 /* YourBlogsController.swift */,
+				808A20DF21F16C1200F69A86 /* SearchViewController.swift */,
+				808A20E221F16D9300F69A86 /* ExploreViewController.swift */,
 			);
 			path = Hub;
 			sourceTree = "<group>";
@@ -404,6 +416,24 @@
 			path = Media;
 			sourceTree = "<group>";
 		};
+		808A20DE21F16BE700F69A86 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				800D9F6521E905C70036DC41 /* YourBlogsController.swift */,
+				808A20DC21F1672900F69A86 /* FollowingController.swift */,
+				808A20E721F28DFF00F69A86 /* CreateBlogViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		808A20E421F2344500F69A86 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				808A20E521F2345500F69A86 /* TimeIndex.swift */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
 		808DDF1821E14F5B005046B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +449,7 @@
 		808DDF1921E159AD005046B5 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				808A20E421F2344500F69A86 /* Time */,
 				808DDF2021E15FFC005046B5 /* Post */,
 				808DDF1F21E15FF1005046B5 /* Blog */,
 				808DDF1E21E15FE9005046B5 /* Auth */,
@@ -879,6 +910,7 @@
 				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/Popover/Popover.framework",
 				"${BUILT_PRODUCTS_DIR}/ReCaptcha/ReCaptcha.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMoment/SwiftMoment.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -901,6 +933,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReCaptcha.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMoment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -965,16 +998,19 @@
 				80AFA5CE21E428D20072A227 /* AuthController.swift in Sources */,
 				8078783221E3E6130011BF9D /* TokenRefreshTask.swift in Sources */,
 				80EB1A0C21E1D434000A51A2 /* AudioPost.swift in Sources */,
+				808A20DD21F1672900F69A86 /* FollowingController.swift in Sources */,
 				CDDD2EAEE6152889A7F8326B /* README.md in Sources */,
 				80AFA5D721E4476F0072A227 /* GetAccountForBlogViewTask.swift in Sources */,
 				80EB1A0E21E1D4C2000A51A2 /* VideoPost.swift in Sources */,
 				8078782C21E3BFDB0011BF9D /* Settings.swift in Sources */,
+				808A20E621F2345500F69A86 /* TimeIndex.swift in Sources */,
 				80EB1A1521E26A5B000A51A2 /* NetworkCallStatus.swift in Sources */,
 				808A20D221EFF6A700F69A86 /* PostAudioContainer.swift in Sources */,
 				8078783021E3E5700011BF9D /* LogoutTask.swift in Sources */,
 				CDDD29719B46F347C861D561 /* Account.swift in Sources */,
 				CDDD29E22B13C2D38E5F770F /* Blog.swift in Sources */,
 				80EB1A1721E26C91000A51A2 /* TaskCallback.swift in Sources */,
+				808A20E321F16D9300F69A86 /* ExploreViewController.swift in Sources */,
 				80AFA5D321E442C00072A227 /* GetAccountTask.swift in Sources */,
 				80540EE221EC037A00EE265D /* UIColorExtension.swift in Sources */,
 				8030899421EF9E5F008D81DD /* AdultOnlyBlock.swift in Sources */,
@@ -1009,12 +1045,14 @@
 				CDDD2DF1E9AF8CB833129803 /* GetBlogsSelfTask.swift in Sources */,
 				80AFA5E821E55F6A0072A227 /* RegisterViewController.swift in Sources */,
 				CDDD2162E9FF00B6ADEC0F4B /* UpdateBlogTask.swift in Sources */,
+				808A20E821F28DFF00F69A86 /* CreateBlogViewController.swift in Sources */,
 				807C047221ECFC4F00AF1FAE /* BlogViewController.swift in Sources */,
 				80AFA5E121E50D410072A227 /* HubController.swift in Sources */,
 				803089A421EFB968008D81DD /* PostTextContainer.swift in Sources */,
 				CDDD2AEEF6BA25EF15A5FCB3 /* GetBlogViewTask.swift in Sources */,
 				CDDD26D7F5DB879E869154F3 /* FollowBlogTask.swift in Sources */,
 				CDDD23E0A55789F0206D8F62 /* UnfollowBlogTask.swift in Sources */,
+				808A20E021F16C1200F69A86 /* SearchViewController.swift in Sources */,
 				CDDD2B295F4DA9A22FF1663F /* GetFollowingBlogsTask.swift in Sources */,
 				CDDD21C7BAB37DDC019A47F0 /* GetFollowersAccountTask.swift in Sources */,
 				800D9F6621E905C70036DC41 /* YourBlogsController.swift in Sources */,

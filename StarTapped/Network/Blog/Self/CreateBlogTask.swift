@@ -11,10 +11,12 @@ class CreateBlogTask: NetworkTask {
     var callback: TaskCallback
 
     let url: String
+    let gcap: String
 
-    init(callback: TaskCallback, url: String) {
+    init(callback: TaskCallback, url: String, gcap: String) {
         self.callback = callback
         self.url = url
+        self.gcap = gcap
     }
 
     func execute() {
@@ -26,6 +28,7 @@ class CreateBlogTask: NetworkTask {
 
         let params: [String: String] = [
             "url": url,
+            "gcap": gcap,
             "type": BlogType.PERSONAL.rawValue
         ]
 

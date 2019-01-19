@@ -31,6 +31,22 @@ class ViewUtils {
         view.present(newViewController, animated: anim, completion: nil)
     }
     
+    func goToFollowing(view: UIViewController, anim: Bool) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Hub", bundle: nil)
+        let newViewController = storyboard
+            .instantiateViewController(withIdentifier: "following-view") as! FollowingController
+        
+        view.present(newViewController, animated: anim, completion: nil)
+    }
+    
+    func goToCreateBlog(view: UIViewController, anim: Bool) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Hub", bundle: nil)
+        let newViewController = storyboard
+            .instantiateViewController(withIdentifier: "create-blog-view") as! CreateBlogViewController
+        
+        view.present(newViewController, animated: anim, completion: nil)
+    }
+    
     func goToViewBlog(view: UIViewController, anim: Bool, blogId: String) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Hub", bundle: nil)
         let newViewController = storyboard

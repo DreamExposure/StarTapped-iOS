@@ -515,6 +515,7 @@ PODS:
   - ReCaptcha (1.4.2):
     - ReCaptcha/Core (= 1.4.2)
   - ReCaptcha/Core (1.4.2)
+  - RevealingSplashView (0.6.0)
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
   - SDWebImage/Core (4.4.3)
@@ -533,6 +534,7 @@ DEPENDENCIES:
   - MaterialComponents
   - Popover
   - ReCaptcha
+  - RevealingSplashView
   - SDWebImage
   - SDWebImage/GIF
   - SwiftMoment
@@ -554,6 +556,7 @@ SPEC REPOS:
     - MotionTransitioning
     - Popover
     - ReCaptcha
+    - RevealingSplashView
     - SDWebImage
     - SwiftMoment
     - SwiftyJSON
@@ -573,11 +576,12 @@ SPEC CHECKSUMS:
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
   Popover: 21e357f86d45c8d9e29a41a4adbca3664d6e511f
   ReCaptcha: bc0a66b13541f4ac749389c6e3c918117956a9e8
+  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SwiftMoment: dc6dd27012e267819104cbb03f74ff9192dd0b42
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
 
-PODFILE CHECKSUM: d9a9d13f8aa4fbf245e5b511271a8ee460564311
+PODFILE CHECKSUM: 59582955e4317edc9f609868c17d67df18265bb0
 
 COCOAPODS: 1.6.0.beta.2
