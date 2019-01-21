@@ -30,7 +30,7 @@
                                             <rect key="frame" x="323" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" image="baseline_more_vert_black_36pt"/>
+                                            <state key="normal" image="baseline_more_vert_black_18pt"/>
                                             <connections>
                                                 <action selector="moreButtonTapped:" destination="bKE-oF-Vq7" eventType="touchUpInside" id="8zb-sQ-Q7O"/>
                                             </connections>
@@ -80,7 +80,7 @@
                                             <rect key="frame" x="323" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" image="baseline_more_vert_black_36pt"/>
+                                            <state key="normal" image="baseline_more_vert_black_18pt"/>
                                             <connections>
                                                 <action selector="moreButtonTapped:" destination="oxm-CZ-QNB" eventType="touchUpInside" id="QFE-Ej-P82"/>
                                             </connections>
@@ -126,7 +126,7 @@
                                             <rect key="frame" x="16" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" image="baseline_arrow_back_black_36pt">
+                                            <state key="normal" image="baseline_arrow_back_black_18pt">
                                                 <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
@@ -183,7 +183,7 @@
                                             <rect key="frame" x="16" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" image="baseline_arrow_back_black_36pt">
+                                            <state key="normal" image="baseline_arrow_back_black_18pt">
                                                 <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
@@ -200,7 +200,7 @@
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eoR-4n-Nrj" customClass="MDCButton">
                                             <rect key="frame" x="287" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="share_36pt">
+                                            <state key="normal" image="share_18pt">
                                                 <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
@@ -213,7 +213,7 @@
                                             <rect key="frame" x="323" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" image="baseline_more_vert_black_36pt"/>
+                                            <state key="normal" image="baseline_more_vert_black_18pt"/>
                                             <connections>
                                                 <action selector="moreButtonTapped:" destination="QuF-uQ-NSi" eventType="touchUpInside" id="LR9-XH-WrE"/>
                                             </connections>
@@ -278,7 +278,7 @@
                                             <rect key="frame" x="323" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" image="baseline_more_vert_black_36pt"/>
+                                            <state key="normal" image="baseline_more_vert_black_18pt"/>
                                             <connections>
                                                 <action selector="moreButtonTapped:" destination="lpH-ic-msu" eventType="touchUpInside" id="HVC-wP-s4j"/>
                                             </connections>
@@ -325,7 +325,7 @@
                                             <rect key="frame" x="16" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" image="baseline_arrow_back_black_36pt">
+                                            <state key="normal" image="baseline_arrow_back_black_18pt">
                                                 <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
@@ -342,7 +342,7 @@
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JBE-XQ-PNB" userLabel="New Blog" customClass="MDCButtonBarButton">
                                             <rect key="frame" x="323" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="new_36pt"/>
+                                            <state key="normal" image="new_18pt"/>
                                             <connections>
                                                 <action selector="onNewBlockButtonClicked:" destination="2NO-ws-Lb3" eventType="touchUpInside" id="N2Z-Mc-dDs"/>
                                             </connections>
@@ -394,7 +394,7 @@
                                             <rect key="frame" x="16" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" image="baseline_arrow_back_black_36pt">
+                                            <state key="normal" image="baseline_arrow_back_black_18pt">
                                                 <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
@@ -411,7 +411,7 @@
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="naZ-v3-385" userLabel="Confirm" customClass="MDCButtonBarButton">
                                             <rect key="frame" x="323" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="check_36pt"/>
+                                            <state key="normal" image="check_18pt"/>
                                             <connections>
                                                 <action selector="onCreateButtonClicked" destination="lhG-1H-w5t" eventType="touchUpInside" id="cbm-ce-zm4"/>
                                             </connections>
@@ -487,14 +487,14 @@
     </scenes>
     <resources>
         <image name="add_48pt" width="48" height="48"/>
-        <image name="baseline_arrow_back_black_36pt" width="36" height="36"/>
-        <image name="baseline_more_vert_black_36pt" width="36" height="36"/>
-        <image name="check_36pt" width="36" height="36"/>
-        <image name="new_36pt" width="36" height="36"/>
-        <image name="share_36pt" width="36" height="36"/>
+        <image name="baseline_arrow_back_black_18pt" width="36" height="36"/>
+        <image name="baseline_more_vert_black_18pt" width="36" height="36"/>
+        <image name="check_18pt" width="18" height="18"/>
+        <image name="new_18pt" width="18" height="18"/>
+        <image name="share_18pt" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="961-28-4h9"/>
-        <segue reference="Pbn-aN-3d1"/>
+        <segue reference="xZb-IZ-me2"/>
+        <segue reference="TAK-hn-RLq"/>
     </inferredMetricsTieBreakers>
 </document>
