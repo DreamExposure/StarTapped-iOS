@@ -50,7 +50,7 @@ class TimeUtils {
         return "\(dateYear)-\(dateMonth)-\(dateDay)" //ex 1970-01-01
     }
     
-    func calculatAge(ageString: String) -> Int {
+    func calculateAge(ageString: String) -> Int {
         let DATE_FORMAT = "yyyy-MM-dd"
         
         let dateFormatter = DateFormatter()

@@ -25,28 +25,37 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="blog-for-self-list-container" id="aFS-hU-xSc">
             <rect key="frame" x="0.0" y="0.0" width="375" height="319"/>
-            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eiv-HO-R1V" customClass="FLAnimatedImageView">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eiv-HO-R1V" customClass="FLAnimatedImageView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="375" id="JLg-bJ-zc1"/>
                         <constraint firstAttribute="height" constant="200" id="vL4-DQ-5uG"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZOH-a7-kNL" customClass="FLAnimatedImageView">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZOH-a7-kNL" customClass="FLAnimatedImageView">
                     <rect key="frame" x="150" y="160" width="75" height="75"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="75" id="34j-g9-1oT"/>
+                        <constraint firstAttribute="height" constant="75" id="4Or-kY-C6F"/>
                         <constraint firstAttribute="width" secondItem="ZOH-a7-kNL" secondAttribute="height" multiplier="1:1" id="ybL-oI-q9G"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Blog Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yd-Ra-Gan">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Blog Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="5yd-Ra-Gan">
                     <rect key="frame" x="16" y="243" width="343" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="343" id="Zli-Kv-ORE"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="24"/>
                     <color key="textColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blog Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u2-wi-60e">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blog Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="3u2-wi-60e">
                     <rect key="frame" x="16" y="279" width="343" height="19.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="343" id="JDU-wn-15i"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>

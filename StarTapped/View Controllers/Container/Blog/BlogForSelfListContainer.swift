@@ -27,7 +27,6 @@ class BlogForSelfListConainer: UIView, TaskCallback {
     @IBOutlet weak var ageBadge: UILabel!
     
     var blog: Blog!
-    var jBlog: JSON!
     var controller: UIViewController!
     
     override init(frame: CGRect) {
@@ -45,9 +44,8 @@ class BlogForSelfListConainer: UIView, TaskCallback {
         self.addSubview(self.contentView)
     }
     
-    func configure(blog: Blog, jBlog: JSON) {
+    func configure(blog: Blog) {
         self.blog = blog
-        self.jBlog = jBlog
     
         //Do all the shit yay!
         self.urlView.setTitle(self.blog.getBaseUrl().lowercased(), for: .normal)
@@ -58,9 +56,8 @@ class BlogForSelfListConainer: UIView, TaskCallback {
         self.noMinorsBadge.isHidden = self.blog.doesAllowUnder18()
         
         if (self.blog.getBlogType() == BlogType.PERSONAL) {
-            let pBlog:PersonalBlog = PersonalBlog().fromJson(json: self.jBlog)
-            if (pBlog.isDisplayAge()) {
-                self.ageBadge.text = "\(TimeUtils().calculatAge(ageString: Settings().getAccount().getBirthday()))"
+            if (self.blog.isDisplayAge()) {
+                self.ageBadge.text = "\(TimeUtils().calculateAge(ageString: Settings().getAccount().getBirthday()))"
                 self.ageBadge.isHidden = false
             } else {
                 self.ageBadge.isHidden = true
@@ -76,19 +73,18 @@ class BlogForSelfListConainer: UIView, TaskCallback {
     }
     
     func fixTheStupid() {
-        blogTitle.sizeToFit()
-        blogTitle.setNeedsDisplay()
-        blogDescription.sizeToFit()
-        blogDescription.setNeedsDisplay()
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.contentView.layoutIfNeeded()
         
         self.heightAnchor
-            .constraint(equalToConstant: self.contentView.bounds.height)
+            .constraint(equalToConstant: self.contentView.frame.height)
             .isActive = true
         self.widthAnchor
-            .constraint(equalToConstant: self.contentView.bounds.width)
+            .constraint(equalToConstant: self.contentView.frame.width)
             .isActive = true
         
-        self.translatesAutoresizingMaskIntoConstraints = false
+        self.layoutIfNeeded()
     }
     @IBAction func onBlogUrlClick() {
         ViewUtils().goToViewBlog(view: controller, anim: true, blogId: blog.getBlogId())
@@ -99,7 +95,7 @@ class BlogForSelfListConainer: UIView, TaskCallback {
     }
     
     func onCallBack(status: NetworkCallStatus) {
-        //Can savely ignore, its just for downloading images.
+        //Can safely ignore, its just for downloading images.
     }
 }
 

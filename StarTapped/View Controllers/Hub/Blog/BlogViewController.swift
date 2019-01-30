@@ -23,6 +23,9 @@ class BlogViewController: UIViewController, TaskCallback {
     var stackView: UIStackView!
     
     var blogId: String!
+    var index: TimeIndex!
+    var isGenerating = false
+    var isRefreshing = false
     
     fileprivate var popover: Popover!
     fileprivate var popoverOptions: [PopoverOption] = [
@@ -33,6 +36,8 @@ class BlogViewController: UIViewController, TaskCallback {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.index = TimeIndex()
         
         self.setupVerticalScrollingStack()
     }
@@ -52,19 +57,104 @@ class BlogViewController: UIViewController, TaskCallback {
     func displayBlog(status: NetworkCallStatus) {
         let blog = Blog().fromJson(json: status.getBody()["blog"])
         toolbarTitle.title = blog.getBaseUrl()
-        
+
+        //TODO: Check if NSFW with safe search on
+
+        //TODO: Check if adult only and user is a minor
+
+
         let blogCon: BlogViewContainer = BlogViewContainer()
             
-        blogCon.configure(blog: blog, jBlog: status.getBody()["blog"])
+        blogCon.configure(blog: blog)
             
         blogCon.fixTheStupid()
             
         self.stackView.addArrangedSubview(blogCon)
         
         //TODO: Determine hide/show followers, follow, unfollow, report, block, unblock
+
+        //TODO: Only call this if the blog is displayed...
+        self.getPosts()
     }
-    
-    //TODO: Add support for loading in posts!!
+
+    func getPostsCallback(status: NetworkCallStatus) {
+        if (status.isSuccess()) {
+            let jPosts: [JSON] = status.getBody()["posts"].arrayValue
+            var posts: [Post] = ViewUtils().getPostsFromJsonArray(jPosts: jPosts)
+            posts.sort(by: {$0.timestamp > $1.timestamp})
+
+            if (isRefreshing) {
+                self.stackView.removeAllArrangedViews()
+            }
+
+            for p in posts {
+                //Skip posts not in range. Probably a parent post which will be handled correctly.
+                if (p.timestamp > index.getStart() && p.timestamp < index.getStop() && p.originBlog?.blogId == self.blogId) {
+                    if (p.getParent() != nil) {
+                        let view = PostViewUtils().generatePostTreeView(lowest: p, posts: posts, controller: self)
+                        
+                        self.stackView.addArrangedSubview(view)
+                    } else {
+                        if p.getType() == .TEXT {
+                            //Handle single post (no parent)
+                            let view = PostViewUtils().generateTextPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+
+                            self.stackView.addArrangedSubview(view)
+                        } else if p.getType() == .IMAGE {
+                            //Handle single post (no parent)
+                            let view = PostViewUtils().generateImagePostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+
+                            self.stackView.addArrangedSubview(view)
+                        } else if p.getType() == .AUDIO {
+                            //Handle single post (no parent)
+                            let view = PostViewUtils().generateAudioPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+
+                            self.stackView.addArrangedSubview(view)
+                        } else if p.getType() == .VIDEO {
+                            //Handle single post (no parent)
+                            let view = PostViewUtils().generateVideoPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+
+                            self.stackView.addArrangedSubview(view)
+                        }
+                    }
+                }
+            }
+
+            if !isRefreshing {
+                index.backwardOneMonth()
+            }
+
+        } else {
+            self.view.makeToast(status.getMessage())
+        }
+        isGenerating = false
+
+        if (isRefreshing) {
+            isRefreshing = false
+            //TODO: Make sure layout animates back to not refreshing...
+        }
+    }
+
+    func getPosts() {
+        if !isGenerating {
+            isGenerating = true
+
+            let task = GetPostsForBlogTask(callback: self, id: blogId, index: index)
+            task.execute()
+        }
+    }
+
+    func refresh() {
+        if !isRefreshing && !isGenerating {
+            //TODO: Possibly handle starting refresh animation...
+            isRefreshing = true
+
+            index = TimeIndex()
+
+            getPosts()
+        }
+    }
+
     func onCallBack(status: NetworkCallStatus) {
         switch status.getType() {
         case .BLOG_GET_VIEW:
@@ -73,6 +163,9 @@ class BlogViewController: UIViewController, TaskCallback {
             } else {
                 self.view.makeToast(status.getMessage())
             }
+            break
+        case .POST_GET_FOR_BLOG:
+            self.getPostsCallback(status: status)
             break
         default:
             //Unsupported action

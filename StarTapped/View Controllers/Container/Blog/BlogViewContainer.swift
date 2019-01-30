@@ -24,7 +24,6 @@ class BlogViewContainer: UIView, TaskCallback {
     @IBOutlet weak var ageBadge: UILabel!
     
     var blog: Blog!
-    var jBlog: JSON!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,9 +40,8 @@ class BlogViewContainer: UIView, TaskCallback {
         self.addSubview(self.contentView)
     }
     
-    func configure(blog: Blog, jBlog: JSON) {
+    func configure(blog: Blog) {
         self.blog = blog
-        self.jBlog = jBlog
         
         //Do all the shit yay!
         self.blogTitle.text = self.blog.getName()
@@ -53,9 +51,8 @@ class BlogViewContainer: UIView, TaskCallback {
         self.noMinorsBadge.isHidden = self.blog.doesAllowUnder18()
         
         if (self.blog.getBlogType() == BlogType.PERSONAL) {
-            let pBlog:PersonalBlog = PersonalBlog().fromJson(json: self.jBlog)
-            if (pBlog.isDisplayAge()) {
-                GetAccountForBlogViewTask(callback: self, id: pBlog.getOwnerId()).execute()
+            if (self.blog.isDisplayAge()) {
+                GetAccountForBlogViewTask(callback: self, id: self.blog.getOwnerId()).execute()
                 self.ageBadge.isHidden = false
             } else {
                 self.ageBadge.isHidden = true
@@ -71,25 +68,24 @@ class BlogViewContainer: UIView, TaskCallback {
     }
     
     func fixTheStupid() {
-        blogTitle.sizeToFit()
-        blogTitle.setNeedsDisplay()
-        blogDescription.sizeToFit()
-        blogDescription.setNeedsDisplay()
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.contentView.layoutIfNeeded()
         
         self.heightAnchor
-            .constraint(equalToConstant: self.contentView.bounds.height)
+            .constraint(equalToConstant: self.contentView.frame.height)
             .isActive = true
         self.widthAnchor
-            .constraint(equalToConstant: self.contentView.bounds.width)
+            .constraint(equalToConstant: self.contentView.frame.width)
             .isActive = true
         
-        self.translatesAutoresizingMaskIntoConstraints = false
+        self.layoutIfNeeded()
     }
     
     func onCallBack(status: NetworkCallStatus) {
         if (status.getType() == .ACCOUNT_GET_BLOG && status.isSuccess()) {
             let acc = Account().fromJson(json: status.getBody()["account"])
-            self.ageBadge.text = "\(TimeUtils().calculatAge(ageString: acc.getBirthday()))"
+            self.ageBadge.text = "\(TimeUtils().calculateAge(ageString: acc.getBirthday()))"
         }
     }
 }

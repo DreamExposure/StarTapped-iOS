@@ -26,6 +26,11 @@ class Blog {
 
     var followers: [String] = [String]()
 
+    //Type specific
+    var owners: [String] = [String]()
+    var ownerId: String = "Unassigned"
+    var displayAge: Bool = true
+
     //Getters
     func getBlogId() -> String {
         return blogId
@@ -75,6 +80,18 @@ class Blog {
         return followers
     }
 
+    func getOwners() -> [String] {
+        return owners
+    }
+
+    func getOwnerId() -> String {
+        return ownerId
+    }
+
+    func isDisplayAge() -> Bool {
+        return displayAge
+    }
+
     //Setters
     func setBlogId(blogId: String) {
         self.blogId = blogId
@@ -120,9 +137,17 @@ class Blog {
         self.nsfw = nsfw
     }
 
+    func setOwnerId(ownerId: String) {
+        self.ownerId = ownerId
+    }
+
+    func setDisplayAge(display: Bool) {
+        self.displayAge = display
+    }
+
     //JSON Handling
     func toJson() -> JSON {
-        return [
+        var json: JSON = [
             "id": blogId,
             "base_url": baseUrl,
             "complete_url": completeUrl,
@@ -136,6 +161,14 @@ class Blog {
             "nsfw": nsfw,
             "followers": followers
         ]
+        if blogType == .GROUP {
+            json["owners"].arrayObject = owners
+        } else if blogType == .PERSONAL {
+            json["owner_id"].string = ownerId
+            json["display_age"].bool = displayAge
+        }
+
+        return json
     }
 
     func fromJson(json: JSON) -> Blog {
@@ -151,6 +184,13 @@ class Blog {
         self.allowUnder18 = json["allow_under_18"].boolValue
         self.nsfw = json["nsfw"].boolValue
         self.followers = json["followers"].arrayValue.map({ $0[].stringValue })
+
+        if self.blogType == .GROUP {
+            owners = json["owners"].arrayValue.map({ $0[].stringValue })
+        } else if self.blogType == .PERSONAL {
+            ownerId = json["owner_id"].stringValue
+            displayAge = json["display_age"].boolValue
+        }
 
         return self
     }

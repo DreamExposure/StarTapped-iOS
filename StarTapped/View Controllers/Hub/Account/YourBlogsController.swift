@@ -48,7 +48,7 @@ class YourBlogsController: UIViewController, TaskCallback {
             let blogCon: BlogForSelfListConainer = BlogForSelfListConainer()
             blogCon.controller = self
             
-            blogCon.configure(blog: blog, jBlog: jBlog)
+            blogCon.configure(blog: blog)
             
             blogCon.fixTheStupid()
             

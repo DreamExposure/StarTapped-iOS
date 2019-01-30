@@ -10,27 +10,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class PostTextContainer: UIView {
-    @IBOutlet weak var contentView: UIView!
-    
-    //Top bar
-    @IBOutlet weak var blogUrlLatest: UIButton!
-    @IBOutlet weak var reblogIcon: UIImageView!
-    @IBOutlet weak var blogUrlSecond: UIButton!
-    
-    //Post contents
-    @IBOutlet weak var postTitle: UILabel!
-    @IBOutlet weak var postText: UILabel!
-    
-    //Bottom bar
-    @IBOutlet weak var sourceBlog: UIButton!
-    @IBOutlet weak var bookmarkPost: UIButton!
-    @IBOutlet weak var reblogPost: UIButton!
-    
-    var post: TextPost!
-    var parent: Post?
-    var jPost: JSON!
-    var controller: UIViewController!
+class PostTextContainer: PostContainerBase {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,10 +27,10 @@ class PostTextContainer: UIView {
         self.addSubview(self.contentView)
     }
     
-    func configure(post: TextPost, jPost: JSON) {
+    func configure(post: Post, controller: UIViewController) {
         self.post = post
         self.parent = nil
-        self.jPost = jPost
+        self.controller = controller
         
         //top bar
         blogUrlLatest.setTitle(post.getOriginBlog().getBaseUrl(), for: .normal)
@@ -63,12 +43,14 @@ class PostTextContainer: UIView {
         
         //Bottom bar
         sourceBlog.setTitle("Source \(post.getOriginBlog().getBaseUrl())", for: .normal)
+
+        super.configureUrlButtons()
     }
     
-    func configure(post: TextPost, parent: Post, jPost: JSON) {
+    func configure(post: Post, parent: Post, controller: UIViewController) {
         self.post = post
         self.parent = parent
-        self.jPost = jPost
+        self.controller = controller
         
         //Top bar
         blogUrlLatest.setTitle(post.getOriginBlog().getBaseUrl(), for: .normal)
@@ -81,55 +63,13 @@ class PostTextContainer: UIView {
         postText.text = post.getBody()
         
         //Bottom bar
-        sourceBlog.setTitle("Source \(post.getOriginBlog().getBaseUrl())", for: .normal)
+        sourceBlog.setTitle("Source: \(post.getOriginBlog().getBaseUrl())", for: .normal)
+
+        super.configureUrlButtons()
     }
     
-    func fixTheStupid() {
-        blogUrlLatest.sizeToFit()
-        blogUrlLatest.setNeedsDisplay()
-        if parent != nil {
-            blogUrlSecond.sizeToFit()
-            blogUrlSecond.setNeedsDisplay()
-        }
-        postTitle.sizeToFit()
-        postTitle.setNeedsDisplay()
-        postText.sizeToFit()
-        postText.setNeedsDisplay()
-        
-        sourceBlog.sizeToFit()
-        sourceBlog.setNeedsDisplay()
-        
-        self.heightAnchor
-            .constraint(equalToConstant: self.contentView.bounds.height)
-            .isActive = true
-        self.widthAnchor
-            .constraint(equalToConstant: self.contentView.bounds.width)
-            .isActive = true
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    
-    @IBAction func onUrlLatestClick() {
-        ViewUtils().goToViewBlog(view: self.controller, anim: true, blogId: post.getOriginBlog().getBlogId())
-    }
-    
-    @IBAction func onUrlSecondClick() {
-        if (parent != nil) {
-            ViewUtils().goToViewBlog(view: self.controller, anim: true, blogId: (parent?.getOriginBlog().getBlogId())!)
-        }
-    }
-    
-    @IBAction func onSourceBlogClick() {
-        ViewUtils().goToViewBlog(view: self.controller, anim: true, blogId: post.getOriginBlog().getBlogId())
-    }
-    
-    @IBAction func onReblogPostClick() {
-        //TODO: Handle reblog click
-    }
-    
-    @IBAction func onBookmarkPostClick() {
-        //TODO: Handle bookmark click
+    override func fixTheStupid() {
+        super.fixTheStupid()
     }
 }
 

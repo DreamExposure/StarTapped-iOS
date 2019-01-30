@@ -10,28 +10,9 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class PostImageContainer: UIView, TaskCallback {
-    @IBOutlet weak var contentView: UIView!
-    
-    //Top bar
-    @IBOutlet weak var blogUrlLatest: UIButton!
-    @IBOutlet weak var blogUrlSecond: UIButton!
-    @IBOutlet weak var reblogIcon: UIImageView!
-    
+class PostImageContainer: PostContainerBase, TaskCallback {
     //Post contents
     @IBOutlet weak var postImage: UIImageView!
-    @IBOutlet weak var postTitle: UILabel!
-    @IBOutlet weak var postText: UILabel!
-    
-    //Bottom bar
-    @IBOutlet weak var sourceBlog: UIButton!
-    @IBOutlet weak var bookmarkPost: UIButton!
-    @IBOutlet weak var reblogPost: UIButton!
-    
-    var post: ImagePost!
-    var parent: Post?
-    var jPost: JSON!
-    var controller: UIViewController!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,10 +29,10 @@ class PostImageContainer: UIView, TaskCallback {
         self.addSubview(self.contentView)
     }
     
-    func configure(post: ImagePost, jPost: JSON) {
+    func configure(post: Post, controller: UIViewController) {
         self.post = post
         self.parent = nil
-        self.jPost = jPost
+        self.controller = controller
         
         //top bar
         blogUrlLatest.setTitle(post.getOriginBlog().getBaseUrl(), for: .normal)
@@ -66,12 +47,14 @@ class PostImageContainer: UIView, TaskCallback {
         
         //Bottom bar
         sourceBlog.setTitle("Source \(post.getOriginBlog().getBaseUrl())", for: .normal)
+
+        super.configureUrlButtons()
     }
     
-    func configure(post: ImagePost, parent: Post, jPost: JSON) {
+    func configure(post: Post, parent: Post, controller: UIViewController) {
         self.post = post
         self.parent = parent
-        self.jPost = jPost
+        self.controller = controller
         
         //Top bar
         blogUrlLatest.setTitle(post.getOriginBlog().getBaseUrl(), for: .normal)
@@ -86,58 +69,17 @@ class PostImageContainer: UIView, TaskCallback {
         DownloadImageTask(callback: self, url: post.getImageUrl(), view: postImage).execute()
         
         //Bottom bar
-        sourceBlog.setTitle("Source \(post.getOriginBlog().getBaseUrl())", for: .normal)
+        sourceBlog.setTitle("Source: \(post.getOriginBlog().getBaseUrl())", for: .normal)
+
+        super.configureUrlButtons()
     }
     
-    func fixTheStupid() {
-        blogUrlLatest.sizeToFit()
-        blogUrlLatest.setNeedsDisplay()
-        if parent != nil {
-            blogUrlSecond.sizeToFit()
-            blogUrlSecond.setNeedsDisplay()
-        }
-        postTitle.sizeToFit()
-        postTitle.setNeedsDisplay()
-        postText.sizeToFit()
-        postText.setNeedsDisplay()
-        
-        sourceBlog.sizeToFit()
-        sourceBlog.setNeedsDisplay()
-        
-        self.heightAnchor
-            .constraint(equalToConstant: self.contentView.bounds.height)
-            .isActive = true
-        self.widthAnchor
-            .constraint(equalToConstant: self.contentView.bounds.width)
-            .isActive = true
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
+    override func fixTheStupid() {
+        super.fixTheStupid()
     }
     
-    
-    @IBAction func onUrlLatestClick() {
-        ViewUtils().goToViewBlog(view: self.controller, anim: true, blogId: post.getOriginBlog().getBlogId())
-    }
-    
-    @IBAction func onUrlSecondClick() {
-        if (parent != nil) {
-            ViewUtils().goToViewBlog(view: self.controller, anim: true, blogId: (parent?.getOriginBlog().getBlogId())!)
-        }
-    }
-    
-    @IBAction func onSourceBlogClick() {
-        ViewUtils().goToViewBlog(view: self.controller, anim: true, blogId: post.getOriginBlog().getBlogId())
-    }
-    
-    @IBAction func onReblogPostClick() {
-        //TODO: Handle reblog click
-    }
-    
-    @IBAction func onBookmarkPostClick() {
-        //TODO: Handle bookmark click
-    }
-    
+
     func onCallBack(status: NetworkCallStatus) {
-        //Can savely ignore, its just for downloading images.
+        //Can safely ignore, its just for downloading images.
     }
 }

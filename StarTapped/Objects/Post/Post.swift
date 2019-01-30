@@ -11,8 +11,8 @@ import SwiftyJSON
 
 class Post {
     var id: String = "Undefined"
-    var creator: Account
-    var originBlog: Blog
+    var creator: Account?
+    var originBlog: Blog?
     var permalink: String = "Undefined"
     var fullUrl: String = "Undefined"
     var type: PostType = PostType.TEXT
@@ -23,11 +23,19 @@ class Post {
 
     var nsfw: Bool = false
 
-    var parent: String = "Undefined"
+    var parent: String?
+
+    //post type specifics
+    var imageUrl = "Undefined"
+    var audioUrl = "Undefined"
+    var videoUrl = "Undefined"
 
     init(creator: Account, originBlog: Blog) {
         self.creator = creator
         self.originBlog = originBlog
+    }
+    
+    init() {
     }
 
     //Getters
@@ -36,11 +44,11 @@ class Post {
     }
 
     func getCreator() -> Account {
-        return creator
+        return creator!
     }
 
     func getOriginBlog() -> Blog {
-        return originBlog
+        return originBlog!
     }
 
     func getPermalink() -> String {
@@ -71,8 +79,20 @@ class Post {
         return nsfw
     }
 
-    func getParent() -> String {
+    func getParent() -> String? {
         return parent
+    }
+
+    func getImageUrl() -> String {
+        return imageUrl
+    }
+
+    func getAudioUrl() -> String {
+        return audioUrl
+    }
+
+    func getVideoUrl() -> String {
+        return videoUrl
     }
 
     //Setters
@@ -120,12 +140,24 @@ class Post {
         self.parent = parent
     }
 
+    func setImageUrl(url: String) {
+        self.imageUrl = url
+    }
+
+    func setAudioUrl(url: String) {
+        self.audioUrl = url
+    }
+
+    func setVideoUrl(url: String) {
+        self.videoUrl = url
+    }
+
     //JSON Handling
     func toJson() -> JSON {
-        return [
+        var json: JSON = [
             "id": id,
-            "creator": creator.toJson(),
-            "origin_blog": originBlog.toJson(),
+            "creator": creator!.toJson(),
+            "origin_blog": originBlog!.toJson(),
             "permalink": permalink,
             "full_url": fullUrl,
             "timestamp": timestamp,
@@ -133,8 +165,18 @@ class Post {
             "title": title,
             "body": body,
             "nsfw": nsfw,
-            "parent": parent
-        ]
+            "parent": parent ?? "Unassigned"
+            ]
+
+        if self.type == .IMAGE {
+            json["image_url"].string = imageUrl
+        } else if self.type == .AUDIO {
+            json["audio_url"].string = audioUrl
+        } else if self.type == .VIDEO {
+            json["video_url"].string = videoUrl
+        }
+
+        return json
     }
 
     func fromJson(json: JSON) -> Post {
@@ -150,6 +192,14 @@ class Post {
         nsfw = json["nsfw"].boolValue
         if let parent = json["parent"].string {
             self.parent = parent
+        }
+
+        if self.type == .IMAGE {
+            imageUrl = json["image_url"].stringValue
+        } else if self.type == .AUDIO {
+            audioUrl = json["audio_url"].stringValue
+        } else if self.type == .VIDEO {
+            videoUrl = json["videoUrl"].stringValue
         }
 
         return self

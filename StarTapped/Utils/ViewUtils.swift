@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class ViewUtils {
     func goToAuth(view: UIViewController, anim: Bool) {
@@ -76,5 +77,25 @@ class ViewUtils {
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0)
         )
+    }
+
+    func getPostsFromJsonArray(jPosts: [JSON]) -> [Post] {
+        var posts: [Post] = []
+
+        for jPost in jPosts {
+            posts.append(Post().fromJson(json: jPost))
+        }
+
+        return posts
+    }
+
+    func getPostFromArray(posts: [Post], id: String) -> Post? {
+        for p in posts {
+            if p.getId() == id {
+                return p
+            }
+        }
+
+        return nil
     }
 }

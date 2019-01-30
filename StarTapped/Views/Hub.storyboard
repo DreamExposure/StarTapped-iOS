@@ -40,12 +40,19 @@
                                 </items>
                                 <color key="barTintColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujX-Lf-lA7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="G6r-kg-z07" firstAttribute="trailing" secondItem="kAl-Zf-67V" secondAttribute="trailing" id="0qS-T0-dp4"/>
+                            <constraint firstItem="ujX-Lf-lA7" firstAttribute="leading" secondItem="kAl-Zf-67V" secondAttribute="leading" id="JxD-JG-w6a"/>
                             <constraint firstItem="G6r-kg-z07" firstAttribute="leading" secondItem="kAl-Zf-67V" secondAttribute="leading" id="M4Q-75-YJU"/>
+                            <constraint firstItem="ujX-Lf-lA7" firstAttribute="trailing" secondItem="kAl-Zf-67V" secondAttribute="trailing" id="QKx-hZ-2eX"/>
                             <constraint firstItem="G6r-kg-z07" firstAttribute="top" secondItem="kAl-Zf-67V" secondAttribute="top" id="WuL-7y-ty1"/>
+                            <constraint firstItem="ujX-Lf-lA7" firstAttribute="bottom" secondItem="kAl-Zf-67V" secondAttribute="bottom" id="b0C-tR-asd"/>
+                            <constraint firstItem="ujX-Lf-lA7" firstAttribute="top" secondItem="G6r-kg-z07" secondAttribute="bottom" id="sce-ne-qMK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kAl-Zf-67V"/>
                     </view>
@@ -58,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5eo-sY-RCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="151"/>
+            <point key="canvasLocation" x="40.799999999999997" y="150.67466266866569"/>
         </scene>
         <!--Search-->
         <scene sceneID="SZy-IH-ONz">
@@ -90,11 +97,18 @@
                                 </items>
                                 <color key="barTintColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xif-gB-xJM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vgM-5l-zVM" firstAttribute="leading" secondItem="GSx-GX-Xel" secondAttribute="leading" id="4oj-Gc-YMz"/>
+                            <constraint firstItem="Xif-gB-xJM" firstAttribute="leading" secondItem="GSx-GX-Xel" secondAttribute="leading" id="Bs9-B7-n19"/>
+                            <constraint firstItem="GSx-GX-Xel" firstAttribute="trailing" secondItem="Xif-gB-xJM" secondAttribute="trailing" id="K7g-7w-EZ0"/>
+                            <constraint firstItem="GSx-GX-Xel" firstAttribute="bottom" secondItem="Xif-gB-xJM" secondAttribute="bottom" id="LxU-s1-PcS"/>
                             <constraint firstItem="vgM-5l-zVM" firstAttribute="top" secondItem="GSx-GX-Xel" secondAttribute="top" id="R2l-RY-fDZ"/>
+                            <constraint firstItem="Xif-gB-xJM" firstAttribute="top" secondItem="vgM-5l-zVM" secondAttribute="bottom" id="dHY-Tr-hsB"/>
                             <constraint firstItem="vgM-5l-zVM" firstAttribute="trailing" secondItem="GSx-GX-Xel" secondAttribute="trailing" id="idn-zQ-cnT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GSx-GX-Xel"/>
@@ -227,7 +241,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mJ7-xf-eRe" firstAttribute="leading" secondItem="7dm-0Y-TJf" secondAttribute="leading" id="C8s-DS-sfF"/>
                             <constraint firstItem="mJ7-xf-eRe" firstAttribute="top" secondItem="7dm-0Y-TJf" secondAttribute="top" id="Ela-Rw-Zwz"/>
@@ -288,18 +302,26 @@
                                 </items>
                                 <color key="barTintColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9T-86-aul">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="F9T-86-aul" firstAttribute="bottom" secondItem="ktm-eO-ABP" secondAttribute="bottom" id="9xf-LP-vtS"/>
                             <constraint firstItem="sUb-WA-VXq" firstAttribute="trailing" secondItem="ktm-eO-ABP" secondAttribute="trailing" id="KH5-a2-QtE"/>
                             <constraint firstItem="sUb-WA-VXq" firstAttribute="leading" secondItem="ktm-eO-ABP" secondAttribute="leading" id="bqf-Ni-BTQ"/>
                             <constraint firstItem="sUb-WA-VXq" firstAttribute="top" secondItem="ktm-eO-ABP" secondAttribute="top" id="d06-PI-ziX"/>
+                            <constraint firstItem="F9T-86-aul" firstAttribute="top" secondItem="sUb-WA-VXq" secondAttribute="bottom" id="fIS-jh-wVa"/>
+                            <constraint firstItem="F9T-86-aul" firstAttribute="trailing" secondItem="ktm-eO-ABP" secondAttribute="trailing" id="sD0-du-pXr"/>
+                            <constraint firstItem="F9T-86-aul" firstAttribute="leading" secondItem="Ugc-MY-T06" secondAttribute="leading" id="vLr-iT-6SQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ktm-eO-ABP"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Hub" id="u1D-Mb-kMg"/>
                     <connections>
                         <outlet property="moreButton" destination="N0j-mF-Q9q" id="3yd-mC-Gcc"/>
+                        <outlet property="scrollView" destination="F9T-86-aul" id="jQb-O0-9BF"/>
                         <segue destination="2NO-ws-Lb3" kind="show" identifier="hub-to-self-blog-list" id="Ptj-5c-c5b"/>
                         <segue destination="QuF-uQ-NSi" kind="show" identifier="hub-to-view-blog" id="xZb-IZ-me2"/>
                         <segue destination="iFZ-dD-B8s" kind="show" identifier="hub-to-following" id="TAK-hn-RLq"/>

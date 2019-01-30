@@ -36,14 +36,18 @@ class NsfwBlogBlock: UIView {
     }
     
     func fixTheStupid() {
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.contentView.layoutIfNeeded()
+        
         self.heightAnchor
-            .constraint(equalToConstant: self.contentView.bounds.height)
+            .constraint(equalToConstant: self.contentView.frame.height)
             .isActive = true
         self.widthAnchor
-            .constraint(equalToConstant: self.contentView.bounds.width)
+            .constraint(equalToConstant: self.contentView.frame.width)
             .isActive = true
         
-        self.translatesAutoresizingMaskIntoConstraints = false
+        self.layoutIfNeeded()
     }
     
     @IBAction func goBackAction() {

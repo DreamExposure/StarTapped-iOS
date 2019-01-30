@@ -11,10 +11,18 @@ import UIKit
 import MaterialComponents
 import Popover
 import SwiftyJSON
+import Toast_Swift
 
 class HubViewController: UIViewController, TaskCallback {
     
     @IBOutlet weak var moreButton: UIBarButtonItem!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    var stackView: UIStackView!
+
+    var index: TimeIndex!
+    var isGenerating = false
+    var isRefreshing = false
     
     fileprivate var popover: Popover!
     fileprivate var popoverOptions: [PopoverOption] = [
@@ -26,9 +34,17 @@ class HubViewController: UIViewController, TaskCallback {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupVerticalScrollingStack()
+
+        index = TimeIndex()
+
         GetAccountTask(callback: self).execute()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
     @IBAction func moreButtonTapped(_ sender: UIButton) {
         let startPoint = CGPoint(x: self.view.frame.width - 60, y: 55)
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width / 2, height: CGFloat(42 * texts.count)))
@@ -38,7 +54,86 @@ class HubViewController: UIViewController, TaskCallback {
         self.popover = Popover(options: self.popoverOptions)
         self.popover.show(tableView, point: startPoint)
     }
-    
+
+    func getPostsCallback(status: NetworkCallStatus) {
+        if (status.isSuccess()) {
+            let jPosts: [JSON] = status.getBody()["posts"].arrayValue
+            var posts: [Post] = ViewUtils().getPostsFromJsonArray(jPosts: jPosts)
+            posts.sort(by: {$0.timestamp > $1.timestamp})
+
+            if (isRefreshing) {
+                self.stackView.removeAllArrangedViews()
+            }
+
+            for p in posts {
+                //Skip posts not in range. Probably a parent post which will be handled correctly.
+                if (p.timestamp > index.getStart() && p.timestamp < index.getStop()) {
+                    if (p.getParent() != nil) {
+                        let view = PostViewUtils().generatePostTreeView(lowest: p, posts: posts, controller: self)
+                        
+                        self.stackView.addArrangedSubview(view)
+                        view.centerXAnchor.constraint(equalTo: self.stackView.centerXAnchor).isActive = true
+                    } else {
+                        if p.getType() == .TEXT {
+                            //Handle single post (no parent)
+                            let view = PostViewUtils().generateTextPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+
+                            self.stackView.addArrangedSubview(view)
+                        } else if p.getType() == .IMAGE {
+                            //Handle single post (no parent)
+                            let view = PostViewUtils().generateImagePostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+
+                            self.stackView.addArrangedSubview(view)
+                        } else if p.getType() == .AUDIO {
+                            //Handle single post (no parent)
+                            let view = PostViewUtils().generateAudioPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+
+                            self.stackView.addArrangedSubview(view)
+                        } else if p.getType() == .VIDEO {
+                            //Handle single post (no parent)
+                            let view = PostViewUtils().generateVideoPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+
+                            self.stackView.addArrangedSubview(view)
+                        }
+                    }
+                }
+            }
+
+            if !isRefreshing {
+                index.backwardOneMonth()
+            }
+
+        } else {
+            self.view.makeToast(status.getMessage())
+        }
+        isGenerating = false
+
+        if (isRefreshing) {
+            isRefreshing = false
+            //TODO: Make sure layout animates back to not refreshing...
+        }
+    }
+
+    func getPosts() {
+        if !isGenerating {
+            isGenerating = true
+
+            let task = GetPostsForHubTask(callback: self, index: index)
+            task.execute()
+        }
+    }
+
+    func refresh() {
+        if !isRefreshing && !isGenerating {
+            //TODO: Possibly handle starting refresh animation...
+            isRefreshing = true
+
+            index = TimeIndex()
+
+            getPosts()
+        }
+    }
+
     func onCallBack(status: NetworkCallStatus) {
         switch status.getType() {
         case .ACCOUNT_GET_SELF:
@@ -47,9 +142,33 @@ class HubViewController: UIViewController, TaskCallback {
                 Settings().deleteAccount()
                 Settings().saveAccount(account: acc)
             }
+            //Call to get posts
+            self.getPosts()
+            break
+        case .POST_GET_FOR_HUB:
+            getPostsCallback(status: status)
+            break
         default:
-            break;
+            break
         }
+    }
+    
+    func setupVerticalScrollingStack() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.alignment = .center
+        stackView.spacing = 30
+        scrollView.addSubview(stackView)
+        
+        scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[stackView]|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: ["stackView": stackView]))
+        scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[stackView]|", options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: ["stackView": stackView]))
+        
+        //Center content horizontally
+        stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
 }
 
