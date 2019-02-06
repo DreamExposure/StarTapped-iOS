@@ -86,7 +86,7 @@ class BlogViewController: UIViewController, TaskCallback {
 
             if (posts.isEmpty) {
                 stopRequesting = true
-                return
+                self.view.makeToast("There's no more posts.")
             }
             
             let range = status.getBody()["range"]
