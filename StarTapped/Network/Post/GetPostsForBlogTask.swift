@@ -28,8 +28,8 @@ class GetPostsForBlogTask: NetworkTask {
 
         let params: [String: Any] = [
             "blog_id": id,
-            "year": index.getYear(),
-            "month": index.getMonth()-1
+            "before": index.getBefore(),
+            "limit": 20
         ]
 
         Alamofire.request("https://api.startapped.com/v1/post/get/blog", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)

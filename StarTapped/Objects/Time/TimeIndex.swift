@@ -9,90 +9,40 @@
 import Foundation
 
 class TimeIndex {
-    private var month: Int
-    private var year: Int
+    private var before: Int64
+    private var latest: Int64
+    private var oldest: Int64
     
     init() {
-        let now = Date()
-        let calendar = Calendar.current
-
-        let nowComp = calendar.dateComponents([.year, .month], from: now)
-
-        self.month = nowComp.month ?? 1
-        self.year = nowComp.year ?? 2019
+        before = TimeUtils().getCurrentMillis()
+        latest = before
+        oldest = before
+        
     }
     
     //Getters
-    func getMonth() -> Int {
-        return self.month
+    func getBefore() -> Int64 {
+        return self.before
     }
     
-    func getYear() -> Int {
-        return self.year
+    func getLatest() -> Int64 {
+        return self.latest
     }
     
-    func getStart() -> Int64 {
-        var dateComponents = DateComponents()
-
-        dateComponents.year = self.year
-        dateComponents.month = self.month
-        dateComponents.day = 1
-        dateComponents.timeZone = Calendar.current.timeZone
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-
-        let start = Calendar.current.date(from: dateComponents)
-
-        return Int64((start?.timeIntervalSince1970)! * 1000)
-    }
-
-    func getStop() -> Int64 {
-        var dateComponents = DateComponents()
-
-        dateComponents.year = self.year
-        dateComponents.month = self.month + 1
-        dateComponents.day = 1
-        dateComponents.timeZone = Calendar.current.timeZone
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-
-        let stop = Calendar.current.date(from: dateComponents)
-
-        return Int64((stop?.timeIntervalSince1970)! * 1000)
+    func getOldest() -> Int64 {
+        return self.oldest
     }
     
     //Setters
-    func setMonth(month: Int) {
-        if (month < 1) {
-            self.month = 1
-        } else if (month > 12) {
-            self.month = 12
-        } else {
-            self.month = month
-        }
+    func setBefore(before: Int64) {
+        self.before = before
     }
     
-    func setYear(year: Int) {
-        self.year = year
+    func setLatest(latest: Int64) {
+        self.latest = latest
     }
     
-    //Functions
-    
-    func forwardOneMonth() {
-        if (self.month == 12) {
-            self.month = 1
-            self.year += 1
-        } else {
-            self.month += 1
-        }
-    }
-    
-    func backwardOneMonth() {
-        if (self.month == 1) {
-            self.month = 12
-            self.year -= 1
-        } else {
-            self.month -= 1
-        }
+    func setOldest(oldest: Int64) {
+        self.oldest = oldest
     }
 }

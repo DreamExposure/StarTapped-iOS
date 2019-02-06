@@ -26,6 +26,7 @@ class BlogViewController: UIViewController, TaskCallback {
     var index: TimeIndex!
     var isGenerating = false
     var isRefreshing = false
+    var stopRequesting = false
     
     fileprivate var popover: Popover!
     fileprivate var popoverOptions: [PopoverOption] = [
@@ -83,13 +84,24 @@ class BlogViewController: UIViewController, TaskCallback {
             var posts: [Post] = ViewUtils().getPostsFromJsonArray(jPosts: jPosts)
             posts.sort(by: {$0.timestamp > $1.timestamp})
 
+            if (posts.isEmpty) {
+                stopRequesting = true
+                return
+            }
+            
+            let range = status.getBody()["range"]
+            if (range["latest"].int64Value > 0) {
+                index.setLatest(latest: range["latest"].int64Value)
+                index.setOldest(oldest: range["oldest"].int64Value)
+            }
+            
             if (isRefreshing) {
                 self.stackView.removeAllArrangedViews()
             }
 
             for p in posts {
                 //Skip posts not in range. Probably a parent post which will be handled correctly.
-                if (p.timestamp > index.getStart() && p.timestamp < index.getStop() && p.originBlog?.blogId == self.blogId) {
+                if (p.timestamp >= index.getOldest() && p.timestamp <= index.getLatest() && p.originBlog?.blogId == self.blogId) {
                     if (p.getParent() != nil) {
                         let view = PostViewUtils().generatePostTreeView(lowest: p, posts: posts, controller: self)
                         
@@ -120,12 +132,13 @@ class BlogViewController: UIViewController, TaskCallback {
                 }
             }
 
-            if !isRefreshing {
-                index.backwardOneMonth()
-            }
-
         } else {
-            self.view.makeToast(status.getMessage())
+            if (status.getCode() == 417) {
+                self.view.makeToast("There's no more posts.")
+                stopRequesting = true
+            } else {
+                self.view.makeToast(status.getMessage())
+            }
         }
         isGenerating = false
 
@@ -133,10 +146,12 @@ class BlogViewController: UIViewController, TaskCallback {
             isRefreshing = false
             //TODO: Make sure layout animates back to not refreshing...
         }
+        
+        index.setBefore(before: index.getOldest() - 1)
     }
 
     func getPosts() {
-        if !isGenerating {
+        if !isGenerating && !stopRequesting {
             isGenerating = true
 
             let task = GetPostsForBlogTask(callback: self, id: blogId, index: index)
@@ -148,6 +163,7 @@ class BlogViewController: UIViewController, TaskCallback {
         if !isRefreshing && !isGenerating {
             //TODO: Possibly handle starting refresh animation...
             isRefreshing = true
+            stopRequesting = false
 
             index = TimeIndex()
 
