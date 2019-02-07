@@ -19,6 +19,7 @@ class HubViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     
     @IBOutlet weak var scrollView: UIScrollView!
     var stackView: UIStackView!
+    var refreshControl: UIRefreshControl!
 
     var index: TimeIndex!
     var isGenerating = false
@@ -38,6 +39,10 @@ class HubViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
         self.setupVerticalScrollingStack()
         
         self.scrollView.delegate = self
+        self.scrollView.alwaysBounceVertical = true
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        scrollView.refreshControl = refreshControl
 
         index = TimeIndex()
 
@@ -46,6 +51,10 @@ class HubViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    @objc func didPullToRefresh() {
+        refresh()
     }
 
     @IBAction func moreButtonTapped(_ sender: UIButton) {
@@ -124,7 +133,7 @@ class HubViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
 
         if (isRefreshing) {
             isRefreshing = false
-            //TODO: Make sure layout animates back to not refreshing...
+            refreshControl.endRefreshing()
         }
         
         index.setBefore(before: index.getOldest() - 1)

@@ -21,6 +21,7 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     
     @IBOutlet weak var scrollView: UIScrollView!
     var stackView: UIStackView!
+    var refreshControl: UIRefreshControl!
     
     var blogId: String!
     var index: TimeIndex!
@@ -43,6 +44,10 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
         self.setupVerticalScrollingStack()
         
         self.scrollView.delegate = self
+        self.scrollView.alwaysBounceVertical = true
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        scrollView.refreshControl = refreshControl
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,6 +55,10 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
         
         //Get blog
         GetBlogViewTask(callback: self, blogId: self.blogId).execute()
+    }
+    
+    @objc func didPullToRefresh() {
+        refresh()
     }
     
     @IBAction func onBackButtonClicked(_ sender: UIButton) {
@@ -146,7 +155,7 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
 
         if (isRefreshing) {
             isRefreshing = false
-            //TODO: Make sure layout animates back to not refreshing...
+            refreshControl.endRefreshing()
         }
         
         index.setBefore(before: index.getOldest() - 1)
