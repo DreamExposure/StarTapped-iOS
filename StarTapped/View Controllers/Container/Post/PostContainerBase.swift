@@ -5,6 +5,7 @@
 
 import Foundation
 import UIKit
+import FRHyperLabel
 
 class PostContainerBase: UIView {
     @IBOutlet weak var contentView: UIView!
@@ -15,8 +16,8 @@ class PostContainerBase: UIView {
     @IBOutlet weak var blogUrlSecond: BlogUrlButton!
 
     //Post contents
-    @IBOutlet weak var postTitle: UILabel!
-    @IBOutlet weak var postText: UILabel!
+    @IBOutlet weak var postTitle: FRHyperLabel!
+    @IBOutlet weak var postText: FRHyperLabel!
 
     //Bottom bar
     @IBOutlet weak var sourceBlog: UIButton!
@@ -27,6 +28,40 @@ class PostContainerBase: UIView {
     var parent: Post?
     var controller: UIViewController!
 
+    func configureText() {
+        postTitle.numberOfLines = 0
+        postText.numberOfLines = 0
+        
+        let titleAttributes = [
+            NSAttributedString.Key.foregroundColor: ViewUtils().hexStringToUIColor(hex: "#b5532d"),
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
+        
+        let bodyAttributes = [
+            NSAttributedString.Key.foregroundColor: ViewUtils().hexStringToUIColor(hex: "#1F2635"),
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)]
+        
+        postTitle.attributedText = NSAttributedString(string: post.getTitle(), attributes: titleAttributes)
+        postText.attributedText = NSAttributedString(string: post.getBody(), attributes: bodyAttributes)
+        
+        
+        //Handler
+        let handler = {
+            (hyperLabel: FRHyperLabel?, substring: String?) -> Void in
+            if let url = URL(string: substring!) {
+                if (UIApplication.shared.canOpenURL(url)) {
+                    UIApplication.shared.open(url, options: [:])
+                }
+            }
+        }
+        
+        //Substrings
+        let titleLinks = Validator().getUrlSubStrings(input: post.getTitle())
+        let bodyLinks = Validator().getUrlSubStrings(input: post.getBody())
+        
+        postTitle.setLinksForSubstrings(titleLinks, withLinkHandler: handler)
+        postText.setLinksForSubstrings(bodyLinks, withLinkHandler: handler)
+    }
+    
     func configureUrlButtons() {
         blogUrlLatest.targetBlogId = post.originBlog?.blogId
 

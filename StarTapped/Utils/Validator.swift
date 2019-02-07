@@ -43,4 +43,17 @@ class Validator {
     func validColorCode(input: String) -> Bool {
         return Guitar(pattern: "#([0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})").test(string: input)
     }
+    
+    func getUrlSubStrings(input: String) -> [String] {
+        var subs: [String] = []
+        let pattern = Guitar(pattern: "(?:(?:https?|ftp|file)://|www.|ftp.)(?:([-A-Z0-9+&@#/%=~_|$?!:,.]*)|[-A-Z0-9+&@#/%=~_|$?!:,.])*(?:([-A-Z0-9+&@#/%=~_|$?!:,.]*)|[A-Z0-9+&@#/%=~_|$])")
+        
+        for sub in input.components(separatedBy: " ") {
+            if pattern.test(string: sub) {
+                subs.append(sub)
+            }
+        }
+        
+        return subs
+    }
 }

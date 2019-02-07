@@ -74,8 +74,7 @@ class PostAudioContainer: PostContainerBase, TaskCallback {
         blogUrlSecond.isHidden = false
         
         //Post contents
-        postTitle.text = post.getTitle()
-        postText.text = post.getBody()
+        super.configureText()
         
         //TODO: Load audio
         

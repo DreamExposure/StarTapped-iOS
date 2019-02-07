@@ -3,6 +3,7 @@ PODS:
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
   - FLAnimatedImage (1.0.12)
+  - FRHyperLabel (1.0.4)
   - Guitar (0.5.0)
   - KeychainSwift (13.0.0)
   - MaterialComponents (73.0.0):
@@ -529,6 +530,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.8.0)
   - AlamofireImage (~> 3.5)
+  - FRHyperLabel
   - Guitar
   - KeychainSwift (~> 13.0)
   - MaterialComponents
@@ -546,6 +548,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - FLAnimatedImage
+    - FRHyperLabel
     - Guitar
     - KeychainSwift
     - MaterialComponents
@@ -566,6 +569,7 @@ SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FRHyperLabel: f4a127d5f8ffb211040554615e93f936d5a576a6
   Guitar: 84256d4716829d44c0c5f1c029bd8c146bdcc957
   KeychainSwift: 23d6c16cbc33f20fafa30c3d783241b4b87d998c
   MaterialComponents: 5ee94fadd206902ffa318ba5adfd3c9c8c799000
@@ -582,6 +586,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
 
-PODFILE CHECKSUM: 59582955e4317edc9f609868c17d67df18265bb0
+PODFILE CHECKSUM: f7274afde80931700ab0a948234567650c9dda24
 
 COCOAPODS: 1.6.0.beta.2

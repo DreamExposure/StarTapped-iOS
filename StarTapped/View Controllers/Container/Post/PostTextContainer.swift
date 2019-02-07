@@ -38,8 +38,7 @@ class PostTextContainer: PostContainerBase {
         blogUrlSecond.isHidden = true
         
         //Post contents
-        postTitle.text = post.getTitle()
-        postText.text = post.getBody()
+        super.configureText()
         
         //Bottom bar
         sourceBlog.setTitle("Source \(post.getOriginBlog().getBaseUrl())", for: .normal)
@@ -59,8 +58,7 @@ class PostTextContainer: PostContainerBase {
         blogUrlSecond.isHidden = false
         
         //Post contents
-        postTitle.text = post.getTitle()
-        postText.text = post.getBody()
+        super.configureText()
         
         //Bottom bar
         sourceBlog.setTitle("Source: \(post.getOriginBlog().getBaseUrl())", for: .normal)

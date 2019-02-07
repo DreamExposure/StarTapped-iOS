@@ -16,6 +16,7 @@ target 'StarTapped' do
   pod 'SDWebImage'
   pod 'SDWebImage/GIF'
   pod 'RevealingSplashView'
+  pod 'FRHyperLabel'
 end
 
 target 'StarTappedTests' do

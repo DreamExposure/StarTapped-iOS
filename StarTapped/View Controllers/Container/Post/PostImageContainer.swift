@@ -63,8 +63,7 @@ class PostImageContainer: PostContainerBase, TaskCallback {
         blogUrlSecond.isHidden = false
         
         //Post contents
-        postTitle.text = post.getTitle()
-        postText.text = post.getBody()
+        super.configureText()
         
         DownloadImageTask(callback: self, url: post.getImageUrl(), view: postImage).execute()
         

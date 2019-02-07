@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import FRHyperLabel
 
 class BlogViewContainer: UIView, TaskCallback {
     @IBOutlet var contentView: UIView!
@@ -16,8 +17,8 @@ class BlogViewContainer: UIView, TaskCallback {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var iconImage: UIImageView!
     
-    @IBOutlet weak var blogTitle: UILabel!
-    @IBOutlet weak var blogDescription: UILabel!
+    @IBOutlet weak var blogTitle: FRHyperLabel!
+    @IBOutlet weak var blogDescription: FRHyperLabel!
     
     @IBOutlet weak var nsfwBadge: UILabel!
     @IBOutlet weak var noMinorsBadge: UILabel!
@@ -44,8 +45,7 @@ class BlogViewContainer: UIView, TaskCallback {
         self.blog = blog
         
         //Do all the shit yay!
-        self.blogTitle.text = self.blog.getName()
-        self.blogDescription.text = self.blog.getDescription()
+        configureText()
         
         self.nsfwBadge.isHidden = !self.blog.isNsfw()
         self.noMinorsBadge.isHidden = self.blog.doesAllowUnder18()
@@ -65,6 +65,40 @@ class BlogViewContainer: UIView, TaskCallback {
         
         DownloadImageTask(callback: self, url: self.blog.getIconUrl(), view: self.iconImage).execute()
         DownloadImageTask(callback: self, url: self.blog.getBackgroundUrl(), view: self.backgroundImage).execute()
+    }
+    
+    func configureText() {
+        blogTitle.numberOfLines = 0
+        blogDescription.numberOfLines = 0
+        
+        let titleAttributes = [
+            NSAttributedString.Key.foregroundColor: ViewUtils().hexStringToUIColor(hex: "#b5532d"),
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
+        
+        let descAttributes = [
+            NSAttributedString.Key.foregroundColor: ViewUtils().hexStringToUIColor(hex: "#1F2635"),
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)]
+        
+        blogTitle.attributedText = NSAttributedString(string: blog.getName(), attributes: titleAttributes)
+        blogDescription.attributedText = NSAttributedString(string: blog.getDescription(), attributes: descAttributes)
+        
+        
+        //Handler
+        let handler = {
+            (hyperLabel: FRHyperLabel?, substring: String?) -> Void in
+            if let url = URL(string: substring!) {
+                if (UIApplication.shared.canOpenURL(url)) {
+                    UIApplication.shared.open(url, options: [:])
+                }
+            }
+        }
+        
+        //Substrings
+        let titleLinks = Validator().getUrlSubStrings(input: blog.getName())
+        let descLinks = Validator().getUrlSubStrings(input: blog.getDescription())
+        
+        blogTitle.setLinksForSubstrings(titleLinks, withLinkHandler: handler)
+        blogDescription.setLinksForSubstrings(descLinks, withLinkHandler: handler)
     }
     
     func fixTheStupid() {
