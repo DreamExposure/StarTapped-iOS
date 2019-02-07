@@ -13,7 +13,7 @@ import Popover
 import SwiftyJSON
 import Toast_Swift
 
-class HubViewController: UIViewController, TaskCallback {
+class HubViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     
     @IBOutlet weak var moreButton: UIBarButtonItem!
     
@@ -36,6 +36,8 @@ class HubViewController: UIViewController, TaskCallback {
         super.viewDidLoad()
         
         self.setupVerticalScrollingStack()
+        
+        self.scrollView.delegate = self
 
         index = TimeIndex()
 
@@ -184,6 +186,13 @@ class HubViewController: UIViewController, TaskCallback {
         
         //Center content horizontally
         stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y + scrollView.frame.size.height >= scrollView.contentSize.height {
+            //At bottom...
+            getPosts()
+        }
     }
 }
 

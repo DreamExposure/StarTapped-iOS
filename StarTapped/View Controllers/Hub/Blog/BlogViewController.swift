@@ -12,7 +12,7 @@ import Toast_Swift
 import SwiftyJSON
 import Popover
 
-class BlogViewController: UIViewController, TaskCallback {
+class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var toolbarTitle:  UIBarButtonItem!
     
@@ -41,6 +41,8 @@ class BlogViewController: UIViewController, TaskCallback {
         self.index = TimeIndex()
         
         self.setupVerticalScrollingStack()
+        
+        self.scrollView.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -151,6 +153,7 @@ class BlogViewController: UIViewController, TaskCallback {
     }
 
     func getPosts() {
+        //TODO: Don't call if the block is on.
         if !isGenerating && !stopRequesting {
             isGenerating = true
 
@@ -160,6 +163,7 @@ class BlogViewController: UIViewController, TaskCallback {
     }
 
     func refresh() {
+        //TODO: Don't call if the block is on.
         if !isRefreshing && !isGenerating {
             //TODO: Possibly handle starting refresh animation...
             isRefreshing = true
@@ -205,6 +209,13 @@ class BlogViewController: UIViewController, TaskCallback {
         
         //Center content horizontally
         stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y + scrollView.frame.size.height >= scrollView.contentSize.height {
+            //At bottom...
+            getPosts()
+        }
     }
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
