@@ -17,6 +17,7 @@ target 'StarTapped' do
   pod 'SDWebImage/GIF'
   pod 'RevealingSplashView'
   pod 'FRHyperLabel'
+  pod 'PopupDialog', '~> 0.9'
 end
 
 target 'StarTappedTests' do

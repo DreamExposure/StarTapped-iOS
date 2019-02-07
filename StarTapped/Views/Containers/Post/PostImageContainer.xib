@@ -62,12 +62,16 @@
                         <action selector="onUrlSecondClick" destination="-1" eventType="touchUpInside" id="AYt-vm-TcP"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q6g-wL-g9E" customClass="FLAnimatedImageView">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q6g-wL-g9E" customClass="FLAnimatedImageView">
                     <rect key="frame" x="0.0" y="41" width="375" height="200"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="width" constant="375" id="0de-ZW-FTP"/>
                         <constraint firstAttribute="height" constant="200" id="0mg-wI-218"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="fEm-qw-Jlu" appends="YES" id="JBa-9f-CP8"/>
+                    </connections>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" preservesSuperviewLayoutMargins="YES" text="Post Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="DNA-8y-HgH" customClass="FRHyperLabel">
                     <rect key="frame" x="16" y="257" width="343" height="24"/>
@@ -167,6 +171,11 @@
             <viewLayoutGuide key="safeArea" id="IH7-yh-tZO"/>
             <point key="canvasLocation" x="138.40000000000001" y="50.824587706146929"/>
         </view>
+        <tapGestureRecognizer id="fEm-qw-Jlu">
+            <connections>
+                <action selector="imageClicked:" destination="-1" id="HWp-Yr-sGe"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="bookmark_48pt" width="48" height="48"/>

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import PopupDialog
 
 class PostImageContainer: PostContainerBase, TaskCallback {
     //Post contents
@@ -73,11 +74,23 @@ class PostImageContainer: PostContainerBase, TaskCallback {
         super.configureUrlButtons()
     }
     
+    @IBAction func imageClicked(_ sender: Any) {
+        
+        let popup = PopupDialog(title: nil, message: nil, image: postImage.image)
+
+        let close = CancelButton(title: "Close") {}
+        
+        popup.addButtons([close])
+        
+        popup.transitionStyle = .zoomIn
+        
+        self.controller.present(popup, animated: true, completion: nil)
+    }
+    
     override func fixTheStupid() {
         super.fixTheStupid()
     }
     
-
     func onCallBack(status: NetworkCallStatus) {
         //Can safely ignore, its just for downloading images.
     }
