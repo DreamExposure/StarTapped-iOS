@@ -19,6 +19,7 @@ class FileUtils {
         
         return [
             "type": fileUrl.mimeType(),
+            "name": (filePath as NSString).lastPathComponent,
             "encoded": fileStream
         ]
     }

@@ -55,6 +55,7 @@ class PostAudioContainer: PostContainerBase, TaskCallback {
         postText.text = post.getBody()
         
         //TODO: Load audio
+        audioFileName.text = post.getAudio().getName()
         
         //Bottom bar
         sourceBlog.setTitle("Source \(post.getOriginBlog().getBaseUrl())", for: .normal)
@@ -77,6 +78,7 @@ class PostAudioContainer: PostContainerBase, TaskCallback {
         super.configureText()
         
         //TODO: Load audio
+        audioFileName.text = post.getAudio().getName()
         
         //Bottom bar
         sourceBlog.setTitle("Source: \(post.getOriginBlog().getBaseUrl())", for: .normal)

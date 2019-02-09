@@ -17,9 +17,9 @@ class Blog {
     var name: String = "Unassigned"
     var description: String = "Unassigned"
 
-    var iconUrl: String = "Unassigned"
+    var iconImage: UploadedFile = UploadedFile()
     var backgroundColor: String = "Unassigned"
-    var backgroundUrl: String = "Unassigned"
+    var backgroundImage: UploadedFile = UploadedFile()
 
     var allowUnder18: Bool = true
     var nsfw: Bool = false
@@ -56,16 +56,16 @@ class Blog {
         return description
     }
 
-    func getIconUrl() -> String {
-        return iconUrl
+    func getIconImage() -> UploadedFile {
+        return iconImage
     }
 
     func getBackgroundColor() -> String {
         return backgroundColor
     }
     
-    func getBackgroundUrl() -> String {
-        return backgroundUrl
+    func getBackgroundImage() -> UploadedFile {
+        return backgroundImage
     }
 
     func doesAllowUnder18() -> Bool {
@@ -117,16 +117,16 @@ class Blog {
         self.description = desc
     }
 
-    func setIconUrl(icon: String) {
-        self.iconUrl = icon
+    func setIconImage(icon: UploadedFile) {
+        self.iconImage = icon
     }
 
     func setBackgroundColor(color: String) {
         self.backgroundColor = color
     }
 
-    func setBackgroundUrl(url: String) {
-        self.backgroundUrl = url
+    func setBackgroundImage(image: UploadedFile) {
+        self.backgroundImage = image
     }
 
     func setAllowUnder18(allow: Bool) {
@@ -154,9 +154,9 @@ class Blog {
             "type": blogType.rawValue,
             "name": name,
             "description": description,
-            "icon_url": iconUrl,
+            "icon_image": iconImage.toJson(),
             "background_color": backgroundColor,
-            "background_url": backgroundUrl,
+            "background_image": backgroundImage.toJson(),
             "allow_under_18": allowUnder18,
             "nsfw": nsfw,
             "followers": followers
@@ -178,9 +178,9 @@ class Blog {
         self.blogType = BlogType(rawValue: json["type"].stringValue)!
         self.name = json["name"].stringValue
         self.description = json["description"].stringValue
-        self.iconUrl = json["icon_url"].stringValue
+        self.iconImage = UploadedFile().fromJson(json: json["icon_image"])
         self.backgroundColor = json["background_color"].stringValue
-        self.backgroundUrl = json["background_url"].stringValue
+        self.backgroundImage = UploadedFile().fromJson(json: json["background_image"])
         self.allowUnder18 = json["allow_under_18"].boolValue
         self.nsfw = json["nsfw"].boolValue
         self.followers = json["followers"].arrayValue.map({ $0[].stringValue })

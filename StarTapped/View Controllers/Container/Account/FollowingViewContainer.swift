@@ -42,7 +42,7 @@ class FollowingViewContainer: UIView, TaskCallback {
         //Do all the shit yay!
         self.urlView.setTitle(self.blog.getBaseUrl().lowercased(), for: .normal)
         
-        DownloadImageTask(callback: self, url: self.blog.getIconUrl(), view: self.iconImage).execute()
+        DownloadImageTask(callback: self, url: self.blog.getIconImage().getUrl(), view: self.iconImage).execute()
     }
     
     func fixTheStupid() {
@@ -65,6 +65,6 @@ class FollowingViewContainer: UIView, TaskCallback {
     }
     
     func onCallBack(status: NetworkCallStatus) {
-        //Can savely ignore, its just for downloading images.
+        //Can safely ignore, its just for downloading images.
     }
 }

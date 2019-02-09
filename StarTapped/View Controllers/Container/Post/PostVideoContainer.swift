@@ -51,7 +51,7 @@ class PostVideoContainer: PostContainerBase, TaskCallback {
         
         //Load video
         videoView.isLoop = true
-        videoView.configure(url: post.getVideoUrl())
+        videoView.configure(url: post.getVideo().getUrl())
         
         //Bottom bar
         sourceBlog.setTitle("Source \(post.getOriginBlog().getBaseUrl())", for: .normal)
@@ -75,7 +75,7 @@ class PostVideoContainer: PostContainerBase, TaskCallback {
         
         //Load video
         videoView.isLoop = true
-        videoView.configure(url: post.getVideoUrl())
+        videoView.configure(url: post.getVideo().getUrl())
         
         //Bottom bar
         sourceBlog.setTitle("Source: \(post.getOriginBlog().getBaseUrl())", for: .normal)

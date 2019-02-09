@@ -68,8 +68,8 @@ class BlogForSelfListConainer: UIView, TaskCallback {
         
         self.contentView.backgroundColor = ViewUtils().hexStringToUIColor(hex: self.blog.getBackgroundColor())
         
-        DownloadImageTask(callback: self, url: self.blog.getIconUrl(), view: self.iconImage).execute()
-        DownloadImageTask(callback: self, url: self.blog.getBackgroundUrl(), view: self.backgroundImage).execute()
+        DownloadImageTask(callback: self, url: self.blog.getIconImage().getUrl(), view: self.iconImage).execute()
+        DownloadImageTask(callback: self, url: self.blog.getBackgroundImage().getUrl(), view: self.backgroundImage).execute()
     }
     
     func fixTheStupid() {

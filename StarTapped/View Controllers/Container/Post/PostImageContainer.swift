@@ -44,7 +44,7 @@ class PostImageContainer: PostContainerBase, TaskCallback {
         postTitle.text = post.getTitle()
         postText.text = post.getBody()
         
-        DownloadImageTask(callback: self, url: post.getImageUrl(), view: postImage).execute()
+        DownloadImageTask(callback: self, url: post.getImage().getUrl(), view: postImage).execute()
         
         //Bottom bar
         sourceBlog.setTitle("Source \(post.getOriginBlog().getBaseUrl())", for: .normal)
@@ -66,7 +66,7 @@ class PostImageContainer: PostContainerBase, TaskCallback {
         //Post contents
         super.configureText()
         
-        DownloadImageTask(callback: self, url: post.getImageUrl(), view: postImage).execute()
+        DownloadImageTask(callback: self, url: post.getImage().getUrl(), view: postImage).execute()
         
         //Bottom bar
         sourceBlog.setTitle("Source: \(post.getOriginBlog().getBaseUrl())", for: .normal)

@@ -38,7 +38,7 @@ class SplashController: UIViewController, TaskCallback {
         switch status.getType() {
         case .AUTH_TOKEN_REAUTH:
             if (status.isSuccess()) {
-                if (status.getCode() == 200) {
+                if (status.getCode() == 201) {
                     //Save new credentials
                     Settings().deleteAuthentication()
                     let cred = JSON(status.getBody()["credentials"])

@@ -26,9 +26,9 @@ class Post {
     var parent: String?
 
     //post type specifics
-    var imageUrl = "Undefined"
-    var audioUrl = "Undefined"
-    var videoUrl = "Undefined"
+    var image: UploadedFile = UploadedFile()
+    var audio: UploadedFile = UploadedFile()
+    var video: UploadedFile = UploadedFile()
 
     init(creator: Account, originBlog: Blog) {
         self.creator = creator
@@ -83,16 +83,16 @@ class Post {
         return parent
     }
 
-    func getImageUrl() -> String {
-        return imageUrl
+    func getImage() -> UploadedFile {
+        return image
     }
 
-    func getAudioUrl() -> String {
-        return audioUrl
+    func getAudio() -> UploadedFile {
+        return audio
     }
 
-    func getVideoUrl() -> String {
-        return videoUrl
+    func getVideo() -> UploadedFile {
+        return video
     }
 
     //Setters
@@ -140,16 +140,16 @@ class Post {
         self.parent = parent
     }
 
-    func setImageUrl(url: String) {
-        self.imageUrl = url
+    func setImage(image: UploadedFile) {
+        self.image = image
     }
 
-    func setAudioUrl(url: String) {
-        self.audioUrl = url
+    func setAudio(audio: UploadedFile) {
+        self.audio = audio
     }
 
-    func setVideoUrl(url: String) {
-        self.videoUrl = url
+    func setVideo(video: UploadedFile) {
+        self.video = video
     }
 
     //JSON Handling
@@ -169,11 +169,11 @@ class Post {
             ]
 
         if self.type == .IMAGE {
-            json["image_url"].string = imageUrl
+            json["image"] = image.toJson()
         } else if self.type == .AUDIO {
-            json["audio_url"].string = audioUrl
+            json["audio"] = audio.toJson()
         } else if self.type == .VIDEO {
-            json["video_url"].string = videoUrl
+            json["video"] = video.toJson()
         }
 
         return json
@@ -195,11 +195,11 @@ class Post {
         }
 
         if self.type == .IMAGE {
-            imageUrl = json["image_url"].stringValue
+            image = UploadedFile().fromJson(json: json["image"])
         } else if self.type == .AUDIO {
-            audioUrl = json["audio_url"].stringValue
+            audio = UploadedFile().fromJson(json: json["audio"])
         } else if self.type == .VIDEO {
-            videoUrl = json["videoUrl"].stringValue
+            video = UploadedFile().fromJson(json: json["video"])
         }
 
         return self
