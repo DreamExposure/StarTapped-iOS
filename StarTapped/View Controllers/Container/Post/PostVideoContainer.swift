@@ -11,10 +11,6 @@ import UIKit
 import SwiftyJSON
 
 class PostVideoContainer: PostContainerBase, TaskCallback {
-    //TODO: Figure out how to mute/unmute video
-    //TODO: Figure out how to play/pause video
-    //TODO: Make better video player layout.
-    //TODO: Make video fullscreen view somehow.
     
     //Video stuffs
     @IBOutlet weak var videoContainer: UIView!
@@ -84,7 +80,6 @@ class PostVideoContainer: PostContainerBase, TaskCallback {
     }
     
     override func fixTheStupid() {
-        //TODO: Handle video container resize
 
         super.fixTheStupid()
     }

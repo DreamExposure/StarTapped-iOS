@@ -11,19 +11,9 @@ import UIKit
 import SwiftyJSON
 
 class PostAudioContainer: PostContainerBase, TaskCallback {
-    //TODO: figure out how to handle media
-    //TODO: Figure out how to handle the slider change
-    //TODO: figure out how to sync media to slider
-    //TODO: Figure out how to mute/unmute media
-    //TODO: Figure out how to play/pause media
-    //TODO: Figure out how to get media file name
     
     //Audio stuffs
-    @IBOutlet weak var audioContainer: UIView!
-    @IBOutlet weak var playPauseButton: UIButton!
-    @IBOutlet weak var muteUnmuteButton: UIButton!
-    @IBOutlet weak var audioFileName: UILabel!
-    @IBOutlet weak var audioSeekbar: UISlider!
+    @IBOutlet weak var audioView: AudioView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,8 +44,9 @@ class PostAudioContainer: PostContainerBase, TaskCallback {
         postTitle.text = post.getTitle()
         postText.text = post.getBody()
         
-        //TODO: Load audio
-        audioFileName.text = post.getAudio().getName()
+        //Load audio
+        audioView.isLoop = true
+        audioView.configure(url: post.getAudio().getUrl())
         
         //Bottom bar
         sourceBlog.setTitle("Source \(post.getOriginBlog().getBaseUrl())", for: .normal)
@@ -77,8 +68,9 @@ class PostAudioContainer: PostContainerBase, TaskCallback {
         //Post contents
         super.configureText()
         
-        //TODO: Load audio
-        audioFileName.text = post.getAudio().getName()
+        //Load audio
+        audioView.isLoop = true
+        audioView.configure(url: post.getAudio().getUrl())
         
         //Bottom bar
         sourceBlog.setTitle("Source: \(post.getOriginBlog().getBaseUrl())", for: .normal)
@@ -90,14 +82,6 @@ class PostAudioContainer: PostContainerBase, TaskCallback {
         //TODO: Resize audio container stuffs
 
         super.fixTheStupid();
-    }
-    
-    @IBAction func onPlayPauseButtonClick() {
-        //TODO: Handle play/pause click.
-    }
-    
-    @IBAction func onMuteUnmuteButtonClick() {
-        //TODO: Handle mute/unmute click.
     }
     
     func onCallBack(status: NetworkCallStatus) {

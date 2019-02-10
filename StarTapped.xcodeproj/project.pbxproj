@@ -47,6 +47,7 @@
 		808A20E321F16D9300F69A86 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20E221F16D9300F69A86 /* ExploreViewController.swift */; };
 		808A20E621F2345500F69A86 /* TimeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20E521F2345500F69A86 /* TimeIndex.swift */; };
 		808A20E821F28DFF00F69A86 /* CreateBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20E721F28DFF00F69A86 /* CreateBlogViewController.swift */; };
+		808B05DA2210949C000D755E /* AudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808B05D92210949C000D755E /* AudioView.swift */; };
 		80AFA5CE21E428D20072A227 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5CD21E428D20072A227 /* AuthController.swift */; };
 		80AFA5D321E442C00072A227 /* GetAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D221E442C00072A227 /* GetAccountTask.swift */; };
 		80AFA5D521E444960072A227 /* UpdateAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D421E444960072A227 /* UpdateAccountTask.swift */; };
@@ -159,6 +160,7 @@
 		808A20E221F16D9300F69A86 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		808A20E521F2345500F69A86 /* TimeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIndex.swift; sourceTree = "<group>"; };
 		808A20E721F28DFF00F69A86 /* CreateBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBlogViewController.swift; sourceTree = "<group>"; };
+		808B05D92210949C000D755E /* AudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioView.swift; sourceTree = "<group>"; };
 		808DDF1721E14163005046B5 /* StarTapped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarTapped.entitlements; sourceTree = "<group>"; };
 		80AFA5CD21E428D20072A227 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		80AFA5D221E442C00072A227 /* GetAccountTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountTask.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				808A20DA21F0247100F69A86 /* VideoView.swift */,
+				808B05D92210949C000D755E /* AudioView.swift */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -1063,6 +1066,7 @@
 				80AFA5E621E551CB0072A227 /* NetworkUtils.swift in Sources */,
 				CDDD2738A0F45486BF1EABC6 /* AsyncTask.swift in Sources */,
 				8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */,
+				808B05DA2210949C000D755E /* AudioView.swift in Sources */,
 				8030899621EFA2F8008D81DD /* FollowingViewContainer.swift in Sources */,
 				CDDD2D3D5A1DF16F9A8A1C08 /* NetworkTask.swift in Sources */,
 				CDDD2C093AEC4826F10BBCE7 /* LoginTask.swift in Sources */,

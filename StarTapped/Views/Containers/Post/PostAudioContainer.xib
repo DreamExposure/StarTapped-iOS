@@ -12,15 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostAudioContainer" customModule="StarTapped" customModuleProvider="target">
             <connections>
-                <outlet property="audioContainer" destination="G6J-qF-R1A" id="aFg-yJ-eS4"/>
-                <outlet property="audioFileName" destination="BfE-9o-8Zt" id="Rwx-au-eev"/>
-                <outlet property="audioSeekbar" destination="ZzR-VO-P16" id="Igp-yt-Czk"/>
+                <outlet property="audioView" destination="bqM-tQ-SbO" id="KHI-S5-IO5"/>
                 <outlet property="blogUrlLatest" destination="ABs-JF-rUd" id="VyF-Lu-bcn"/>
                 <outlet property="blogUrlSecond" destination="e6B-gf-LJg" id="UGZ-h4-fX4"/>
                 <outlet property="bookmarkPost" destination="m0O-Re-ohH" id="V50-rq-kHB"/>
                 <outlet property="contentView" destination="Pqn-7F-LiD" id="Y5U-sa-iz2"/>
-                <outlet property="muteUnmuteButton" destination="PHt-fl-m54" id="CRN-2g-hjS"/>
-                <outlet property="playPauseButton" destination="fei-GS-Skk" id="9Cj-rt-J1Z"/>
                 <outlet property="postText" destination="Tdz-DQ-LD2" id="Jj3-Nm-8hJ"/>
                 <outlet property="postTitle" destination="1tK-Xe-LJL" id="WPK-aW-DPb"/>
                 <outlet property="reblogIcon" destination="VLE-3i-r4F" id="ud2-GX-1dh"/>
@@ -66,65 +62,24 @@
                         <action selector="onUrlSecondClick" destination="-1" eventType="touchUpInside" id="HOR-tV-gyH"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6J-qF-R1A" userLabel="AudioContainer">
+                <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6J-qF-R1A" userLabel="Audio Container">
                     <rect key="frame" x="0.0" y="41" width="375" height="50"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fei-GS-Skk" customClass="MDCButton">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="50" id="ZYU-Lu-JyE"/>
-                                <constraint firstAttribute="height" constant="50" id="xqS-n6-h0D"/>
-                            </constraints>
-                            <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" image="baseline_play_arrow_black_48pt"/>
-                            <connections>
-                                <action selector="onPlayPauseButtonClick" destination="-1" eventType="touchUpInside" id="KAh-pL-zQM"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHt-fl-m54" customClass="MDCButton">
-                            <rect key="frame" x="325" y="0.0" width="50" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="B2b-fQ-Yd1"/>
-                                <constraint firstAttribute="width" constant="50" id="X31-UV-9A7"/>
-                            </constraints>
-                            <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" image="baseline_volume_up_black_48pt"/>
-                            <connections>
-                                <action selector="onMuteUnmuteButtonClick" destination="-1" eventType="touchUpInside" id="HZY-Z7-XFf"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio File name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-9o-8Zt">
-                            <rect key="frame" x="50" y="0.0" width="275" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="25" id="sw8-N4-7CR"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZzR-VO-P16">
-                            <rect key="frame" x="48" y="20" width="279" height="31"/>
-                            <color key="minimumTrackTintColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="maximumTrackTintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="thumbTintColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                        </slider>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqM-tQ-SbO" customClass="AudioView" customModule="StarTapped" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" updatesFrequently="YES"/>
+                            </accessibility>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.67843137249999996" green="0.70980392160000005" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="PHt-fl-m54" secondAttribute="trailing" id="2Ni-ch-UJB"/>
-                        <constraint firstItem="BfE-9o-8Zt" firstAttribute="leading" secondItem="fei-GS-Skk" secondAttribute="trailing" id="4VN-Mv-sGn"/>
-                        <constraint firstAttribute="bottom" secondItem="fei-GS-Skk" secondAttribute="bottom" id="6Ek-Y7-4VU"/>
-                        <constraint firstItem="PHt-fl-m54" firstAttribute="top" secondItem="G6J-qF-R1A" secondAttribute="top" id="9lR-s6-N60"/>
-                        <constraint firstItem="fei-GS-Skk" firstAttribute="top" secondItem="G6J-qF-R1A" secondAttribute="top" id="Cg5-o9-mpg"/>
-                        <constraint firstItem="fei-GS-Skk" firstAttribute="leading" secondItem="G6J-qF-R1A" secondAttribute="leading" id="Il7-7O-B5j"/>
-                        <constraint firstItem="ZzR-VO-P16" firstAttribute="leading" secondItem="fei-GS-Skk" secondAttribute="trailing" id="ORJ-iC-RMa"/>
+                        <constraint firstItem="bqM-tQ-SbO" firstAttribute="leading" secondItem="G6J-qF-R1A" secondAttribute="leading" id="2Cr-N5-g8f"/>
+                        <constraint firstAttribute="trailing" secondItem="bqM-tQ-SbO" secondAttribute="trailing" id="6AG-7n-RaA"/>
+                        <constraint firstAttribute="bottom" secondItem="bqM-tQ-SbO" secondAttribute="bottom" id="Hmw-IX-nmp"/>
+                        <constraint firstItem="bqM-tQ-SbO" firstAttribute="top" secondItem="G6J-qF-R1A" secondAttribute="top" id="PUq-Fc-TCQ"/>
                         <constraint firstAttribute="height" constant="50" id="adB-jA-Jbp"/>
-                        <constraint firstItem="PHt-fl-m54" firstAttribute="leading" secondItem="ZzR-VO-P16" secondAttribute="trailing" id="cdO-QD-d6W"/>
                         <constraint firstAttribute="width" constant="375" id="e9L-83-hhg"/>
-                        <constraint firstItem="PHt-fl-m54" firstAttribute="leading" secondItem="BfE-9o-8Zt" secondAttribute="trailing" id="oYD-4O-G4t"/>
-                        <constraint firstAttribute="bottom" secondItem="PHt-fl-m54" secondAttribute="bottom" id="sJx-B1-U1b"/>
-                        <constraint firstItem="BfE-9o-8Zt" firstAttribute="top" secondItem="G6J-qF-R1A" secondAttribute="top" id="tLz-Gs-Hw2"/>
-                        <constraint firstAttribute="bottom" secondItem="ZzR-VO-P16" secondAttribute="bottom" id="wfw-b5-1U2"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" preservesSuperviewLayoutMargins="YES" text="Post Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="343" translatesAutoresizingMaskIntoConstraints="NO" id="1tK-Xe-LJL" customClass="FRHyperLabel">
@@ -228,8 +183,6 @@
         </view>
     </objects>
     <resources>
-        <image name="baseline_play_arrow_black_48pt" width="96" height="96"/>
-        <image name="baseline_volume_up_black_48pt" width="96" height="96"/>
         <image name="bookmark_48pt" width="48" height="48"/>
         <image name="reblog_48pt" width="48" height="48"/>
     </resources>
