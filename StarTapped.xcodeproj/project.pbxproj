@@ -48,6 +48,8 @@
 		808A20E621F2345500F69A86 /* TimeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20E521F2345500F69A86 /* TimeIndex.swift */; };
 		808A20E821F28DFF00F69A86 /* CreateBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20E721F28DFF00F69A86 /* CreateBlogViewController.swift */; };
 		808B05DA2210949C000D755E /* AudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808B05D92210949C000D755E /* AudioView.swift */; };
+		80A188BB2210A9BB00F3B01B /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A188BA2210A9BB00F3B01B /* SettingsController.swift */; };
+		80A188BE2210B06800F3B01B /* AccountSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A188BD2210B06800F3B01B /* AccountSettingsController.swift */; };
 		80AFA5CE21E428D20072A227 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5CD21E428D20072A227 /* AuthController.swift */; };
 		80AFA5D321E442C00072A227 /* GetAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D221E442C00072A227 /* GetAccountTask.swift */; };
 		80AFA5D521E444960072A227 /* UpdateAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AFA5D421E444960072A227 /* UpdateAccountTask.swift */; };
@@ -162,6 +164,8 @@
 		808A20E721F28DFF00F69A86 /* CreateBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBlogViewController.swift; sourceTree = "<group>"; };
 		808B05D92210949C000D755E /* AudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioView.swift; sourceTree = "<group>"; };
 		808DDF1721E14163005046B5 /* StarTapped.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarTapped.entitlements; sourceTree = "<group>"; };
+		80A188BA2210A9BB00F3B01B /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		80A188BD2210B06800F3B01B /* AccountSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsController.swift; sourceTree = "<group>"; };
 		80AFA5CD21E428D20072A227 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		80AFA5D221E442C00072A227 /* GetAccountTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountTask.swift; sourceTree = "<group>"; };
 		80AFA5D421E444960072A227 /* UpdateAccountTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountTask.swift; sourceTree = "<group>"; };
@@ -426,9 +430,11 @@
 		808A20DE21F16BE700F69A86 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				80A188BC2210B04F00F3B01B /* Settings */,
 				800D9F6521E905C70036DC41 /* YourBlogsController.swift */,
 				808A20DC21F1672900F69A86 /* FollowingController.swift */,
 				808A20E721F28DFF00F69A86 /* CreateBlogViewController.swift */,
+				80A188BA2210A9BB00F3B01B /* SettingsController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -498,6 +504,14 @@
 				80EB1A0521E1C4FD000A51A2 /* Post.swift */,
 			);
 			path = Post;
+			sourceTree = "<group>";
+		};
+		80A188BC2210B04F00F3B01B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				80A188BD2210B06800F3B01B /* AccountSettingsController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		80AFA5D821E448D70072A227 /* Blog */ = {
@@ -1057,6 +1071,7 @@
 				80AFA5DB21E504010072A227 /* FileUtils.swift in Sources */,
 				803089A621EFDFA8008D81DD /* PostImageContainer.swift in Sources */,
 				CDDD24F5F72C0EF8C76CECFA /* BlogType.swift in Sources */,
+				80A188BB2210A9BB00F3B01B /* SettingsController.swift in Sources */,
 				CDDD2ED84BF8C162EBE0374E /* PostType.swift in Sources */,
 				80AFA5E421E5470E0072A227 /* SignInViewController.swift in Sources */,
 				80AFA5DD21E508580072A227 /* MimeTypes.swift in Sources */,
@@ -1084,6 +1099,7 @@
 				CDDD2AEEF6BA25EF15A5FCB3 /* GetBlogViewTask.swift in Sources */,
 				CDDD26D7F5DB879E869154F3 /* FollowBlogTask.swift in Sources */,
 				CDDD23E0A55789F0206D8F62 /* UnfollowBlogTask.swift in Sources */,
+				80A188BE2210B06800F3B01B /* AccountSettingsController.swift in Sources */,
 				808A20E021F16C1200F69A86 /* SearchViewController.swift in Sources */,
 				CDDD2B295F4DA9A22FF1663F /* GetFollowingBlogsTask.swift in Sources */,
 				CDDD21C7BAB37DDC019A47F0 /* GetFollowersAccountTask.swift in Sources */,

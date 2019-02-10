@@ -216,7 +216,7 @@ extension HubViewController: UITableViewDelegate {
             ViewUtils().goToFollowing(view: self, anim: true)
             break
         case 2:
-            //TODO: Go to settings
+            ViewUtils().goToSettings(view: self, anim: true)
             break
         default:
             //Unsupported action

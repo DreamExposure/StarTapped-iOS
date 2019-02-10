@@ -61,6 +61,7 @@
                         <outlet property="moreButton" destination="Xyl-nW-6dO" id="gPo-Nr-Mq5"/>
                         <segue destination="QuF-uQ-NSi" kind="show" identifier="explore-to-view-blog" id="4Lk-6J-Nji"/>
                         <segue destination="iFZ-dD-B8s" kind="show" identifier="explore-to-following" id="Pbn-aN-3d1"/>
+                        <segue destination="wxz-t9-W52" kind="show" identifier="explore-to-settings" id="IHv-E1-pU7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5eo-sY-RCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,6 +119,7 @@
                         <outlet property="moreButton" destination="MNE-q4-dp6" id="ewH-vP-61n"/>
                         <segue destination="QuF-uQ-NSi" kind="show" identifier="search-to-view-blog" id="ocV-XD-Drr"/>
                         <segue destination="iFZ-dD-B8s" kind="show" identifier="search-to-following" id="cgC-xh-MVP"/>
+                        <segue destination="wxz-t9-W52" kind="show" identifier="search-to-settings" id="qwX-7U-uvl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOK-kh-uPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -179,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZs-Kr-Toi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1766" y="392"/>
+            <point key="canvasLocation" x="1766" y="258"/>
         </scene>
         <!--Blog View-->
         <scene sceneID="cHy-jj-eU0">
@@ -265,6 +267,176 @@
             </objects>
             <point key="canvasLocation" x="1767" y="-514"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="PF8-74-CVb">
+            <objects>
+                <viewController storyboardIdentifier="settings-view" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wxz-t9-W52" customClass="SettingsController" customModule="StarTapped" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D1e-LY-0zA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zz-7Z-hI9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Back Container" style="plain" id="MyP-MM-bac">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1HF-9r-Ky9" userLabel="Back Button" customClass="MDCButtonBarButton">
+                                            <rect key="frame" x="16" y="4" width="36" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="baseline_arrow_back_black_18pt">
+                                                <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onBackButtonClicked:" destination="wxz-t9-W52" eventType="touchUpInside" id="wcJ-lU-xWB"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Settings" style="done" id="jbY-0Z-dFG">
+                                        <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="4Pz-g9-AOu"/>
+                                </items>
+                                <color key="barTintColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eF-Jy-EXn" customClass="MDCButton">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Z57-mp-c2h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Account">
+                                    <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAccountSettingsClick" destination="wxz-t9-W52" eventType="touchUpInside" id="wU8-Av-OUP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5po-Ch-qPt" customClass="MDCButton">
+                                <rect key="frame" x="0.0" y="114" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="76k-40-36A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Notifications">
+                                    <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Keb-Kw-45g" customClass="MDCButton">
+                                <rect key="frame" x="0.0" y="164" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1UR-xt-jn5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Data &amp; Network">
+                                    <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3zz-7Z-hI9" firstAttribute="leading" secondItem="yuQ-aK-3xx" secondAttribute="leading" id="2xU-jg-T9U"/>
+                            <constraint firstItem="5po-Ch-qPt" firstAttribute="leading" secondItem="yuQ-aK-3xx" secondAttribute="leading" id="8gH-f7-Dq6"/>
+                            <constraint firstItem="4eF-Jy-EXn" firstAttribute="top" secondItem="3zz-7Z-hI9" secondAttribute="bottom" id="Fm3-9f-iUY"/>
+                            <constraint firstItem="4eF-Jy-EXn" firstAttribute="trailing" secondItem="yuQ-aK-3xx" secondAttribute="trailing" id="GGv-aw-iep"/>
+                            <constraint firstItem="5po-Ch-qPt" firstAttribute="top" secondItem="4eF-Jy-EXn" secondAttribute="bottom" id="Teg-TH-Dps"/>
+                            <constraint firstItem="Keb-Kw-45g" firstAttribute="trailing" secondItem="yuQ-aK-3xx" secondAttribute="trailing" id="avL-vZ-dG3"/>
+                            <constraint firstItem="Keb-Kw-45g" firstAttribute="top" secondItem="5po-Ch-qPt" secondAttribute="bottom" id="cnV-dR-tLB"/>
+                            <constraint firstItem="4eF-Jy-EXn" firstAttribute="leading" secondItem="yuQ-aK-3xx" secondAttribute="leading" id="dJb-Yx-9EH"/>
+                            <constraint firstItem="3zz-7Z-hI9" firstAttribute="trailing" secondItem="yuQ-aK-3xx" secondAttribute="trailing" id="id5-v5-B6R"/>
+                            <constraint firstItem="5po-Ch-qPt" firstAttribute="trailing" secondItem="yuQ-aK-3xx" secondAttribute="trailing" id="oIT-bA-6b4"/>
+                            <constraint firstItem="Keb-Kw-45g" firstAttribute="leading" secondItem="yuQ-aK-3xx" secondAttribute="leading" id="r3h-Sz-p9g"/>
+                            <constraint firstItem="3zz-7Z-hI9" firstAttribute="top" secondItem="yuQ-aK-3xx" secondAttribute="top" id="uqG-7J-BoG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yuQ-aK-3xx"/>
+                    </view>
+                    <connections>
+                        <outlet property="toolbar" destination="3zz-7Z-hI9" id="Hcq-rR-Hq0"/>
+                        <segue destination="kp3-8b-zjL" kind="show" identifier="settings-to-account-settings" id="y8w-aW-qKW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOh-2j-tLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1765.5999999999999" y="1329.9850074962519"/>
+        </scene>
+        <!--Account Settings Controller-->
+        <scene sceneID="fe4-G9-Rhw">
+            <objects>
+                <viewController storyboardIdentifier="account-settings-view" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kp3-8b-zjL" customClass="AccountSettingsController" customModule="StarTapped" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JUn-vN-8Ws">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1M-IN-lzi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Back Container" style="plain" id="Ohp-WC-IJ6">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oxA-qI-t9a" userLabel="Back Button" customClass="MDCButtonBarButton">
+                                            <rect key="frame" x="16" y="4" width="36" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="baseline_arrow_back_black_18pt">
+                                                <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onBackButtonClicked:" destination="kp3-8b-zjL" eventType="touchUpInside" id="sL5-qF-mVr"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Account Settings" style="done" id="Jsr-X4-AdE">
+                                        <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="41j-CW-cWz"/>
+                                </items>
+                                <color key="barTintColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o30-H7-f70">
+                                <rect key="frame" x="310" y="72" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="SdR-sO-wb1"/>
+                                </constraints>
+                                <color key="onTintColor" red="0.42352941179999998" green="0.57647058819999997" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="onSafeSearchCheck" destination="kp3-8b-zjL" eventType="valueChanged" id="sny-dh-Qac"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Safe Search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aY4-E2-cZW">
+                                <rect key="frame" x="8" y="72" width="100" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Ine-1n-mRL"/>
+                                    <constraint firstAttribute="height" constant="31" id="gBE-5a-1Mb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="y1M-IN-lzi" firstAttribute="top" secondItem="lkN-0T-TIa" secondAttribute="top" id="62e-c1-56k"/>
+                            <constraint firstItem="aY4-E2-cZW" firstAttribute="leading" secondItem="lkN-0T-TIa" secondAttribute="leading" constant="8" id="8LI-25-dYl"/>
+                            <constraint firstItem="y1M-IN-lzi" firstAttribute="trailing" secondItem="lkN-0T-TIa" secondAttribute="trailing" id="9E6-v9-Q5n"/>
+                            <constraint firstItem="aY4-E2-cZW" firstAttribute="top" secondItem="y1M-IN-lzi" secondAttribute="bottom" constant="8" id="ELV-XB-5qS"/>
+                            <constraint firstItem="o30-H7-f70" firstAttribute="top" secondItem="y1M-IN-lzi" secondAttribute="bottom" constant="8" id="hCs-Vk-2qn"/>
+                            <constraint firstItem="lkN-0T-TIa" firstAttribute="trailing" secondItem="o30-H7-f70" secondAttribute="trailing" constant="16" id="nYM-eQ-Apt"/>
+                            <constraint firstItem="y1M-IN-lzi" firstAttribute="leading" secondItem="lkN-0T-TIa" secondAttribute="leading" id="yds-Ob-2a2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lkN-0T-TIa"/>
+                    </view>
+                    <connections>
+                        <outlet property="safeSearchSwitch" destination="o30-H7-f70" id="9du-sQ-XM2"/>
+                        <outlet property="toolbar" destination="y1M-IN-lzi" id="8VY-us-qIR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ylK-fP-bEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2740" y="1014.2428785607198"/>
+        </scene>
         <!--Hub-->
         <scene sceneID="uft-Ik-unr">
             <objects>
@@ -325,6 +497,7 @@
                         <segue destination="2NO-ws-Lb3" kind="show" identifier="hub-to-self-blog-list" id="Ptj-5c-c5b"/>
                         <segue destination="QuF-uQ-NSi" kind="show" identifier="hub-to-view-blog" id="xZb-IZ-me2"/>
                         <segue destination="iFZ-dD-B8s" kind="show" identifier="hub-to-following" id="TAK-hn-RLq"/>
+                        <segue destination="wxz-t9-W52" kind="show" identifier="hub-to-settings" id="HZZ-HU-tza"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeD-u3-uKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -516,7 +689,8 @@
         <image name="share_18pt" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xZb-IZ-me2"/>
-        <segue reference="TAK-hn-RLq"/>
+        <segue reference="qwX-7U-uvl"/>
+        <segue reference="4Lk-6J-Nji"/>
+        <segue reference="cgC-xh-MVP"/>
     </inferredMetricsTieBreakers>
 </document>

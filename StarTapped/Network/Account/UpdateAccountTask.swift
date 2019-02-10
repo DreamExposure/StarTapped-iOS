@@ -25,8 +25,7 @@ class UpdateAccountTask: NetworkTask {
         ]
 
         let params: [String: Any] = [
-            "safe_search": Settings().getAccount().isSafeSearch(),
-            "phone_number": Settings().getAccount().getPhoneNumber()
+            "safe_search": Settings().getAccount().isSafeSearch()
         ]
 
         Alamofire.request("https://api.startapped.com/v1/account/update", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)

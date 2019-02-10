@@ -76,4 +76,3 @@ class CreateBlogViewController: UIViewController, TaskCallback {
         }
     }
 }
-
