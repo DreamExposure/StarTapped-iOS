@@ -11,7 +11,7 @@ import AVKit
 import AVFoundation
 
 class VideoView: UIView {
-    var playerLayer: AVPlayerLayer?
+    var controller: AVPlayerViewController?
     var player: AVPlayer?
     var isLoop: Bool = false
     var isAutoPlay: Bool = false
@@ -23,12 +23,14 @@ class VideoView: UIView {
     func configure(url: String) {
         if let videoURL = URL(string: url) {
             player = AVPlayer(url: videoURL)
-            playerLayer = AVPlayerLayer(player: player)
-            playerLayer?.frame = bounds
-            playerLayer?.videoGravity = AVLayerVideoGravity.resize
-            if let playerLayer = self.playerLayer {
-                layer.addSublayer(playerLayer)
-            }
+            controller = AVPlayerViewController()
+            
+            controller?.player = player
+            controller?.videoGravity = .resizeAspect
+            controller?.view.frame = self.frame
+            
+            self.addSubview(controller!.view)
+            
             NotificationCenter.default.addObserver(self, selector: #selector(reachTheEndOfTheVideo(_:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player?.currentItem)
             
             if (isAutoPlay) {
