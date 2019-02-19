@@ -28,6 +28,7 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     var isGenerating = false
     var isRefreshing = false
     var stopRequesting = false
+    var blockOn = false
     
     fileprivate var popover: Popover!
     fileprivate var popoverOptions: [PopoverOption] = [
@@ -70,23 +71,35 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
         let blog = Blog().fromJson(json: status.getBody()["blog"])
         toolbarTitle.title = blog.getBaseUrl()
 
-        //TODO: Check if NSFW with safe search on
-
-        //TODO: Check if adult only and user is a minor
-
-
-        let blogCon: BlogViewContainer = BlogViewContainer()
+        if blog.isNsfw() && Settings().getAccount().isSafeSearch() {
+            //NSFW blog with Safe Search on, show block.
+            blockOn = true
+            let blockMessage: NsfwBlogBlock = NsfwBlogBlock()
+            blockMessage.controller = self
+            blockMessage.fixTheStupid()
             
-        blogCon.configure(blog: blog)
+            self.stackView.addArrangedSubview(blockMessage)
+        } else if !blog.allowUnder18 && TimeUtils().calculateAge(ageString: Settings().getAccount().getBirthday()) < 18 {
+            //Blog does not allow minors and user is minor
+            blockOn = true
+            let blockMessage: AdultOnlyBlock = AdultOnlyBlock()
+            blockMessage.controller = self
+            blockMessage.fixTheStupid()
             
-        blogCon.fixTheStupid()
+            self.stackView.addArrangedSubview(blockMessage)
+        } else {
+            let blogCon: BlogViewContainer = BlogViewContainer()
             
-        self.stackView.addArrangedSubview(blogCon)
+            blogCon.configure(blog: blog)
+            
+            blogCon.fixTheStupid()
+            
+            self.stackView.addArrangedSubview(blogCon)
         
-        //TODO: Determine hide/show followers, follow, unfollow, report, block, unblock
+            //TODO: Determine hide/show followers, follow, unfollow, report, block, unblock
 
-        //TODO: Only call this if the blog is displayed...
-        self.getPosts()
+            self.getPosts()
+        }
     }
 
     func getPostsCallback(status: NetworkCallStatus) {
@@ -162,8 +175,7 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     }
 
     func getPosts() {
-        //TODO: Don't call if the block is on.
-        if !isGenerating && !stopRequesting {
+        if !isGenerating && !stopRequesting && !blockOn {
             isGenerating = true
 
             let task = GetPostsForBlogTask(callback: self, id: blogId, index: index)
@@ -172,8 +184,7 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     }
 
     func refresh() {
-        //TODO: Don't call if the block is on.
-        if !isRefreshing && !isGenerating {
+        if !isRefreshing && !isGenerating && !blockOn {
             //TODO: Possibly handle starting refresh animation...
             isRefreshing = true
             stopRequesting = false
