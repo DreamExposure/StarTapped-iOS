@@ -51,10 +51,12 @@ class Settings {
     func getAccount() -> Account {
         let account = Account()
 
+        let id: String = KeychainSwift().get("id") ?? "Unassigned"
         let safeSearch: Bool = KeychainSwift().getBool("safe_search") ?? false
         let phone: String = KeychainSwift().get("phone_number") ?? "000.000.0000"
         let birthday: String = KeychainSwift().get("birthday") ?? "1970-01-01"
 
+        account.setAccountId(id: id)
         account.setSafeSearch(safe: safeSearch)
         account.setPhoneNumber(number: phone)
         account.setBirthday(birthday: birthday)

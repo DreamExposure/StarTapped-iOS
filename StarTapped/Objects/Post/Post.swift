@@ -25,6 +25,8 @@ class Post {
 
     var parent: String?
 
+    var tags: [String] = [String]()
+
     //post type specifics
     var image: UploadedFile = UploadedFile()
     var audio: UploadedFile = UploadedFile()
@@ -81,6 +83,18 @@ class Post {
 
     func getParent() -> String? {
         return parent
+    }
+
+    func getTags() -> [String] {
+        return tags
+    }
+
+    func tagsToString() -> String {
+        if !tags.isEmpty {
+            return tags.joined(separator: ",")
+        } else {
+            return ""
+        }
     }
 
     func getImage() -> UploadedFile {
@@ -165,7 +179,8 @@ class Post {
             "title": title,
             "body": body,
             "nsfw": nsfw,
-            "parent": parent ?? "Unassigned"
+            "parent": parent ?? "Unassigned",
+            "tags": tags
             ]
 
         if self.type == .IMAGE {
@@ -190,9 +205,11 @@ class Post {
         title = json["title"].stringValue
         body = json["body"].stringValue
         nsfw = json["nsfw"].boolValue
-        if let parent = json["parent"].string {
+        if let parent: String = json["parent"].string {
             self.parent = parent
         }
+
+        self.tags = json["tags"].arrayValue.map({ $0[].stringValue }) 
 
         if self.type == .IMAGE {
             image = UploadedFile().fromJson(json: json["image"])

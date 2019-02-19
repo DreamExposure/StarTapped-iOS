@@ -75,4 +75,17 @@ public extension UIStackView {
             $0.removeFromSuperview()
         }
     }
+
+    func removeArrangedViewsWithOffset(offset: Int) {
+        //Until I find a better way for this, I think that this should work well.
+        var i = 0;
+        subviews.forEach {
+            if i < offset {
+                i += 1
+            } else {
+                removeArrangedSubview($0)
+                $0.removeFromSuperview()
+            }
+        }
+    }
 }

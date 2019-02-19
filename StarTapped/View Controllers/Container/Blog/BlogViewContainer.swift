@@ -102,18 +102,19 @@ class BlogViewContainer: UIView, TaskCallback {
     }
     
     func fixTheStupid() {
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.contentView.layoutIfNeeded()
-        
+        blogTitle.sizeToFit()
+        blogTitle.setNeedsDisplay()
+        blogDescription.sizeToFit()
+        blogDescription.setNeedsDisplay()
+
         self.heightAnchor
-            .constraint(equalToConstant: self.contentView.frame.height)
-            .isActive = true
+                .constraint(equalToConstant: self.contentView.bounds.height)
+                .isActive = true
         self.widthAnchor
-            .constraint(equalToConstant: self.contentView.frame.width)
-            .isActive = true
-        
-        self.layoutIfNeeded()
+                .constraint(equalToConstant: self.contentView.bounds.width)
+                .isActive = true
+
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func onCallBack(status: NetworkCallStatus) {

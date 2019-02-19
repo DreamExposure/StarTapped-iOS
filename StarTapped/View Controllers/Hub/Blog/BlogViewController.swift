@@ -29,6 +29,8 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     var isRefreshing = false
     var stopRequesting = false
     var blockOn = false
+
+    var blog: Blog!
     
     fileprivate var popover: Popover!
     fileprivate var popoverOptions: [PopoverOption] = [
@@ -68,15 +70,18 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     }
     
     func displayBlog(status: NetworkCallStatus) {
-        let blog = Blog().fromJson(json: status.getBody()["blog"])
+        blog = Blog().fromJson(json: status.getBody()["blog"])
         toolbarTitle.title = blog.getBaseUrl()
 
+        //TODO: Figure out check for blocked.
         if blog.isNsfw() && Settings().getAccount().isSafeSearch() {
             //NSFW blog with Safe Search on, show block.
             blockOn = true
             let blockMessage: NsfwBlogBlock = NsfwBlogBlock()
             blockMessage.controller = self
             blockMessage.fixTheStupid()
+
+            texts.removeAll()
             
             self.stackView.addArrangedSubview(blockMessage)
         } else if !blog.allowUnder18 && TimeUtils().calculateAge(ageString: Settings().getAccount().getBirthday()) < 18 {
@@ -85,6 +90,8 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
             let blockMessage: AdultOnlyBlock = AdultOnlyBlock()
             blockMessage.controller = self
             blockMessage.fixTheStupid()
+
+            texts.removeAll()
             
             self.stackView.addArrangedSubview(blockMessage)
         } else {
@@ -95,8 +102,47 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
             blogCon.fixTheStupid()
             
             self.stackView.addArrangedSubview(blogCon)
-        
-            //TODO: Determine hide/show followers, follow, unfollow, report, block, unblock
+
+            if blog.getOwnerId() == Settings().getAccount().getAccountId() || blog.getOwners().contains(Settings().getAccount().getAccountId()) {
+                //Owns blog...
+                texts.removeAll {
+                    $0 == "Follow"
+                }
+                texts.removeAll {
+                    $0 == "Unfollow"
+                }
+                texts.removeAll {
+                    $0 == "Report"
+                }
+                texts.removeAll {
+                    $0 == "Block"
+                }
+                texts.removeAll {
+                    $0 == "Unblock"
+                }
+            } else if blog.getFollowers().contains(Settings().getAccount().getAccountId()) {
+                //User is following blog
+                texts.removeAll {
+                    $0 == "Followers"
+                }
+                texts.removeAll {
+                    $0 == "Follow"
+                }
+                texts.removeAll {
+                    $0 == "Unblock"
+                }
+            } else {
+                //User is not following blog and has not blocked blog
+                texts.removeAll {
+                    $0 == "Followers"
+                }
+                texts.removeAll {
+                    $0 == "Unfollow"
+                }
+                texts.removeAll {
+                    $0 == "Unblock"
+                }
+            }
 
             self.getPosts()
         }
@@ -120,7 +166,7 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
             }
             
             if (isRefreshing) {
-                self.stackView.removeAllArrangedViews()
+                self.stackView.removeArrangedViewsWithOffset(offset: 1) //Should skip blog header
             }
 
             for p in posts {
@@ -239,7 +285,11 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     }
     
     @IBAction func shareButtonTapped(_ sender: UIButton) {
-        //TODO: Copy blog URL to clipboard...
+        //TODO: Handle share better, till then copy link to clipboard.
+        let pasteBoard = UIPasteboard.general
+        pasteBoard.string = blog.getCompleteUrl()
+
+        self.view.makeToast("Copied to clipboard!")
     }
     
     @IBAction func moreButtonTapped(_ sender: UIButton) {
@@ -256,8 +306,25 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
 extension BlogViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        //TODO: Handle more button item clicks!!!!!!
+        switch indexPath.description {
+        case "Followers":
+            //TODO: Show followers (or at least show follower count.
+            break
+        case "Follow":
+            //TODO: Handle follow
+            break
+        case "Unfollow":
+            //TODO: Handle unfollow
+            break
+        case "Report":
+            //TODO: Handle report
+            break
+        case "Block":
+            //TODO: Handle block
+            break
+        case "Unblock":
+            //TODO: Handle unblock
+            break
         default:
             //Unsupported action
             break
