@@ -253,6 +253,28 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
         case .POST_GET_FOR_BLOG:
             self.getPostsCallback(status: status)
             break
+        case .FOLLOW_FOLLOW_BLOG:
+            if (status.isSuccess()) {
+                self.view.makeToast("Success!")
+                texts.removeAll {
+                    $0 == "Follow"
+                }
+                texts.insert("Unfollow", at: 0)
+            } else {
+                self.view.makeToast(status.getMessage())
+            }
+            break
+        case .FOLLOW_UNFOLLOW_BLOG:
+            if (status.isSuccess()) {
+                self.view.makeToast("Success!")
+                texts.removeAll {
+                    $0 == "Unfollow"
+                }
+                texts.insert("Follow", at: 0)
+            } else {
+                self.view.makeToast(status.getMessage())
+            }
+            break
         default:
             //Unsupported action
             break
@@ -311,10 +333,10 @@ extension BlogViewController: UITableViewDelegate {
             //TODO: Show followers (or at least show follower count.
             break
         case "Follow":
-            //TODO: Handle follow
+            FollowBlogTask(callback: self, blogId: blog.getBlogId()).execute()
             break
         case "Unfollow":
-            //TODO: Handle unfollow
+            UnfollowBlogTask(callback: self, blogId: blog.getBlogId()).execute()
             break
         case "Report":
             //TODO: Handle report
