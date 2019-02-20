@@ -179,22 +179,22 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
                     } else {
                         if p.getType() == .TEXT {
                             //Handle single post (no parent)
-                            let view = PostViewUtils().generateTextPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+                            let view = PostViewUtils().generateTextPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, showTags: true, controller: self)
 
                             self.stackView.addArrangedSubview(view)
                         } else if p.getType() == .IMAGE {
                             //Handle single post (no parent)
-                            let view = PostViewUtils().generateImagePostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+                            let view = PostViewUtils().generateImagePostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, showTags: true, controller: self)
 
                             self.stackView.addArrangedSubview(view)
                         } else if p.getType() == .AUDIO {
                             //Handle single post (no parent)
-                            let view = PostViewUtils().generateAudioPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+                            let view = PostViewUtils().generateAudioPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, showTags: true, controller: self)
 
                             self.stackView.addArrangedSubview(view)
                         } else if p.getType() == .VIDEO {
                             //Handle single post (no parent)
-                            let view = PostViewUtils().generateVideoPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, controller: self)
+                            let view = PostViewUtils().generateVideoPostView(post: p, parent: nil, showTopBar: true, showBottomBar: true, showTags: true, controller: self)
 
                             self.stackView.addArrangedSubview(view)
                         }

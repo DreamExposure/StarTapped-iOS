@@ -15,6 +15,7 @@
 		800D9F6921E94B280036DC41 /* BlogForSelfList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800D9F6821E94B280036DC41 /* BlogForSelfList.xib */; };
 		800D9F6C21EA3D470036DC41 /* BlogForSelfListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */; };
 		800D9F6F21EA56B60036DC41 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D9F6E21EA56B60036DC41 /* UIViewExtension.swift */; };
+		802BF90A221CC9DE0002A986 /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BF909221CC9DE0002A986 /* TagButton.swift */; };
 		8030898E21EF98E4008D81DD /* NsfwBlogBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8030898D21EF98E4008D81DD /* NsfwBlogBlock.xib */; };
 		8030899021EF990D008D81DD /* NsfwBlogBLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8030898F21EF990D008D81DD /* NsfwBlogBLock.swift */; };
 		8030899221EF9E44008D81DD /* AdultOnlyBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8030899121EF9E44008D81DD /* AdultOnlyBlock.xib */; };
@@ -130,6 +131,7 @@
 		800D9F6821E94B280036DC41 /* BlogForSelfList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogForSelfList.xib; sourceTree = "<group>"; };
 		800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogForSelfListContainer.swift; sourceTree = "<group>"; };
 		800D9F6E21EA56B60036DC41 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		802BF909221CC9DE0002A986 /* TagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
 		8030898D21EF98E4008D81DD /* NsfwBlogBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NsfwBlogBlock.xib; sourceTree = "<group>"; };
 		8030898F21EF990D008D81DD /* NsfwBlogBLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NsfwBlogBLock.swift; sourceTree = "<group>"; };
 		8030899121EF9E44008D81DD /* AdultOnlyBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdultOnlyBlock.xib; sourceTree = "<group>"; };
@@ -617,6 +619,7 @@
 			isa = PBXGroup;
 			children = (
 				CDDD2842180A0ED2C2AB0A59 /* BlogUrlButton.swift */,
+				802BF909221CC9DE0002A986 /* TagButton.swift */,
 			);
 			path = SubClassed;
 			sourceTree = "<group>";
@@ -961,6 +964,7 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMoment/SwiftMoment.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -987,6 +991,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMoment.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1108,6 +1113,7 @@
 				CDDD2E8565734D6F5CDE0704 /* PostContainerBase.swift in Sources */,
 				CDDD2E595974BA12D2C8AF96 /* BlogUrlButton.swift in Sources */,
 				CDDD25D2462320A503B5AEC9 /* GetPostSingleTask.swift in Sources */,
+				802BF90A221CC9DE0002A986 /* TagButton.swift in Sources */,
 				CDDD26F188D06AEC94FE7505 /* GetPostsForBlogTask.swift in Sources */,
 				CDDD2C9E23C126781642953C /* GetPostsForHubTask.swift in Sources */,
 				CDDD218EA4483CE55F7735DA /* UploadedFile.swift in Sources */,

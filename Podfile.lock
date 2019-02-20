@@ -529,6 +529,7 @@ PODS:
   - SwiftMoment (0.7)
   - SwiftyJSON (4.2.0)
   - Toast-Swift (4.0.1)
+  - TTGTagCollectionView (1.11.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.0)
@@ -546,6 +547,7 @@ DEPENDENCIES:
   - SwiftMoment
   - SwiftyJSON (~> 4.0)
   - Toast-Swift (~> 4.0.0)
+  - TTGTagCollectionView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -570,6 +572,7 @@ SPEC REPOS:
     - SwiftMoment
     - SwiftyJSON
     - Toast-Swift
+    - TTGTagCollectionView
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -593,7 +596,8 @@ SPEC CHECKSUMS:
   SwiftMoment: dc6dd27012e267819104cbb03f74ff9192dd0b42
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
+  TTGTagCollectionView: be3f47f2df1e4cef7e596cb64cac1532bb6b5904
 
-PODFILE CHECKSUM: 6acc846d285e42739bf53d69373fb0e65b9333a2
+PODFILE CHECKSUM: 02d88e84641e515a9d10d1b44c8f45597e10e973
 
 COCOAPODS: 1.6.0.beta.2

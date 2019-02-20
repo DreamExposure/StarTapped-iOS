@@ -40,6 +40,9 @@ class PostTextContainer: PostContainerBase {
         //Post contents
         super.configureText()
         
+        //Tags
+        super.configureTags()
+        
         //Bottom bar
         sourceBlog.setTitle("Source \(post.getOriginBlog().getBaseUrl())", for: .normal)
 
@@ -59,6 +62,9 @@ class PostTextContainer: PostContainerBase {
         
         //Post contents
         super.configureText()
+        
+        //Tags
+        super.configureTags()
         
         //Bottom bar
         sourceBlog.setTitle("Source: \(post.getOriginBlog().getBaseUrl())", for: .normal)

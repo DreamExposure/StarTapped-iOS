@@ -43,13 +43,13 @@ class PostViewUtils {
             var v: PostContainerBase?
 
             if p.getType() == .TEXT {
-                v = generateTextPostView(post: p, parent: nil, showTopBar: false, showBottomBar: false, controller: controller)
+                v = generateTextPostView(post: p, parent: nil, showTopBar: false, showBottomBar: false, showTags: false, controller: controller)
             } else if p.getType() == .IMAGE {
-                v = generateImagePostView(post: p, parent: nil, showTopBar: false, showBottomBar: false, controller: controller)
+                v = generateImagePostView(post: p, parent: nil, showTopBar: false, showBottomBar: false, showTags: false, controller: controller)
             } else if p.getType() == .AUDIO {
-                v = generateAudioPostView(post: p, parent: nil, showTopBar: false, showBottomBar: false, controller: controller)
+                v = generateAudioPostView(post: p, parent: nil, showTopBar: false, showBottomBar: false, showTags: false, controller: controller)
             } else if p.getType() == .VIDEO {
-                v = generateVideoPostView(post: p, parent: nil, showTopBar: false, showBottomBar: false, controller: controller)
+                v = generateVideoPostView(post: p, parent: nil, showTopBar: false, showBottomBar: false, showTags: false, controller: controller)
             }
 
             if first == nil {
@@ -63,13 +63,13 @@ class PostViewUtils {
         var child: PostContainerBase?
 
         if lowest.getType() == .TEXT {
-            child = generateTextPostView(post: lowest, parent: nil, showTopBar: false, showBottomBar: true, controller: controller)
+            child = generateTextPostView(post: lowest, parent: nil, showTopBar: false, showBottomBar: true, showTags: true, controller: controller)
         } else if lowest.getType() == .IMAGE {
-            child = generateImagePostView(post: lowest, parent: nil, showTopBar: false, showBottomBar: true, controller: controller)
+            child = generateImagePostView(post: lowest, parent: nil, showTopBar: false, showBottomBar: true, showTags: true, controller: controller)
         } else if lowest.getType() == .AUDIO {
-            child = generateAudioPostView(post: lowest, parent: nil, showTopBar: false, showBottomBar: true, controller: controller)
+            child = generateAudioPostView(post: lowest, parent: nil, showTopBar: false, showBottomBar: true, showTags: true, controller: controller)
         } else if lowest.getType() == .VIDEO {
-            child = generateVideoPostView(post: lowest, parent: nil, showTopBar: false, showBottomBar: true, controller: controller)
+            child = generateVideoPostView(post: lowest, parent: nil, showTopBar: false, showBottomBar: true, showTags: true, controller: controller)
         }
         root.addArrangedSubview(child!)
 
@@ -92,7 +92,7 @@ class PostViewUtils {
         return root
     }
     
-    func generateTextPostView(post: Post, parent: Post?, showTopBar: Bool, showBottomBar: Bool, controller: UIViewController) -> PostTextContainer {
+    func generateTextPostView(post: Post, parent: Post?, showTopBar: Bool, showBottomBar: Bool, showTags: Bool, controller: UIViewController) -> PostTextContainer {
         let root = PostTextContainer()
 
         if (parent == nil) {
@@ -118,13 +118,18 @@ class PostViewUtils {
             root.reblogPost.isHidden = true
             root.bookmarkPost.isHidden = true
         }
+        if (!showTags || post.getTags().isEmpty || post.tagsToString().count <= 0 || post.tagsToString() == "") {
+            root.tagDisplay.isHidden = true
+            
+            root.tagDisplay.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        }
 
         root.fixTheStupid();
 
         return root;
     }
     
-    func generateImagePostView(post: Post, parent: Post?, showTopBar: Bool, showBottomBar: Bool, controller: UIViewController) -> PostImageContainer {
+    func generateImagePostView(post: Post, parent: Post?, showTopBar: Bool, showBottomBar: Bool, showTags: Bool, controller: UIViewController) -> PostImageContainer {
         let root = PostImageContainer()
 
         if (parent == nil) {
@@ -150,13 +155,18 @@ class PostViewUtils {
             root.reblogPost.isHidden = true
             root.bookmarkPost.isHidden = true
         }
+        if (!showTags || post.getTags().isEmpty || post.tagsToString().count <= 0 || post.tagsToString() == "") {
+            root.tagDisplay.isHidden = true
+            
+            root.tagDisplay.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        }
 
         root.fixTheStupid();
 
         return root;
     }
     
-    func generateAudioPostView(post: Post, parent: Post?, showTopBar: Bool, showBottomBar: Bool, controller: UIViewController) -> PostAudioContainer {
+    func generateAudioPostView(post: Post, parent: Post?, showTopBar: Bool, showBottomBar: Bool, showTags: Bool, controller: UIViewController) -> PostAudioContainer {
         let root = PostAudioContainer()
 
         if (parent == nil) {
@@ -182,13 +192,18 @@ class PostViewUtils {
             root.reblogPost.isHidden = true
             root.bookmarkPost.isHidden = true
         }
+        if (!showTags || post.getTags().isEmpty || post.tagsToString().count <= 0 || post.tagsToString() == "") {
+            root.tagDisplay.isHidden = true
+            
+            root.tagDisplay.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        }
 
         root.fixTheStupid();
 
         return root;
     }
     
-    func generateVideoPostView(post: Post, parent: Post?, showTopBar: Bool, showBottomBar: Bool, controller: UIViewController) -> PostVideoContainer {
+    func generateVideoPostView(post: Post, parent: Post?, showTopBar: Bool, showBottomBar: Bool, showTags: Bool, controller: UIViewController) -> PostVideoContainer {
         let root = PostVideoContainer()
 
         if (parent == nil) {
@@ -213,6 +228,11 @@ class PostViewUtils {
             root.sourceBlog.isHidden = true
             root.reblogPost.isHidden = true
             root.bookmarkPost.isHidden = true
+        }
+        if (!showTags || post.getTags().isEmpty || post.tagsToString().count <= 0 || post.tagsToString() == "") {
+            root.tagDisplay.isHidden = true
+            
+            root.tagDisplay.heightAnchor.constraint(equalToConstant: 0).isActive = true
         }
 
         root.fixTheStupid();

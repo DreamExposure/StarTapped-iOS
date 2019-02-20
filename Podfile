@@ -18,6 +18,7 @@ target 'StarTapped' do
   pod 'RevealingSplashView'
   pod 'FRHyperLabel'
   pod 'PopupDialog', '~> 0.9'
+  pod 'TTGTagCollectionView'
 end
 
 target 'StarTappedTests' do

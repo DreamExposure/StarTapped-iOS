@@ -42,8 +42,10 @@ class PostVideoContainer: PostContainerBase, TaskCallback {
         blogUrlSecond.isHidden = true
         
         //Post contents
-        postTitle.text = post.getTitle()
-        postText.text = post.getBody()
+        super.configureText()
+        
+        //Tags
+        super.configureTags()
         
         //Load video
         videoView.isLoop = true
@@ -68,6 +70,9 @@ class PostVideoContainer: PostContainerBase, TaskCallback {
         
         //Post contents
         super.configureText()
+        
+        //Tags
+        super.configureTags()
         
         //Load video
         videoView.isLoop = true

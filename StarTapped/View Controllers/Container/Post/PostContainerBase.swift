@@ -6,8 +6,9 @@
 import Foundation
 import UIKit
 import FRHyperLabel
+import TTGTagCollectionView
 
-class PostContainerBase: UIView {
+class PostContainerBase: UIView, TTGTextTagCollectionViewDelegate {
     @IBOutlet weak var contentView: UIView!
     
     //Top bar
@@ -19,6 +20,9 @@ class PostContainerBase: UIView {
     @IBOutlet weak var postTitle: FRHyperLabel!
     @IBOutlet weak var postText: FRHyperLabel!
 
+    //Tags
+    @IBOutlet weak var tagDisplay: TTGTextTagCollectionView!
+    
     //Bottom bar
     @IBOutlet weak var sourceBlog: UIButton!
     @IBOutlet weak var bookmarkPost: UIButton!
@@ -69,6 +73,29 @@ class PostContainerBase: UIView {
             blogUrlSecond.targetBlogId = parent?.getOriginBlog().getBlogId()
         }
     }
+    
+    func configureTags() {
+        //Configure tag container
+        tagDisplay.scrollDirection = .horizontal
+        tagDisplay.numberOfLines = 1
+        tagDisplay.selectionLimit = 1
+        
+        tagDisplay.delegate = self
+        
+        //Create tag config
+        let tagConfig = TTGTextTagConfig()
+        tagConfig.textColor = ViewUtils().hexStringToUIColor(hex: "#4e5f85")
+        tagConfig.backgroundColor = ViewUtils().hexStringToUIColor(hex: "#adb5bd")
+        
+        //Add tags to tag container
+        for t in post.getTags() {
+            if t.count > 0 && t != "" {
+                let tagText = "#\(t.trimmingCharacters(in: .whitespacesAndNewlines))"
+                
+                tagDisplay.addTag(tagText, with: tagConfig)
+            }
+        }
+    }
 
     func fixTheStupid() {
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -105,5 +132,11 @@ class PostContainerBase: UIView {
 
     @IBAction func onBookmarkPostClick() {
         //TODO: Handle bookmark click
+    }
+    
+    func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {
+        //TODO: go to search view with the tag that was clicked!!!!
+        
+        self.tagDisplay.setTagAt(index, selected: false)
     }
 }
