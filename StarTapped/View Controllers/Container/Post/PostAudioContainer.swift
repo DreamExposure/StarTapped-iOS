@@ -81,8 +81,6 @@ class PostAudioContainer: PostContainerBase, TaskCallback {
     }
     
     override func fixTheStupid() {
-        //TODO: Resize audio container stuffs
-
         super.fixTheStupid();
     }
     
