@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostCreateContainer" customModule="StarTapped" customModuleProvider="target">
+            <connections>
+                <outlet property="audioContainer" destination="rDS-aI-Wy9" id="qkg-Zo-5Tm"/>
+                <outlet property="audioView" destination="aFd-gp-4OO" id="wjY-Ov-mBH"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="ohf-ZO-NZV"/>
+                <outlet property="postBody" destination="cFh-Tc-Cg1" id="Tkg-Od-8Py"/>
+                <outlet property="postImage" destination="RfE-q4-xDT" id="7LO-dz-dje"/>
+                <outlet property="postTitle" destination="0Xk-ue-zII" id="vrU-Xp-Tqd"/>
+                <outlet property="videoContainer" destination="FZN-u1-1Ur" id="qfA-4z-GeT"/>
+                <outlet property="videoView" destination="skp-V6-ZGs" id="eih-Qg-5le"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="715"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RfE-q4-xDT" customClass="FLAnimatedImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="375" id="8Bs-h0-nTW"/>
+                        <constraint firstAttribute="height" constant="200" id="PbD-XT-5dB"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="xpz-LQ-UwJ" appends="YES" id="50f-Y5-aqE"/>
+                    </connections>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDS-aI-Wy9">
+                    <rect key="frame" x="0.0" y="200" width="375" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aFd-gp-4OO" customClass="AudioView" customModule="StarTapped" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <color key="backgroundColor" red="0.67843137249999996" green="0.70980392160000005" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.67843137249999996" green="0.70980392160000005" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="aFd-gp-4OO" secondAttribute="trailing" id="Dfj-rg-ztY"/>
+                        <constraint firstAttribute="bottom" secondItem="aFd-gp-4OO" secondAttribute="bottom" id="MaX-1z-5Li"/>
+                        <constraint firstItem="aFd-gp-4OO" firstAttribute="top" secondItem="rDS-aI-Wy9" secondAttribute="top" id="Q2F-aN-CMT"/>
+                        <constraint firstItem="aFd-gp-4OO" firstAttribute="leading" secondItem="rDS-aI-Wy9" secondAttribute="leading" id="pA4-dv-NvI"/>
+                        <constraint firstAttribute="height" constant="50" id="sQi-xN-9Wf"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Xk-ue-zII">
+                    <rect key="frame" x="16" y="458" width="343" height="40"/>
+                    <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="alert"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Title, if you want one"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                            <color key="value" red="0.78823529411764703" green="0.50588235294117645" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-Tc-Cg1">
+                    <rect key="frame" x="16" y="506" width="343" height="201"/>
+                    <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="alert"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                            <color key="value" red="0.30588235289999999" green="0.37254901959999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Go on, say something"/>
+                    </userDefinedRuntimeAttributes>
+                </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZN-u1-1Ur">
+                    <rect key="frame" x="0.0" y="250" width="375" height="200"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skp-V6-ZGs" customClass="VideoView" customModule="StarTapped" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                            <color key="backgroundColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="skp-V6-ZGs" secondAttribute="bottom" id="UdN-Lp-hKO"/>
+                        <constraint firstAttribute="trailing" secondItem="skp-V6-ZGs" secondAttribute="trailing" id="oIK-j7-iCe"/>
+                        <constraint firstAttribute="height" constant="200" id="tka-3Y-J2j"/>
+                        <constraint firstItem="skp-V6-ZGs" firstAttribute="top" secondItem="FZN-u1-1Ur" secondAttribute="top" id="z3U-mo-X01"/>
+                        <constraint firstItem="skp-V6-ZGs" firstAttribute="leading" secondItem="FZN-u1-1Ur" secondAttribute="leading" id="zgi-Cf-15L"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="FZN-u1-1Ur" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1tA-xF-Lu0"/>
+                <constraint firstItem="cFh-Tc-Cg1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="3zP-bQ-hc4"/>
+                <constraint firstItem="RfE-q4-xDT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8OP-rn-DXJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0Xk-ue-zII" secondAttribute="trailing" constant="16" id="G3h-Z0-w1d"/>
+                <constraint firstItem="0Xk-ue-zII" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="I3V-X7-4eV"/>
+                <constraint firstItem="RfE-q4-xDT" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="M2Y-2y-KMV"/>
+                <constraint firstItem="RfE-q4-xDT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NGf-OH-6tG"/>
+                <constraint firstItem="rDS-aI-Wy9" firstAttribute="top" secondItem="RfE-q4-xDT" secondAttribute="bottom" id="Uvw-Ev-BrW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cFh-Tc-Cg1" secondAttribute="trailing" constant="16" id="YRj-5v-DNN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FZN-u1-1Ur" secondAttribute="trailing" id="mPJ-mQ-dyA"/>
+                <constraint firstItem="rDS-aI-Wy9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pSm-rJ-bjl"/>
+                <constraint firstItem="cFh-Tc-Cg1" firstAttribute="top" secondItem="0Xk-ue-zII" secondAttribute="bottom" constant="8" id="rDk-OE-bfv"/>
+                <constraint firstItem="0Xk-ue-zII" firstAttribute="top" secondItem="FZN-u1-1Ur" secondAttribute="bottom" constant="8" id="sTS-mV-uEv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cFh-Tc-Cg1" secondAttribute="bottom" constant="8" id="uvn-ME-iPK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rDS-aI-Wy9" secondAttribute="trailing" id="v99-dp-CDa"/>
+                <constraint firstItem="FZN-u1-1Ur" firstAttribute="top" secondItem="rDS-aI-Wy9" secondAttribute="bottom" id="zfo-Ce-Qvi"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="53.600000000000001" y="69.715142428785612"/>
+        </view>
+        <tapGestureRecognizer id="xpz-LQ-UwJ">
+            <connections>
+                <action selector="imageClicked" destination="-1" id="MlN-gU-gYY"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

@@ -19,6 +19,7 @@ target 'StarTapped' do
   pod 'FRHyperLabel'
   pod 'PopupDialog', '~> 0.9'
   pod 'TTGTagCollectionView'
+  pod 'UITextView+Placeholder'
 end
 
 target 'StarTappedTests' do

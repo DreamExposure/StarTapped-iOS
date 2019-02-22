@@ -530,6 +530,7 @@ PODS:
   - SwiftyJSON (4.2.0)
   - Toast-Swift (4.0.1)
   - TTGTagCollectionView (1.11.0)
+  - "UITextView+Placeholder (1.2.1)"
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.0)
@@ -548,6 +549,7 @@ DEPENDENCIES:
   - SwiftyJSON (~> 4.0)
   - Toast-Swift (~> 4.0.0)
   - TTGTagCollectionView
+  - "UITextView+Placeholder"
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -573,6 +575,7 @@ SPEC REPOS:
     - SwiftyJSON
     - Toast-Swift
     - TTGTagCollectionView
+    - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -597,7 +600,8 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   TTGTagCollectionView: be3f47f2df1e4cef7e596cb64cac1532bb6b5904
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: 02d88e84641e515a9d10d1b44c8f45597e10e973
+PODFILE CHECKSUM: c2c6daaaa3aa855b55829eea27b2f974d2328458
 
 COCOAPODS: 1.6.0.beta.2

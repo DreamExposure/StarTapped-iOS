@@ -73,6 +73,14 @@ class ViewUtils {
         view.present(newViewController, animated: anim, completion: nil)
     }
     
+    func goToPostCreate(view: UIViewController, anim: Bool) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Hub", bundle: nil)
+        let newViewController = storyboard
+            .instantiateViewController(withIdentifier: "post-create-view") as! PostCreateController
+        
+        view.present(newViewController, animated: anim, completion: nil)
+    }
+    
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         

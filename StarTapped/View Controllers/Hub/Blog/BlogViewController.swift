@@ -328,9 +328,12 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
 extension BlogViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.description {
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        switch cell?.textLabel?.text {
         case "Followers":
-            //TODO: Show followers (or at least show follower count.
+            //TODO: Show followers for real, for now just show how many followers
+            self.view.makeToast("\(blog.getFollowers().count) Follower(s)")
             break
         case "Follow":
             FollowBlogTask(callback: self, blogId: blog.getBlogId()).execute()

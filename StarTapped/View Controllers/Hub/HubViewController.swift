@@ -66,6 +66,10 @@ class HubViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
         self.popover = Popover(options: self.popoverOptions)
         self.popover.show(tableView, point: startPoint)
     }
+    
+    @IBAction func onPostCreateButtonClicked() {
+        ViewUtils().goToPostCreate(view: self, anim: true)
+    }
 
     func getPostsCallback(status: NetworkCallStatus) {
         if (status.isSuccess()) {

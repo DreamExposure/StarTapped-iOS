@@ -27,6 +27,9 @@
 		803089A921EFDFE0008D81DD /* PostImageContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803089A821EFDFE0008D81DD /* PostImageContainer.xib */; };
 		80540EE221EC037A00EE265D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80540EE121EC037A00EE265D /* UIColorExtension.swift */; };
 		8061E89521FBB2E9007653E8 /* PostViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061E89421FBB2E9007653E8 /* PostViewUtils.swift */; };
+		807098EB221F0FD700F087E1 /* PostCreateContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807098EA221F0FD700F087E1 /* PostCreateContainer.xib */; };
+		807098ED221F113600F087E1 /* PostCreateContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807098EC221F113600F087E1 /* PostCreateContainer.swift */; };
+		807098F022206BC900F087E1 /* PostCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807098EF22206BC900F087E1 /* PostCreateViewController.swift */; };
 		8078782C21E3BFDB0011BF9D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782B21E3BFDB0011BF9D /* Settings.swift */; };
 		8078782E21E3E27C0011BF9D /* RegisterTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782D21E3E27C0011BF9D /* RegisterTask.swift */; };
 		8078783021E3E5700011BF9D /* LogoutTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078782F21E3E5700011BF9D /* LogoutTask.swift */; };
@@ -142,6 +145,9 @@
 		803089A821EFDFE0008D81DD /* PostImageContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostImageContainer.xib; sourceTree = "<group>"; };
 		80540EE121EC037A00EE265D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		8061E89421FBB2E9007653E8 /* PostViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewUtils.swift; sourceTree = "<group>"; };
+		807098EA221F0FD700F087E1 /* PostCreateContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCreateContainer.xib; sourceTree = "<group>"; };
+		807098EC221F113600F087E1 /* PostCreateContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateContainer.swift; sourceTree = "<group>"; };
+		807098EF22206BC900F087E1 /* PostCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreateViewController.swift; sourceTree = "<group>"; };
 		8078782B21E3BFDB0011BF9D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8078782D21E3E27C0011BF9D /* RegisterTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTask.swift; sourceTree = "<group>"; };
 		8078782F21E3E5700011BF9D /* LogoutTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTask.swift; sourceTree = "<group>"; };
@@ -280,6 +286,7 @@
 		800D9F5F21E8514F0036DC41 /* Hub */ = {
 			isa = PBXGroup;
 			children = (
+				807098EE22206BB000F087E1 /* Post */,
 				808A20DE21F16BE700F69A86 /* Account */,
 				807C047021ECFC4300AF1FAE /* Blog */,
 				800D9F6021E851690036DC41 /* HubViewController.swift */,
@@ -354,6 +361,7 @@
 				803089A821EFDFE0008D81DD /* PostImageContainer.xib */,
 				808A20D321EFF6DE00F69A86 /* PostAudioContainer.xib */,
 				808A20D521F01F3C00F69A86 /* PostVideoContainer.xib */,
+				807098EA221F0FD700F087E1 /* PostCreateContainer.xib */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -392,6 +400,15 @@
 				808A20D121EFF6A700F69A86 /* PostAudioContainer.swift */,
 				808A20D721F01F6300F69A86 /* PostVideoContainer.swift */,
 				CDDD2D7984A2F49A195B0E68 /* PostContainerBase.swift */,
+				807098EC221F113600F087E1 /* PostCreateContainer.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		807098EE22206BB000F087E1 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				807098EF22206BC900F087E1 /* PostCreateViewController.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -872,6 +889,7 @@
 				CDDD25C96BE7A8FB6D581692 /* Assets.xcassets in Resources */,
 				800D9F6921E94B280036DC41 /* BlogForSelfList.xib in Resources */,
 				CDDD2EC6AE87403310FD7C2D /* LaunchScreen.storyboard in Resources */,
+				807098EB221F0FD700F087E1 /* PostCreateContainer.xib in Resources */,
 				8078783721E426A00011BF9D /* Auth.storyboard in Resources */,
 				803089A921EFDFE0008D81DD /* PostImageContainer.xib in Resources */,
 				807C046A21EC45CB00AF1FAE /* BlogView.xib in Resources */,
@@ -963,6 +981,7 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTagCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -990,6 +1009,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTagCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1049,6 +1069,7 @@
 				80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */,
 				80AFA5CE21E428D20072A227 /* AuthController.swift in Sources */,
 				8078783221E3E6130011BF9D /* TokenRefreshTask.swift in Sources */,
+				807098ED221F113600F087E1 /* PostCreateContainer.swift in Sources */,
 				808A20DD21F1672900F69A86 /* FollowingController.swift in Sources */,
 				CDDD2EAEE6152889A7F8326B /* README.md in Sources */,
 				80AFA5D721E4476F0072A227 /* GetAccountForBlogViewTask.swift in Sources */,
@@ -1070,6 +1091,7 @@
 				800D9F6F21EA56B60036DC41 /* UIViewExtension.swift in Sources */,
 				807C046C21EC45E000AF1FAE /* BlogViewContainer.swift in Sources */,
 				807C046F21ECF9CB00AF1FAE /* ViewType.swift in Sources */,
+				807098F022206BC900F087E1 /* PostCreateViewController.swift in Sources */,
 				80AFA5DB21E504010072A227 /* FileUtils.swift in Sources */,
 				803089A621EFDFA8008D81DD /* PostImageContainer.swift in Sources */,
 				CDDD24F5F72C0EF8C76CECFA /* BlogType.swift in Sources */,
