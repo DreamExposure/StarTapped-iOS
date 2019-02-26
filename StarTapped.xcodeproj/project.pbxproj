@@ -76,6 +76,7 @@
 		CDDD218EA4483CE55F7735DA /* UploadedFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD26D2F4E4CB447C356682 /* UploadedFile.swift */; };
 		CDDD21C7BAB37DDC019A47F0 /* GetFollowersAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2282E9E406ECD6405C9D /* GetFollowersAccountTask.swift */; };
 		CDDD22070EB51F959CAE86A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDDD2E0B19AA74F1974FB46C /* Main.storyboard */; };
+		CDDD2292DEF9D9BBD25781DC /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2C3E46FD80103C522A8F /* UIImageExtension.swift */; };
 		CDDD23E0A55789F0206D8F62 /* UnfollowBlogTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2E741D083E36942FF6FD /* UnfollowBlogTask.swift */; };
 		CDDD246E77840A1E52DE7BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2B6F3C21D2E1815A62D0 /* AppDelegate.swift */; };
 		CDDD24F5F72C0EF8C76CECFA /* BlogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2A61C28CD1C2451DACE3 /* BlogType.swift */; };
@@ -97,6 +98,7 @@
 		CDDD2D84EFA176CB216CC8F2 /* StarTappedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD239F3A388B1DAD751618 /* StarTappedTests.swift */; };
 		CDDD2DF1E9AF8CB833129803 /* GetBlogsSelfTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2A7FC9F28D235B95FFE1 /* GetBlogsSelfTask.swift */; };
 		CDDD2E032FF9DE99A828A185 /* CreateBlogTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD265276D46B0BD63A3987 /* CreateBlogTask.swift */; };
+		CDDD2E3BEB6120D44628824A /* PostCreateTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2553207A73084401CE29 /* PostCreateTask.swift */; };
 		CDDD2E595974BA12D2C8AF96 /* BlogUrlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2842180A0ED2C2AB0A59 /* BlogUrlButton.swift */; };
 		CDDD2E8565734D6F5CDE0704 /* PostContainerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2D7984A2F49A195B0E68 /* PostContainerBase.swift */; };
 		CDDD2EAEE6152889A7F8326B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CDDD296BEBE82F09CF7F4CAF /* README.md */; };
@@ -198,6 +200,7 @@
 		CDDD229A3445D01E19277DF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		CDDD239F3A388B1DAD751618 /* StarTappedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTappedTests.swift; sourceTree = "<group>"; };
 		CDDD23DCDCF7DC0CFA92809D /* StarTappedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarTappedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDDD2553207A73084401CE29 /* PostCreateTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCreateTask.swift; sourceTree = "<group>"; };
 		CDDD2648F0B6093ADB2A7211 /* NetworkTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 		CDDD265276D46B0BD63A3987 /* CreateBlogTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBlogTask.swift; sourceTree = "<group>"; };
 		CDDD2670545863E42AC9689C /* StarTappedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarTappedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +225,7 @@
 		CDDD2B8FA52FFFD1508C5D76 /* PostType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostType.swift; sourceTree = "<group>"; };
 		CDDD2BE740ECFB7B205FE439 /* StarTapped.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarTapped.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDD2C3B10F51FF7E4CF11BD /* FollowBlogTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowBlogTask.swift; sourceTree = "<group>"; };
+		CDDD2C3E46FD80103C522A8F /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		CDDD2C42978BF2DEFAE3B6D0 /* AsyncTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTask.swift; sourceTree = "<group>"; };
 		CDDD2C74955008AA580B4268 /* GetPostsForHubTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPostsForHubTask.swift; sourceTree = "<group>"; };
 		CDDD2D7984A2F49A195B0E68 /* PostContainerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostContainerBase.swift; sourceTree = "<group>"; };
@@ -324,6 +328,7 @@
 			children = (
 				800D9F6E21EA56B60036DC41 /* UIViewExtension.swift */,
 				80540EE121EC037A00EE265D /* UIColorExtension.swift */,
+				CDDD2C3E46FD80103C522A8F /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 				CDDD2900A5A83FE16D08AEDA /* GetPostSingleTask.swift */,
 				CDDD26A25FCB637FF10EE2BD /* GetPostsForBlogTask.swift */,
 				CDDD2C74955008AA580B4268 /* GetPostsForHubTask.swift */,
+				CDDD2553207A73084401CE29 /* PostCreateTask.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1135,6 +1141,8 @@
 				CDDD26F188D06AEC94FE7505 /* GetPostsForBlogTask.swift in Sources */,
 				CDDD2C9E23C126781642953C /* GetPostsForHubTask.swift in Sources */,
 				CDDD218EA4483CE55F7735DA /* UploadedFile.swift in Sources */,
+				CDDD2292DEF9D9BBD25781DC /* UIImageExtension.swift in Sources */,
+				CDDD2E3BEB6120D44628824A /* PostCreateTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

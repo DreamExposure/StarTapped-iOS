@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class BlogForSelfListConainer: UIView, TaskCallback {
+class BlogForSelfListContainer: UIView, TaskCallback {
     @IBOutlet var contentView: UIView!
     
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -74,14 +74,20 @@ class BlogForSelfListConainer: UIView, TaskCallback {
     
     func fixTheStupid() {
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = false
+
+        blogTitle.sizeToFit()
+        blogTitle.setNeedsDisplay()
+        blogDescription.sizeToFit()
+        blogDescription.setNeedsDisplay()
         
         self.contentView.layoutIfNeeded()
         
         self.heightAnchor
-            .constraint(equalToConstant: self.contentView.frame.height)
+            .constraint(equalToConstant: self.contentView.bounds.height)
             .isActive = true
         self.widthAnchor
-            .constraint(equalToConstant: self.contentView.frame.width)
+            .constraint(equalToConstant: self.contentView.bounds.width)
             .isActive = true
         
         self.layoutIfNeeded()

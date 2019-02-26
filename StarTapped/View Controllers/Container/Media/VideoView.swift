@@ -38,8 +38,23 @@ class VideoView: UIView {
             }
         }
     }
-    
-    //TODO: configure from video file on device.
+
+    func configure(url: URL) {
+        player = AVPlayer(url: url)
+        controller = AVPlayerViewController()
+
+        controller?.player = player
+        controller?.videoGravity = .resizeAspect
+        controller?.view.frame = self.frame
+
+        self.addSubview(controller!.view)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(reachTheEndOfTheVideo(_:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.player?.currentItem)
+
+        if (isAutoPlay) {
+            self.play()
+        }
+    }
     
     func play() {
         if player?.timeControlStatus != AVPlayer.TimeControlStatus.playing {
@@ -53,6 +68,17 @@ class VideoView: UIView {
     func stop() {
         player?.pause()
         player?.seek(to: CMTime.zero)
+    }
+
+    func kill() {
+        if player != nil {
+            self.stop()
+        }
+
+        player = nil
+        controller = nil
+
+        self.removeAllSubviews()
     }
     
     @objc func reachTheEndOfTheVideo(_ notification: Notification) {

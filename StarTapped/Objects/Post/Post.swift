@@ -154,6 +154,15 @@ class Post {
         self.parent = parent
     }
 
+    func tagsFromString(tagString: String) {
+        for tag: String in tagString.components(separatedBy: ",") {
+            let trimmed: String = tag.trimmingCharacters(in: .whitespacesAndNewlines)
+            if trimmed.count > 0 {
+                self.tags.append(trimmed)
+            }
+        }
+    }
+
     func setImage(image: UploadedFile) {
         self.image = image
     }

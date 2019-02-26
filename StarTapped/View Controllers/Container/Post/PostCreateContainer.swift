@@ -11,6 +11,7 @@ import UIKit
 import FRHyperLabel
 import UITextView_Placeholder
 import PopupDialog
+import SwiftyJSON
 
 class PostCreateContainer: UIView, UITextViewDelegate {
     @IBOutlet weak var contentView: UIView!
@@ -29,9 +30,26 @@ class PostCreateContainer: UIView, UITextViewDelegate {
     //Text
     @IBOutlet weak var postTitle: UITextView!
     @IBOutlet weak var postBody: UITextView!
+    @IBOutlet weak var postTags: UITextView!
+
+    //Constraints
+    var contentHeight: NSLayoutConstraint!
+    var imageHeightShow: NSLayoutConstraint!
+    var imageHeightHidden: NSLayoutConstraint!
+    var audioHeightShow: NSLayoutConstraint!
+    var audioHeightHidden: NSLayoutConstraint!
+    var videoHeightShow: NSLayoutConstraint!
+    var videoHeightHidden: NSLayoutConstraint!
+    var postTitleHeight: NSLayoutConstraint!
+    var postBodyHeight: NSLayoutConstraint!
+    var postTagsHeight: NSLayoutConstraint!
     
+    //Other stuffs
     var controller: UIViewController!
+
+    //Post stuffs
     var postType: PostType = .TEXT
+    var postMediaJson: [String: String]!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,66 +64,135 @@ class PostCreateContainer: UIView, UITextViewDelegate {
     private func setupView() {
         Bundle.main.loadNibNamed("PostCreateContainer", owner: self  , options: nil)
         self.addSubview(self.contentView)
+
+        self.contentHeight = self.heightAnchor.constraint(equalToConstant: 800)
+        self.contentHeight.isActive = true
         
+        self.postTitle.delegate = self
+        self.postBody.delegate = self
+        self.postTags.delegate = self
+        self.postTitleHeight = self.postTitle.heightAnchor.constraint(equalToConstant: self.postTitle.frame.height)
+        self.postBodyHeight = self.postBody.heightAnchor.constraint(equalToConstant: self.postBody.frame.height)
+        self.postTagsHeight = self.postTags.heightAnchor.constraint(equalToConstant: self.postTags.frame.height)
+        self.postTitleHeight.isActive = true
+        self.postBodyHeight.isActive = true
+        self.postTagsHeight.isActive = true
+
+        imageHeightShow = postImage.heightAnchor.constraint(equalToConstant: 200)
+        imageHeightHidden = postImage.heightAnchor.constraint(equalToConstant: 0)
+        imageHeightShow.isActive = false
+        imageHeightHidden.isActive = true
+        
+        audioHeightShow = audioContainer.heightAnchor.constraint(equalToConstant: 200)
+        audioHeightHidden = audioContainer.heightAnchor.constraint(equalToConstant: 0)
+        audioHeightShow.isActive = false
+        audioHeightHidden.isActive = true
+        
+        videoHeightShow = videoContainer.heightAnchor.constraint(equalToConstant: 200)
+        videoHeightHidden = videoContainer.heightAnchor.constraint(equalToConstant: 0)
+        videoHeightShow.isActive = false
+        videoHeightHidden.isActive = true
+
         self.removeAndHideImage()
         self.removeAndHideAudio()
         self.removeAndHideVideo()
     }
     
     //Post type changing and media handling
-    func imageAdded() {
+    func imageAdded(imageUrl: URL) {
         postType = .IMAGE
+
+        self.postMediaJson = FileUtils().fileToBase64(filePath: imageUrl.path)
         
-        //TODO: Handle adding image
+        postImage.sd_setImage(with: imageUrl)
         
-        postImage.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        imageHeightHidden.isActive = false
+        imageHeightShow.isActive = true
+        
         postImage.isHidden = false
+        self.fixTheStupid()
+    }
+
+    func imageAdded(image: UIImage) {
+        postType = .IMAGE
+
+        self.postMediaJson = FileUtils().imageToBase64(image: image)
+
+        postImage.image = image
+
+        imageHeightHidden.isActive = false
+        imageHeightShow.isActive = true
+
+        postImage.isHidden = false
+        self.fixTheStupid()
     }
     
-    func audioAdded() {
+    func audioAdded(audioUrl: URL) {
         postType = .AUDIO
-        
-        //TODO: Handle adding audio
-        
-        audioContainer.heightAnchor.constraint(equalToConstant: 200).isActive = true
+
+        self.postMediaJson = FileUtils().fileToBase64(filePath: audioUrl.path)
+
+        audioView.configure(url: audioUrl)
+
+        audioHeightHidden.isActive = false
+        audioHeightShow.isActive = true
+
         audioContainer.isHidden = false
+        self.fixTheStupid()
     }
     
-    func videoAdded() {
+    func videoAdded(videoUrl: URL) {
         postType = .VIDEO
-        
-        //TODO: Handle adding video
-        
-        videoContainer.heightAnchor.constraint(equalToConstant: 200).isActive = true
+
+        self.postMediaJson = FileUtils().fileToBase64(filePath: videoUrl.path)
+
+        videoView.configure(url: videoUrl)
+
+        videoHeightHidden.isActive = false
+        videoHeightShow.isActive = true
+
         videoContainer.isHidden = false
+        self.fixTheStupid()
     }
     
     //Post media hiding
     func removeAndHideImage() {
         postImage.image = nil
         postImage.isHidden = true
-        
-        postImage.heightAnchor.constraint(equalToConstant: 0).isActive = true
+
+        imageHeightShow.isActive = false
+        imageHeightHidden.isActive = true
+    
         
         postType = .TEXT
+        self.postMediaJson = nil
+        self.fixTheStupid()
     }
     
     func removeAndHideAudio() {
-        audioView.stop()
+        audioView.kill()
         
         audioContainer.isHidden = true
-        audioContainer.heightAnchor.constraint(equalToConstant: 0).isActive = true
+
+        audioHeightShow.isActive = false
+        audioHeightHidden.isActive = true
         
         postType = .TEXT
+        self.postMediaJson = nil
+        self.fixTheStupid()
     }
     
     func removeAndHideVideo() {
-        videoView.stop()
+        videoView.kill()
         
         videoContainer.isHidden = true
-        videoContainer.heightAnchor.constraint(equalToConstant: 0).isActive = true
+
+        videoHeightShow.isActive = false
+        videoHeightHidden.isActive = true
         
         postType = .TEXT
+        self.postMediaJson = nil
+        self.fixTheStupid()
     }
     
     
@@ -126,9 +213,7 @@ class PostCreateContainer: UIView, UITextViewDelegate {
         
         self.contentView.layoutIfNeeded()
         
-        self.heightAnchor
-            .constraint(equalToConstant: self.contentView.frame.height)
-            .isActive = true
+        self.contentHeight.constant = self.contentView.frame.height
         self.widthAnchor
             .constraint(equalToConstant: self.contentView.frame.width)
             .isActive = true
@@ -136,13 +221,25 @@ class PostCreateContainer: UIView, UITextViewDelegate {
         self.layoutIfNeeded()
     }
     
-    //TODO: Make sure that this actually works.
     func textViewDidChange(_ textView: UITextView) {
-        textView.translatesAutoresizingMaskIntoConstraints = true
-        textView.sizeToFit()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+
+        let newSize = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat(MAXFLOAT)))
+
+        textView.frame.size.height = newSize.height
+        textView.setNeedsDisplay()
+        textView.setNeedsUpdateConstraints()
+        
+        if textView == postTitle {
+            postTitleHeight.constant = newSize.height
+        } else if textView == postBody {
+            postBodyHeight.constant = newSize.height
+        } else {
+            postTagsHeight.constant = newSize.height
+        }
+        
         textView.isScrollEnabled = false
         
-        let calHeight = textView.frame.size.height
-        textView.frame.size.height = calHeight
+        self.fixTheStupid()
     }
 }

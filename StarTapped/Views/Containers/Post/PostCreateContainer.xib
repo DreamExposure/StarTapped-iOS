@@ -17,6 +17,7 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="ohf-ZO-NZV"/>
                 <outlet property="postBody" destination="cFh-Tc-Cg1" id="Tkg-Od-8Py"/>
                 <outlet property="postImage" destination="RfE-q4-xDT" id="7LO-dz-dje"/>
+                <outlet property="postTags" destination="f1f-dg-eNb" id="ETT-R5-UB0"/>
                 <outlet property="postTitle" destination="0Xk-ue-zII" id="vrU-Xp-Tqd"/>
                 <outlet property="videoContainer" destination="FZN-u1-1Ur" id="qfA-4z-GeT"/>
                 <outlet property="videoView" destination="skp-V6-ZGs" id="eih-Qg-5le"/>
@@ -24,10 +25,10 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="715"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="586"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RfE-q4-xDT" customClass="FLAnimatedImageView">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RfE-q4-xDT" customClass="FLAnimatedImageView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                     <gestureRecognizers/>
                     <constraints>
@@ -35,7 +36,7 @@
                         <constraint firstAttribute="height" constant="200" id="PbD-XT-5dB"/>
                     </constraints>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="xpz-LQ-UwJ" appends="YES" id="50f-Y5-aqE"/>
+                        <outletCollection property="gestureRecognizers" destination="sUy-jz-RQQ" appends="YES" id="aed-ef-eOH"/>
                     </connections>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDS-aI-Wy9">
@@ -55,32 +56,6 @@
                         <constraint firstAttribute="height" constant="50" id="sQi-xN-9Wf"/>
                     </constraints>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Xk-ue-zII">
-                    <rect key="frame" x="16" y="458" width="343" height="40"/>
-                    <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="textColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="alert"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Title, if you want one"/>
-                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                            <color key="value" red="0.78823529411764703" green="0.50588235294117645" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </textView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-Tc-Cg1">
-                    <rect key="frame" x="16" y="506" width="343" height="201"/>
-                    <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="textColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="alert"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                            <color key="value" red="0.30588235289999999" green="0.37254901959999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Go on, say something"/>
-                    </userDefinedRuntimeAttributes>
-                </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZN-u1-1Ur">
                     <rect key="frame" x="0.0" y="250" width="375" height="200"/>
                     <subviews>
@@ -98,35 +73,77 @@
                         <constraint firstItem="skp-V6-ZGs" firstAttribute="leading" secondItem="FZN-u1-1Ur" secondAttribute="leading" id="zgi-Cf-15L"/>
                     </constraints>
                 </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" keyboardDismissMode="onDrag" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Xk-ue-zII" customClass="MDCIntrinsicHeightTextView">
+                    <rect key="frame" x="16" y="458" width="343" height="40"/>
+                    <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Title, if you want one"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                            <color key="value" red="0.78823529411764703" green="0.50588235294117645" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-Tc-Cg1" customClass="MDCIntrinsicHeightTextView">
+                    <rect key="frame" x="16" y="506" width="343" height="33"/>
+                    <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                            <color key="value" red="0.30588235289999999" green="0.37254901959999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Go on, say something"/>
+                    </userDefinedRuntimeAttributes>
+                </textView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f1f-dg-eNb" customClass="MDCIntrinsicHeightTextView">
+                    <rect key="frame" x="16" y="547" width="343" height="31"/>
+                    <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                            <color key="value" red="0.30588235289999999" green="0.37254901959999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Tags, if you want any, comma separated"/>
+                    </userDefinedRuntimeAttributes>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="FZN-u1-1Ur" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1tA-xF-Lu0"/>
                 <constraint firstItem="cFh-Tc-Cg1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="3zP-bQ-hc4"/>
                 <constraint firstItem="RfE-q4-xDT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8OP-rn-DXJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="f1f-dg-eNb" secondAttribute="bottom" constant="8" id="9E0-Sk-MOY"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0Xk-ue-zII" secondAttribute="trailing" constant="16" id="G3h-Z0-w1d"/>
                 <constraint firstItem="0Xk-ue-zII" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="I3V-X7-4eV"/>
                 <constraint firstItem="RfE-q4-xDT" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="M2Y-2y-KMV"/>
+                <constraint firstItem="f1f-dg-eNb" firstAttribute="top" secondItem="cFh-Tc-Cg1" secondAttribute="bottom" constant="8" id="Mjz-ey-Zlw"/>
                 <constraint firstItem="RfE-q4-xDT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NGf-OH-6tG"/>
                 <constraint firstItem="rDS-aI-Wy9" firstAttribute="top" secondItem="RfE-q4-xDT" secondAttribute="bottom" id="Uvw-Ev-BrW"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cFh-Tc-Cg1" secondAttribute="trailing" constant="16" id="YRj-5v-DNN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="f1f-dg-eNb" secondAttribute="trailing" constant="16" id="m56-kX-H3T"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FZN-u1-1Ur" secondAttribute="trailing" id="mPJ-mQ-dyA"/>
                 <constraint firstItem="rDS-aI-Wy9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pSm-rJ-bjl"/>
                 <constraint firstItem="cFh-Tc-Cg1" firstAttribute="top" secondItem="0Xk-ue-zII" secondAttribute="bottom" constant="8" id="rDk-OE-bfv"/>
                 <constraint firstItem="0Xk-ue-zII" firstAttribute="top" secondItem="FZN-u1-1Ur" secondAttribute="bottom" constant="8" id="sTS-mV-uEv"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cFh-Tc-Cg1" secondAttribute="bottom" constant="8" id="uvn-ME-iPK"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rDS-aI-Wy9" secondAttribute="trailing" id="v99-dp-CDa"/>
+                <constraint firstItem="f1f-dg-eNb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="z4d-PX-H89"/>
                 <constraint firstItem="FZN-u1-1Ur" firstAttribute="top" secondItem="rDS-aI-Wy9" secondAttribute="bottom" id="zfo-Ce-Qvi"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="53.600000000000001" y="69.715142428785612"/>
+            <point key="canvasLocation" x="53.600000000000001" y="11.694152923538232"/>
         </view>
-        <tapGestureRecognizer id="xpz-LQ-UwJ">
+        <tapGestureRecognizer id="sUy-jz-RQQ">
             <connections>
-                <action selector="imageClicked" destination="-1" id="MlN-gU-gYY"/>
+                <action selector="imageClicked" destination="-1" id="T2X-OC-SEU"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

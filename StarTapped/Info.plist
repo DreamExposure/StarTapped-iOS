@@ -43,6 +43,12 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>To allow taking photos and uploading them to your blog.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To allow selecting photos and uploading them to your blog.</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>To allow selecting media and uploading them to your blog.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

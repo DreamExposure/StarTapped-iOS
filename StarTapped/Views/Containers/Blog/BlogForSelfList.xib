@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BlogForSelfListConainer" customModule="StarTapped" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BlogForSelfListContainer" customModule="StarTapped" customModuleProvider="target">
             <connections>
                 <outlet property="ageBadge" destination="Rwq-P3-txM" id="hSQ-9Y-ZWU"/>
                 <outlet property="backgroundImage" destination="Ceq-qk-20c" id="ASW-ya-NMo"/>

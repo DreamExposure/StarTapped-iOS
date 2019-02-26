@@ -45,7 +45,7 @@ class YourBlogsController: UIViewController, TaskCallback {
         
         for jBlog in jBlogs {
             let blog = Blog().fromJson(json: jBlog)
-            let blogCon: BlogForSelfListConainer = BlogForSelfListConainer()
+            let blogCon: BlogForSelfListContainer = BlogForSelfListContainer()
             blogCon.controller = self
             
             blogCon.configure(blog: blog)

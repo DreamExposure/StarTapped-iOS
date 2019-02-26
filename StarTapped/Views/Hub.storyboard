@@ -706,7 +706,7 @@
                                 </items>
                                 <color key="barTintColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="ivL-fr-Tun">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="ivL-fr-Tun">
                                 <rect key="frame" x="0.0" y="114" width="375" height="509"/>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPu-O0-noR">
@@ -715,7 +715,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="oRl-39-89k"/>
                                     <barButtonItem title="Camera Button" style="plain" id="evK-cp-eSq">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xkU-Tb-0gA" customClass="MDCButtonBarButton">
-                                            <rect key="frame" x="115.5" y="4" width="36" height="36"/>
+                                            <rect key="frame" x="133.5" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="baseline_camera_black_18pt"/>
                                             <connections>
@@ -725,7 +725,7 @@
                                     </barButtonItem>
                                     <barButtonItem title="Audio Button" style="plain" id="tJu-AP-pJD">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="q23-SA-XWJ" customClass="MDCButtonBarButton">
-                                            <rect key="frame" x="151.5" y="4" width="36" height="36"/>
+                                            <rect key="frame" x="169.5" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="baseline_audiotrack_black_18pt"/>
                                             <connections>
@@ -735,7 +735,7 @@
                                     </barButtonItem>
                                     <barButtonItem title="Video Button" style="plain" id="W7I-P5-1vd">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a3o-vH-fJ1" customClass="MDCButtonBarButton">
-                                            <rect key="frame" x="187.5" y="4" width="36" height="36"/>
+                                            <rect key="frame" x="205.5" y="4" width="36" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="baseline_videocam_black_18pt"/>
                                             <connections>
@@ -744,16 +744,6 @@
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="3dD-BU-Rhw"/>
-                                    <barButtonItem title="Add Tag Button" style="plain" id="pg9-Dr-26U">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aZO-Gb-yxq" customClass="MDCButtonBarButton">
-                                            <rect key="frame" x="323" y="4" width="36" height="36"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="add_18pt"/>
-                                            <connections>
-                                                <action selector="onTagButtonClick" destination="hg7-tr-7Xk" eventType="touchUpInside" id="jhc-8Y-1Kj"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
@@ -844,7 +834,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add_18pt" width="18" height="18"/>
         <image name="add_48pt" width="48" height="48"/>
         <image name="baseline_arrow_back_black_18pt" width="36" height="36"/>
         <image name="baseline_audiotrack_black_18pt" width="36" height="36"/>
