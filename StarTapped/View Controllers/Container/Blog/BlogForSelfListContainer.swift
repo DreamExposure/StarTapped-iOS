@@ -73,15 +73,10 @@ class BlogForSelfListContainer: UIView, TaskCallback {
     }
     
     func fixTheStupid() {
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        self.translatesAutoresizingMaskIntoConstraints = false
-
         blogTitle.sizeToFit()
         blogTitle.setNeedsDisplay()
         blogDescription.sizeToFit()
         blogDescription.setNeedsDisplay()
-        
-        self.contentView.layoutIfNeeded()
         
         self.heightAnchor
             .constraint(equalToConstant: self.contentView.bounds.height)
@@ -90,14 +85,14 @@ class BlogForSelfListContainer: UIView, TaskCallback {
             .constraint(equalToConstant: self.contentView.bounds.width)
             .isActive = true
         
-        self.layoutIfNeeded()
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     @IBAction func onBlogUrlClick() {
         ViewUtils().goToViewBlog(view: controller, anim: true, blogId: blog.getBlogId())
     }
     
     @IBAction func onEditButtonClick() {
-        //TODO: Load blog edit view
+        ViewUtils().goToEditBlog(view: controller, anim: true, blogId: blog.getBlogId())
     }
     
     func onCallBack(status: NetworkCallStatus) {

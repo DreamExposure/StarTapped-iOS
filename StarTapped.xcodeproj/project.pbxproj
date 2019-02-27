@@ -40,6 +40,7 @@
 		807C046C21EC45E000AF1FAE /* BlogViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C046B21EC45E000AF1FAE /* BlogViewContainer.swift */; };
 		807C046F21ECF9CB00AF1FAE /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C046E21ECF9CB00AF1FAE /* ViewType.swift */; };
 		807C047221ECFC4F00AF1FAE /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C047121ECFC4F00AF1FAE /* BlogViewController.swift */; };
+		807FB468222641780002158C /* BlogEditContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807FB467222641780002158C /* BlogEditContainer.xib */; };
 		808A20D221EFF6A700F69A86 /* PostAudioContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808A20D121EFF6A700F69A86 /* PostAudioContainer.swift */; };
 		808A20D421EFF6DE00F69A86 /* PostAudioContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808A20D321EFF6DE00F69A86 /* PostAudioContainer.xib */; };
 		808A20D621F01F3C00F69A86 /* PostVideoContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808A20D521F01F3C00F69A86 /* PostVideoContainer.xib */; };
@@ -94,7 +95,9 @@
 		CDDD2B7B13A554F76F083AF0 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD281FD34CCEA14F12DB54 /* Validator.swift */; };
 		CDDD2C093AEC4826F10BBCE7 /* LoginTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD274F81ABDE2FC18C9891 /* LoginTask.swift */; };
 		CDDD2C9E23C126781642953C /* GetPostsForHubTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2C74955008AA580B4268 /* GetPostsForHubTask.swift */; };
+		CDDD2CB88079A689DC2ABDA7 /* BlogEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2F4AA04E3C6E6E18E30A /* BlogEditController.swift */; };
 		CDDD2D3D5A1DF16F9A8A1C08 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2648F0B6093ADB2A7211 /* NetworkTask.swift */; };
+		CDDD2D633D732526C5D82E0E /* BlogEditContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2FBF7729E4E38364399E /* BlogEditContainer.swift */; };
 		CDDD2D84EFA176CB216CC8F2 /* StarTappedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD239F3A388B1DAD751618 /* StarTappedTests.swift */; };
 		CDDD2DF1E9AF8CB833129803 /* GetBlogsSelfTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2A7FC9F28D235B95FFE1 /* GetBlogsSelfTask.swift */; };
 		CDDD2E032FF9DE99A828A185 /* CreateBlogTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD265276D46B0BD63A3987 /* CreateBlogTask.swift */; };
@@ -160,6 +163,7 @@
 		807C046B21EC45E000AF1FAE /* BlogViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewContainer.swift; sourceTree = "<group>"; };
 		807C046E21ECF9CB00AF1FAE /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		807C047121ECFC4F00AF1FAE /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
+		807FB467222641780002158C /* BlogEditContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogEditContainer.xib; sourceTree = "<group>"; };
 		808A20D121EFF6A700F69A86 /* PostAudioContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAudioContainer.swift; sourceTree = "<group>"; };
 		808A20D321EFF6DE00F69A86 /* PostAudioContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostAudioContainer.xib; sourceTree = "<group>"; };
 		808A20D521F01F3C00F69A86 /* PostVideoContainer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostVideoContainer.xib; sourceTree = "<group>"; };
@@ -231,7 +235,9 @@
 		CDDD2D7984A2F49A195B0E68 /* PostContainerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostContainerBase.swift; sourceTree = "<group>"; };
 		CDDD2DF093C7172083428412 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDDD2E741D083E36942FF6FD /* UnfollowBlogTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowBlogTask.swift; sourceTree = "<group>"; };
+		CDDD2F4AA04E3C6E6E18E30A /* BlogEditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogEditController.swift; sourceTree = "<group>"; };
 		CDDD2F75E9240D447491A89B /* GetFollowingBlogsTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFollowingBlogsTask.swift; sourceTree = "<group>"; };
+		CDDD2FBF7729E4E38364399E /* BlogEditContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogEditContainer.swift; sourceTree = "<group>"; };
 		F607EC0C33FEE7B17FADD069 /* Pods-StarTappedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarTappedUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarTappedUITests/Pods-StarTappedUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F8F11554B442D2106A4E6237 /* Pods_StarTapped.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarTapped.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -347,6 +353,7 @@
 			children = (
 				800D9F6821E94B280036DC41 /* BlogForSelfList.xib */,
 				807C046921EC45CB00AF1FAE /* BlogView.xib */,
+				807FB467222641780002158C /* BlogEditContainer.xib */,
 			);
 			path = Blog;
 			sourceTree = "<group>";
@@ -384,6 +391,7 @@
 			children = (
 				807C046B21EC45E000AF1FAE /* BlogViewContainer.swift */,
 				800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */,
+				CDDD2FBF7729E4E38364399E /* BlogEditContainer.swift */,
 			);
 			path = Blog;
 			sourceTree = "<group>";
@@ -436,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				807C047121ECFC4F00AF1FAE /* BlogViewController.swift */,
+				CDDD2F4AA04E3C6E6E18E30A /* BlogEditController.swift */,
 			);
 			path = Blog;
 			sourceTree = "<group>";
@@ -891,6 +900,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8030899221EF9E44008D81DD /* AdultOnlyBlock.xib in Resources */,
+				807FB468222641780002158C /* BlogEditContainer.xib in Resources */,
 				808A20D621F01F3C00F69A86 /* PostVideoContainer.xib in Resources */,
 				CDDD25C96BE7A8FB6D581692 /* Assets.xcassets in Resources */,
 				800D9F6921E94B280036DC41 /* BlogForSelfList.xib in Resources */,
@@ -1143,6 +1153,8 @@
 				CDDD218EA4483CE55F7735DA /* UploadedFile.swift in Sources */,
 				CDDD2292DEF9D9BBD25781DC /* UIImageExtension.swift in Sources */,
 				CDDD2E3BEB6120D44628824A /* PostCreateTask.swift in Sources */,
+				CDDD2D633D732526C5D82E0E /* BlogEditContainer.swift in Sources */,
+				CDDD2CB88079A689DC2ABDA7 /* BlogEditController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,9 +15,14 @@ class UpdateBlogTask: NetworkTask {
 
     let blog: Blog
 
-    init(callback: TaskCallback, blog: Blog) {
+    let icon: [String: String]?
+    let background: [String:String]?
+
+    init(callback: TaskCallback, blog: Blog, icon: [String:String]?, background: [String:String]?) {
         self.callback = callback
         self.blog = blog
+        self.icon = icon
+        self.background = background
     }
 
     func execute() {
@@ -27,17 +32,25 @@ class UpdateBlogTask: NetworkTask {
             "Authorization_Refresh": Settings().getAuthentication().getRefreshToken()
         ]
 
-        let params: [String: Any] = [
+        var params: [String: Any] = [
             "id": blog.getBlogId(),
             "name": blog.getName(),
             "description": blog.getDescription(),
             "nsfw": blog.isNsfw(),
-            "allow_under18": blog.doesAllowUnder18(),
+            "allow_under_18": blog.doesAllowUnder18(),
             "background_color": blog.getBackgroundColor()
         ]
-        //TODO: Handle display age if personal blog
-        //TODO: handle background image
-        //TODO: Handle icon image
+
+        if blog.getBlogType() == .PERSONAL {
+            params["display_age"] = blog.isDisplayAge()
+        }
+
+        if self.icon != nil {
+            params["icon_image"] = self.icon!
+        }
+        if self.background != nil {
+            params["background_image"] = self.background!
+        }
 
         Alamofire.request("https://api.startapped.com/v1/blog/update", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { response in
