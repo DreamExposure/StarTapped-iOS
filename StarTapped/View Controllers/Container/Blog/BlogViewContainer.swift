@@ -120,7 +120,7 @@ class BlogViewContainer: UIView, TaskCallback {
     func onCallBack(status: NetworkCallStatus) {
         if (status.getType() == .ACCOUNT_GET_BLOG && status.isSuccess()) {
             let acc = Account().fromJson(json: status.getBody()["account"])
-            self.ageBadge.text = "\(TimeUtils().calculateAge(ageString: acc.getBirthday()))"
+            self.ageBadge.text = "\(acc.getAge())"
         }
     }
 }

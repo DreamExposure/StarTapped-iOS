@@ -13,6 +13,7 @@ class Account {
     var email: String = "Unassigned"
     var phoneNumber: String = "000.000.0000"
     var birthday: String = "1970-01-01"
+    var age: Int = -1
 
     var safeSearch: Bool = false
 
@@ -40,6 +41,10 @@ class Account {
 
     func getBirthday() -> String {
         return birthday
+    }
+
+    func getAge() -> Int {
+        return age
     }
 
     func isSafeSearch() -> Bool {
@@ -120,7 +125,14 @@ class Account {
         if let phoneNumber = json["phone_number"].string {
             self.phoneNumber = phoneNumber
         }
-        self.birthday = json["birthday"].stringValue
+        if let birthday = json["birthday"].string {
+            self.birthday = birthday
+            self.age = TimeUtils().calculateAge(ageString: self.birthday)
+
+        }
+        if let age = json["age"].int {
+            self.age = age
+        }
         self.safeSearch = json["safe_search"].boolValue
         self.verified = json["verified"].boolValue
         if let emailConfirmed = json["email_confirmed"].bool {
