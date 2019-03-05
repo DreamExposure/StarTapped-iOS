@@ -98,18 +98,32 @@
                                 </items>
                                 <color key="barTintColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search StarTapped" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owy-VV-kM9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Tag</string>
+                                    <string>Blog</string>
+                                    <string>Title</string>
+                                    <string>Keyword</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xif-gB-xJM">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.94509803920000002" green="0.92941176469999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vgM-5l-zVM" firstAttribute="leading" secondItem="GSx-GX-Xel" secondAttribute="leading" id="4oj-Gc-YMz"/>
+                            <constraint firstItem="Xif-gB-xJM" firstAttribute="top" secondItem="owy-VV-kM9" secondAttribute="bottom" id="71N-8K-1PB"/>
                             <constraint firstItem="Xif-gB-xJM" firstAttribute="leading" secondItem="GSx-GX-Xel" secondAttribute="leading" id="Bs9-B7-n19"/>
                             <constraint firstItem="GSx-GX-Xel" firstAttribute="trailing" secondItem="Xif-gB-xJM" secondAttribute="trailing" id="K7g-7w-EZ0"/>
                             <constraint firstItem="GSx-GX-Xel" firstAttribute="bottom" secondItem="Xif-gB-xJM" secondAttribute="bottom" id="LxU-s1-PcS"/>
                             <constraint firstItem="vgM-5l-zVM" firstAttribute="top" secondItem="GSx-GX-Xel" secondAttribute="top" id="R2l-RY-fDZ"/>
-                            <constraint firstItem="Xif-gB-xJM" firstAttribute="top" secondItem="vgM-5l-zVM" secondAttribute="bottom" id="dHY-Tr-hsB"/>
+                            <constraint firstItem="owy-VV-kM9" firstAttribute="leading" secondItem="GSx-GX-Xel" secondAttribute="leading" id="bFw-pF-j21"/>
+                            <constraint firstItem="Xif-gB-xJM" firstAttribute="top" secondItem="owy-VV-kM9" secondAttribute="bottom" id="erC-kO-fi9"/>
+                            <constraint firstItem="owy-VV-kM9" firstAttribute="trailing" secondItem="GSx-GX-Xel" secondAttribute="trailing" id="fUn-Bh-t5K"/>
+                            <constraint firstItem="owy-VV-kM9" firstAttribute="top" secondItem="vgM-5l-zVM" secondAttribute="bottom" id="fbi-Fg-x50"/>
                             <constraint firstItem="vgM-5l-zVM" firstAttribute="trailing" secondItem="GSx-GX-Xel" secondAttribute="trailing" id="idn-zQ-cnT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GSx-GX-Xel"/>
@@ -117,6 +131,8 @@
                     <tabBarItem key="tabBarItem" title="Search" id="0j1-rK-Ee6"/>
                     <connections>
                         <outlet property="moreButton" destination="MNE-q4-dp6" id="ewH-vP-61n"/>
+                        <outlet property="scrollView" destination="Xif-gB-xJM" id="OHZ-jk-obl"/>
+                        <outlet property="searchBar" destination="owy-VV-kM9" id="lVR-Dl-ivB"/>
                         <segue destination="QuF-uQ-NSi" kind="show" identifier="search-to-view-blog" id="ocV-XD-Drr"/>
                         <segue destination="iFZ-dD-B8s" kind="show" identifier="search-to-following" id="cgC-xh-MVP"/>
                         <segue destination="wxz-t9-W52" kind="show" identifier="search-to-settings" id="qwX-7U-uvl"/>
@@ -124,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOK-kh-uPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="834"/>
+            <point key="canvasLocation" x="40.799999999999997" y="833.43328335832086"/>
         </scene>
         <!--Following View-->
         <scene sceneID="GEE-MR-fcV">
@@ -919,7 +935,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qwX-7U-uvl"/>
-        <segue reference="961-28-4h9"/>
+        <segue reference="ocV-XD-Drr"/>
         <segue reference="cgC-xh-MVP"/>
     </inferredMetricsTieBreakers>
 </document>

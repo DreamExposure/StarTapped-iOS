@@ -154,7 +154,6 @@ class HubViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
 
     func refresh() {
         if !isRefreshing && !isGenerating {
-            //TODO: Possibly handle starting refresh animation...
             isRefreshing = true
             stopRequesting = false
 
