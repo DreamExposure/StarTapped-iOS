@@ -74,6 +74,7 @@
 		80EB1A1521E26A5B000A51A2 /* NetworkCallStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A1421E26A5B000A51A2 /* NetworkCallStatus.swift */; };
 		80EB1A1721E26C91000A51A2 /* TaskCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB1A1621E26C91000A51A2 /* TaskCallback.swift */; };
 		80FBBB90222F08E500B155D2 /* GetPostsForSearchTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FBBB8F222F08E500B155D2 /* GetPostsForSearchTask.swift */; };
+		80FBBB92222F4D9700B155D2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FBBB91222F4D9700B155D2 /* StringExtension.swift */; };
 		CDDD2162E9FF00B6ADEC0F4B /* UpdateBlogTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2962CF930FF2A5CBD505 /* UpdateBlogTask.swift */; };
 		CDDD218EA4483CE55F7735DA /* UploadedFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD26D2F4E4CB447C356682 /* UploadedFile.swift */; };
 		CDDD21C7BAB37DDC019A47F0 /* GetFollowersAccountTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD2282E9E406ECD6405C9D /* GetFollowersAccountTask.swift */; };
@@ -199,6 +200,7 @@
 		80EB1A1421E26A5B000A51A2 /* NetworkCallStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCallStatus.swift; sourceTree = "<group>"; };
 		80EB1A1621E26C91000A51A2 /* TaskCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCallback.swift; sourceTree = "<group>"; };
 		80FBBB8F222F08E500B155D2 /* GetPostsForSearchTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostsForSearchTask.swift; sourceTree = "<group>"; };
+		80FBBB91222F4D9700B155D2 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		AB41B7EA209269D765B4C061 /* Pods_StarTappedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarTappedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDD203B6E0736BD9CD55386 /* Blog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
 		CDDD222CD0228473949E3DB9 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = StarTapped/Objects/Account/Account.swift; sourceTree = SOURCE_ROOT; };
@@ -337,6 +339,7 @@
 				800D9F6E21EA56B60036DC41 /* UIViewExtension.swift */,
 				80540EE121EC037A00EE265D /* UIColorExtension.swift */,
 				CDDD2C3E46FD80103C522A8F /* UIImageExtension.swift */,
+				80FBBB91222F4D9700B155D2 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1132,6 +1135,7 @@
 				CDDD2E032FF9DE99A828A185 /* CreateBlogTask.swift in Sources */,
 				8030899021EF990D008D81DD /* NsfwBlogBLock.swift in Sources */,
 				8061E89521FBB2E9007653E8 /* PostViewUtils.swift in Sources */,
+				80FBBB92222F4D9700B155D2 /* StringExtension.swift in Sources */,
 				CDDD2DF1E9AF8CB833129803 /* GetBlogsSelfTask.swift in Sources */,
 				80AFA5E821E55F6A0072A227 /* RegisterViewController.swift in Sources */,
 				CDDD2162E9FF00B6ADEC0F4B /* UpdateBlogTask.swift in Sources */,

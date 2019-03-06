@@ -57,6 +57,9 @@ class SearchViewController: UIViewController, UIScrollViewDelegate, UISearchBarD
         super.viewDidAppear(animated)
         
         if currentTags.count > 0 && searchOnDisplay {
+            //Make sure we turn off search on display so we don't loop accidently.
+            searchOnDisplay = false
+            
             //Alright, we need to search, lets clear out anything and search...
             index = TimeIndex()
             stopRequesting = false

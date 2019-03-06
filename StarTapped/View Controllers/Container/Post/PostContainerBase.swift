@@ -135,7 +135,43 @@ class PostContainerBase: UIView, TTGTextTagCollectionViewDelegate {
     }
     
     func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {
-        //TODO: go to search view with the tag that was clicked!!!!
+        var textFor: String = tagText
+        if tagText.starts(with: "#") {
+            textFor = String(tagText[1..<tagText.count])
+        }
+        
+        if self.controller is SearchViewController {
+            //Already in search view controller, just change current tags and tell it to do a new search...
+            let search = self.controller as! SearchViewController
+            
+            search.index = TimeIndex()
+            search.clear = true
+            search.stopRequesting = false
+            
+            search.currentTags.removeAll()
+            
+            search.currentTags.append(textFor.trimmingCharacters(in: .whitespacesAndNewlines))
+            
+            search.searchBar.text = textFor
+            
+            search.getPosts()
+        } else {
+            //Get search controller
+            let tabBar: UITabBarController? = self.controller.tabBarController
+            let search = tabBar?.viewControllers![2].children[0] as! SearchViewController
+        
+            search.searchOnDisplay = true
+            search.currentTags.removeAll()
+            search.currentTags.append(textFor.trimmingCharacters(in: .whitespacesAndNewlines))
+            
+            //Switch to search
+            self.controller.tabBarController?.selectedIndex = 2;
+            
+            //Unwind if needed...
+            search.navigationController?.popToRootViewController(animated: true)
+            
+            //Would search but our viewDidAppear() in the search controller will handle it.
+        }
         
         self.tagDisplay.setTagAt(index, selected: false)
     }
