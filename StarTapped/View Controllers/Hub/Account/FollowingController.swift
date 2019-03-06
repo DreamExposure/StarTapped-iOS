@@ -31,7 +31,7 @@ class FollowingController: UIViewController, TaskCallback {
     }
     
     @IBAction func onBackButtonClicked(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func displayFollowing(status: NetworkCallStatus) {

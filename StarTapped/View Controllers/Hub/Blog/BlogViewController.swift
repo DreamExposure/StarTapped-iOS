@@ -66,7 +66,7 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     
     @IBAction func onBackButtonClicked(_ sender: UIButton) {
         //Go to previous view...
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func displayBlog(status: NetworkCallStatus) {

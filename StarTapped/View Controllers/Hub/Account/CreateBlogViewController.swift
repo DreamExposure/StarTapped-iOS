@@ -28,7 +28,7 @@ class CreateBlogViewController: UIViewController, TaskCallback {
     }
     
     @IBAction func onBackButtonClicked(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onCreateButtonClicked() {

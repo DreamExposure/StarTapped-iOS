@@ -29,7 +29,7 @@ class ViewUtils {
         let storyboard: UIStoryboard = UIStoryboard(name: "Hub", bundle: nil)
         let newViewController = storyboard
             .instantiateViewController(withIdentifier: "your-blogs") as! YourBlogsController
-        view.present(newViewController, animated: anim, completion: nil)
+         view.navigationController?.show(newViewController, sender: view)
     }
     
     func goToEditBlog(view: UIViewController, anim: Bool, blogId: String) {
@@ -38,7 +38,7 @@ class ViewUtils {
             .instantiateViewController(withIdentifier: "blog-edit-view") as! BlogEditController
         newViewController.blogId = blogId
         
-        view.present(newViewController, animated: anim, completion: nil)
+         view.navigationController?.show(newViewController, sender: view)
     }
     
     func goToFollowing(view: UIViewController, anim: Bool) {
@@ -46,7 +46,7 @@ class ViewUtils {
         let newViewController = storyboard
             .instantiateViewController(withIdentifier: "following-view") as! FollowingController
         
-        view.present(newViewController, animated: anim, completion: nil)
+         view.navigationController?.show(newViewController, sender: view)
     }
     
     func goToSettings(view: UIViewController, anim: Bool) {
@@ -54,7 +54,8 @@ class ViewUtils {
         let newViewController = storyboard
             .instantiateViewController(withIdentifier: "settings-view") as! SettingsController
         
-        view.present(newViewController, animated: anim, completion: nil)
+        //view.present(newViewController, animated: anim, completion: nil)
+         view.navigationController?.show(newViewController, sender: view)
     }
     
     func goToAccountSettings(view: UIViewController, anim: Bool) {
@@ -62,7 +63,7 @@ class ViewUtils {
         let newViewController = storyboard
             .instantiateViewController(withIdentifier: "account-settings-view") as! AccountSettingsController
         
-        view.present(newViewController, animated: anim, completion: nil)
+        view.navigationController?.show(newViewController, sender: view)
     }
     
     func goToCreateBlog(view: UIViewController, anim: Bool) {
@@ -70,7 +71,7 @@ class ViewUtils {
         let newViewController = storyboard
             .instantiateViewController(withIdentifier: "create-blog-view") as! CreateBlogViewController
         
-        view.present(newViewController, animated: anim, completion: nil)
+         view.navigationController?.show(newViewController, sender: view)
     }
     
     func goToViewBlog(view: UIViewController, anim: Bool, blogId: String) {
@@ -79,7 +80,7 @@ class ViewUtils {
             .instantiateViewController(withIdentifier: "blog-view") as! BlogViewController
         newViewController.blogId = blogId
         
-        view.present(newViewController, animated: anim, completion: nil)
+         view.navigationController?.show(newViewController, sender: view)
     }
     
     func goToPostCreate(view: UIViewController, anim: Bool) {
@@ -87,7 +88,7 @@ class ViewUtils {
         let newViewController = storyboard
             .instantiateViewController(withIdentifier: "post-create-view") as! PostCreateController
         
-        view.present(newViewController, animated: anim, completion: nil)
+         view.navigationController?.show(newViewController, sender: view)
     }
     
     func hexStringToUIColor (hex:String) -> UIColor {

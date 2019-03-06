@@ -21,7 +21,7 @@ class SettingsController: UIViewController {
     }
     
     @IBAction func onBackButtonClicked(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onAccountSettingsClick() {

@@ -51,6 +51,6 @@ class AdultOnlyBlock: UIView {
     }
 
     @IBAction func goBackAction() {
-        self.controller.dismiss(animated: true, completion: nil)
+        self.controller.navigationController?.popViewController(animated: true)
     }
 }
