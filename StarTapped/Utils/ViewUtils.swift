@@ -41,6 +41,14 @@ class ViewUtils {
          view.navigationController?.show(newViewController, sender: view)
     }
     
+    func goToBookmarks(view: UIViewController, anim: Bool) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Hub", bundle: nil)
+        let newViewController = storyboard
+        .instantiateViewController(withIdentifier: "bookmarks-view") as! BookmarksViewController
+        
+        view.navigationController?.show(newViewController, sender: view)
+    }
+    
     func goToFollowing(view: UIViewController, anim: Bool) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Hub", bundle: nil)
         let newViewController = storyboard

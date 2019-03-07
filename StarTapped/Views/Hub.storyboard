@@ -62,6 +62,7 @@
                         <segue destination="QuF-uQ-NSi" kind="show" identifier="explore-to-view-blog" id="4Lk-6J-Nji"/>
                         <segue destination="iFZ-dD-B8s" kind="show" identifier="explore-to-following" id="Pbn-aN-3d1"/>
                         <segue destination="wxz-t9-W52" kind="show" identifier="explore-to-settings" id="IHv-E1-pU7"/>
+                        <segue destination="Kyj-Ca-VEP" kind="show" identifier="explore-to-bookmarks" id="3JS-cg-ejP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5eo-sY-RCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,6 +137,7 @@
                         <segue destination="QuF-uQ-NSi" kind="show" identifier="search-to-view-blog" id="ocV-XD-Drr"/>
                         <segue destination="iFZ-dD-B8s" kind="show" identifier="search-to-following" id="cgC-xh-MVP"/>
                         <segue destination="wxz-t9-W52" kind="show" identifier="search-to-settings" id="qwX-7U-uvl"/>
+                        <segue destination="Kyj-Ca-VEP" kind="show" identifier="search-to-bookmarks" id="aej-BM-P3Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOK-kh-uPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZs-Kr-Toi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1905" y="940"/>
+            <point key="canvasLocation" x="1905" y="833"/>
         </scene>
         <!--Blog View-->
         <scene sceneID="cHy-jj-eU0">
@@ -376,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOh-2j-tLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="790" y="1650"/>
+            <point key="canvasLocation" x="790" y="1648"/>
         </scene>
         <!--Account Settings-->
         <scene sceneID="fe4-G9-Rhw">
@@ -518,6 +520,7 @@
                         <segue destination="iFZ-dD-B8s" kind="show" identifier="hub-to-following" id="TAK-hn-RLq"/>
                         <segue destination="wxz-t9-W52" kind="show" identifier="hub-to-settings" id="HZZ-HU-tza"/>
                         <segue destination="hg7-tr-7Xk" kind="show" identifier="hub-to-post-create" id="khH-K4-QpS"/>
+                        <segue destination="Kyj-Ca-VEP" kind="show" identifier="hub-to-bookmarks" id="kWF-Y8-T4h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeD-u3-uKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -594,7 +597,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qdr-mE-WFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1905" y="-1974"/>
+            <point key="canvasLocation" x="2758" y="-2179"/>
         </scene>
         <!--Your Blogs-->
         <scene sceneID="bhq-qc-zbl">
@@ -664,7 +667,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I45-lF-37k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="-1257"/>
+            <point key="canvasLocation" x="1905" y="-1442"/>
         </scene>
         <!--Create Blog-->
         <scene sceneID="tGF-dZ-2GU">
@@ -749,7 +752,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXT-Rc-wwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1905" y="-1257"/>
+            <point key="canvasLocation" x="2758" y="-1442"/>
+        </scene>
+        <!--Bookmarks-->
+        <scene sceneID="Bz2-1N-qPj">
+            <objects>
+                <viewController storyboardIdentifier="bookmarks-view" title="Bookmarks" id="Kyj-Ca-VEP" customClass="BookmarksViewController" customModule="StarTapped" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ST3-Th-fel">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYb-kZ-ISY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Back Container" style="plain" id="sFW-Lp-g7P">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JJd-dE-IZ4" userLabel="Back Button" customClass="MDCButtonBarButton">
+                                            <rect key="frame" x="16" y="4" width="36" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="baseline_arrow_back_black_18pt">
+                                                <color key="titleColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onBackButtonClicked:" destination="Kyj-Ca-VEP" eventType="touchUpInside" id="vME-wS-n59"/>
+                                                <action selector="onBackButtonClicked:" destination="iFZ-dD-B8s" eventType="touchUpInside" id="zPQ-I9-j0R"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Bookmarks" style="done" id="H4M-ym-58z">
+                                        <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="z3o-Kg-9az"/>
+                                </items>
+                                <color key="barTintColor" red="0.70980392160000005" green="0.32549019610000002" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14o-XB-hvC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="14o-XB-hvC" firstAttribute="top" secondItem="dYb-kZ-ISY" secondAttribute="bottom" id="2q9-qW-v2z"/>
+                            <constraint firstItem="dYb-kZ-ISY" firstAttribute="leading" secondItem="EoS-aD-1lv" secondAttribute="leading" id="TGT-3k-ScM"/>
+                            <constraint firstItem="14o-XB-hvC" firstAttribute="trailing" secondItem="EoS-aD-1lv" secondAttribute="trailing" id="ZXo-1P-sZa"/>
+                            <constraint firstItem="dYb-kZ-ISY" firstAttribute="top" secondItem="EoS-aD-1lv" secondAttribute="top" id="bw7-Rb-MlA"/>
+                            <constraint firstItem="dYb-kZ-ISY" firstAttribute="trailing" secondItem="EoS-aD-1lv" secondAttribute="trailing" id="eNE-Gz-Ck2"/>
+                            <constraint firstItem="14o-XB-hvC" firstAttribute="leading" secondItem="EoS-aD-1lv" secondAttribute="leading" id="k2Z-ez-Ma9"/>
+                            <constraint firstItem="14o-XB-hvC" firstAttribute="bottom" secondItem="EoS-aD-1lv" secondAttribute="bottom" id="pWZ-5C-d9i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EoS-aD-1lv"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="14o-XB-hvC" id="L1I-hl-D5B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HE4-Rl-HrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="-514"/>
         </scene>
         <!--Post Create-->
         <scene sceneID="S95-wD-9pQ">
@@ -898,7 +958,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dc-jI-wN3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="-514"/>
+            <point key="canvasLocation" x="790" y="-1442"/>
         </scene>
         <!--Hub Controller-->
         <scene sceneID="rjk-iw-f2e">
@@ -919,7 +979,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXs-CC-tUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1884" y="382"/>
+            <point key="canvasLocation" x="-1927" y="456"/>
         </scene>
         <!--Hub-->
         <scene sceneID="2UN-s2-YXp">
@@ -991,8 +1051,9 @@
         <image name="share_18pt" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="aej-BM-P3Z"/>
         <segue reference="qwX-7U-uvl"/>
-        <segue reference="961-28-4h9"/>
-        <segue reference="Pbn-aN-3d1"/>
+        <segue reference="ocV-XD-Drr"/>
+        <segue reference="cgC-xh-MVP"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -1,8 +1,8 @@
 //
-//  SearchViewController.swift
+//  BookmarksViewController.swift
 //  StarTapped
 //
-//  Created by Nova Maday on 1/17/19.
+//  Created by Nova Maday on 3/6/19.
 //  Copyright © 2019 DreamExposure Studios. All rights reserved.
 //
 
@@ -11,12 +11,9 @@ import UIKit
 import MaterialComponents
 import Popover
 import SwiftyJSON
+import Toast_Swift
 
-class SearchViewController: UIViewController, UIScrollViewDelegate, UISearchBarDelegate, TaskCallback {
-    
-    @IBOutlet weak var moreButton: UIBarButtonItem!
-    
-    @IBOutlet weak var searchBar: UISearchBar!
+class BookmarksViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
     @IBOutlet weak var scrollView: UIScrollView!
     var stackView: UIStackView!
     var refreshControl: UIRefreshControl!
@@ -25,22 +22,9 @@ class SearchViewController: UIViewController, UIScrollViewDelegate, UISearchBarD
     var isGenerating = false
     var isRefreshing = false
     var stopRequesting = false
-    var clear = false
-    var searchOnDisplay = false
-    
-    var currentTags: [String] = []
-    
-    fileprivate var popover: Popover!
-    fileprivate var popoverOptions: [PopoverOption] = [
-        .type(.auto),
-        .blackOverlayColor(UIColor(red:0.12, green:0.15, blue:0.21, alpha:0.6))
-    ]
-    fileprivate var texts = ["Your Blogs", "Following", "Bookmarks", "Settings"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        searchBar.delegate = self
         
         self.setupVerticalScrollingStack()
         
@@ -51,40 +35,20 @@ class SearchViewController: UIViewController, UIScrollViewDelegate, UISearchBarD
         scrollView.refreshControl = refreshControl
         
         index = TimeIndex()
+        
+        getPosts()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if currentTags.count > 0 && searchOnDisplay {
-            //Make sure we turn off search on display so we don't loop accidently.
-            searchOnDisplay = false
-            
-            //Alright, we need to search, lets clear out anything and search...
-            index = TimeIndex()
-            stopRequesting = false
-            clear = true //Just incase anything is already there
-            
-            //Set the search bar text...
-            searchBar.text = currentTags.joined(separator: ",")
-            
-            //And now we can get the posts
-            getPosts()
-        }
     }
     
     @objc func didPullToRefresh() {
         refresh()
     }
     
-    @IBAction func moreButtonTapped(_ sender: UIButton) {
-        let startPoint = CGPoint(x: self.view.frame.width - 60, y: 55)
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width / 2, height: CGFloat(42 * texts.count)))
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.isScrollEnabled = false
-        self.popover = Popover(options: self.popoverOptions)
-        self.popover.show(tableView, point: startPoint)
+    @IBAction func onBackButtonClicked(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func getPostsCallback(status: NetworkCallStatus) {
@@ -104,13 +68,13 @@ class SearchViewController: UIViewController, UIScrollViewDelegate, UISearchBarD
                 index.setOldest(oldest: range["oldest"].int64Value)
             }
             
-            if (isRefreshing || clear) {
+            if (isRefreshing) {
                 self.stackView.removeAllArrangedViews()
             }
             
             for p in posts {
                 //Skip posts not in range. Probably a parent post which will be handled correctly.
-                if (p.timestamp >= index.getOldest() && p.timestamp <= index.getLatest()) {
+                if (p.timestamp >= index.getOldest() && p.timestamp <= index.getLatest() && p.isBookmarked()) {
                     if (p.getParent() != nil) {
                         let view = PostViewUtils().generatePostTreeView(lowest: p, posts: posts, controller: self)
                         
@@ -150,7 +114,6 @@ class SearchViewController: UIViewController, UIScrollViewDelegate, UISearchBarD
             }
         }
         isGenerating = false
-        clear = false
         
         if (isRefreshing) {
             isRefreshing = false
@@ -164,60 +127,29 @@ class SearchViewController: UIViewController, UIScrollViewDelegate, UISearchBarD
         if !isGenerating && !stopRequesting {
             isGenerating = true
             
-            let task = GetPostsForSearchTask(callback: self, index: index, filters: currentTags)
+            let task = GetBookmarkedPostsTask(callback: self, index: index)
             task.execute()
         }
     }
     
     func refresh() {
         if !isRefreshing && !isGenerating {
-            if currentTags.count > 0 {
-                isRefreshing = true
-                stopRequesting = false
+            isRefreshing = true
+            stopRequesting = false
             
-                index = TimeIndex()
+            index = TimeIndex()
             
-                getPosts()
-            } else {
-                isRefreshing = false
-                refreshControl.endRefreshing()
-                self.view.makeToast("You can't search for nothing")
-            }
+            getPosts()
         }
     }
     
     func onCallBack(status: NetworkCallStatus) {
         switch status.getType() {
-        case .POST_GET_FOR_SEARCH:
+        case .POST_GET_BOOKMARKED:
             getPostsCallback(status: status)
             break
         default:
             break
-        }
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = currentTags.joined(separator: ",")
-        searchBar.resignFirstResponder()
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.currentTags.removeAll()
-        for tag: String in (searchBar.text?.components(separatedBy: ","))! {
-            let trimmed: String = tag.trimmingCharacters(in: .whitespacesAndNewlines)
-            if trimmed.count > 0 {
-                self.currentTags.append(trimmed)
-            }
-        }
-        searchBar.resignFirstResponder()
-        
-        if currentTags.count > 0 {
-            //Reset our stuffs and search
-            index = TimeIndex()
-            clear = true
-            stopRequesting = false
-            
-            getPosts()
         }
     }
     
@@ -242,47 +174,7 @@ class SearchViewController: UIViewController, UIScrollViewDelegate, UISearchBarD
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y + scrollView.frame.size.height >= scrollView.contentSize.height {
             //At bottom...
-            
-            if currentTags.count > 0 && stackView.arrangedSubviews.count > 0 {
-                getPosts()
-            }
+            getPosts()
         }
-    }
-}
-
-extension SearchViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            ViewUtils().goToYourBlogs(view: self, anim: true)
-            break
-        case 1:
-            ViewUtils().goToFollowing(view: self, anim: true)
-            break
-        case 2:
-            ViewUtils().goToBookmarks(view: self, anim: true)
-            break
-        case 3:
-            ViewUtils().goToSettings(view: self, anim: true)
-            break
-        default:
-            //Unsupported action
-            break
-        }
-        self.popover.dismiss()
-    }
-}
-
-extension SearchViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return texts.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = self.texts[(indexPath as NSIndexPath).row]
-        return cell
     }
 }

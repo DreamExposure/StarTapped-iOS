@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class PostVideoContainer: PostContainerBase, TaskCallback {
+class PostVideoContainer: PostContainerBase {
     
     //Video stuffs
     @IBOutlet weak var videoContainer: UIView!
@@ -87,10 +87,5 @@ class PostVideoContainer: PostContainerBase, TaskCallback {
     override func fixTheStupid() {
 
         super.fixTheStupid()
-    }
-
-    
-    func onCallBack(status: NetworkCallStatus) {
-        //Can safely ignore, its just for downloading images.
     }
 }

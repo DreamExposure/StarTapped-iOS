@@ -24,6 +24,8 @@ class Post {
     var nsfw: Bool = false
 
     var parent: String?
+    
+    var bookmarked: Bool = false
 
     var tags: [String] = [String]()
 
@@ -83,6 +85,10 @@ class Post {
 
     func getParent() -> String? {
         return parent
+    }
+    
+    func isBookmarked() -> Bool {
+        return bookmarked
     }
 
     func getTags() -> [String] {
@@ -153,6 +159,10 @@ class Post {
     func setParent(parent: String) {
         self.parent = parent
     }
+    
+    func setBookmarked(bookmarked: Bool) {
+        self.bookmarked = bookmarked
+    }
 
     func tagsFromString(tagString: String) {
         for tag: String in tagString.components(separatedBy: ",") {
@@ -189,6 +199,7 @@ class Post {
             "body": body,
             "nsfw": nsfw,
             "parent": parent ?? "Unassigned",
+            "bookmarked": bookmarked,
             "tags": tags
             ]
 
@@ -217,6 +228,7 @@ class Post {
         if let parent: String = json["parent"].string {
             self.parent = parent
         }
+        bookmarked = json["bookmarked"].boolValue
 
         self.tags = json["tags"].arrayValue.map({ $0[].stringValue }) 
 

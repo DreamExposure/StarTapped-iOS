@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-class PostAudioContainer: PostContainerBase, TaskCallback {
+class PostAudioContainer: PostContainerBase {
     
     //Audio stuffs
     @IBOutlet weak var audioView: AudioView!
@@ -82,9 +82,5 @@ class PostAudioContainer: PostContainerBase, TaskCallback {
     
     override func fixTheStupid() {
         super.fixTheStupid();
-    }
-    
-    func onCallBack(status: NetworkCallStatus) {
-        //Can safely ignore, its just for downloading images.
     }
 }

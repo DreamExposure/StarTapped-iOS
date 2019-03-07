@@ -15,6 +15,10 @@
 		800D9F6921E94B280036DC41 /* BlogForSelfList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800D9F6821E94B280036DC41 /* BlogForSelfList.xib */; };
 		800D9F6C21EA3D470036DC41 /* BlogForSelfListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */; };
 		800D9F6F21EA56B60036DC41 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D9F6E21EA56B60036DC41 /* UIViewExtension.swift */; };
+		8029F8782230994A006E1E14 /* GetBookmarkedPostsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029F8772230994A006E1E14 /* GetBookmarkedPostsTask.swift */; };
+		8029F87B22309B8C006E1E14 /* AddBookmarkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029F87A22309B8C006E1E14 /* AddBookmarkTask.swift */; };
+		8029F87D22309DDF006E1E14 /* RemoveBookmarkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029F87C22309DDF006E1E14 /* RemoveBookmarkTask.swift */; };
+		8029F87F2230A183006E1E14 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029F87E2230A183006E1E14 /* BookmarksViewController.swift */; };
 		8030898E21EF98E4008D81DD /* NsfwBlogBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8030898D21EF98E4008D81DD /* NsfwBlogBlock.xib */; };
 		8030899021EF990D008D81DD /* NsfwBlogBLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8030898F21EF990D008D81DD /* NsfwBlogBLock.swift */; };
 		8030899221EF9E44008D81DD /* AdultOnlyBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8030899121EF9E44008D81DD /* AdultOnlyBlock.xib */; };
@@ -140,6 +144,10 @@
 		800D9F6821E94B280036DC41 /* BlogForSelfList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlogForSelfList.xib; sourceTree = "<group>"; };
 		800D9F6B21EA3D470036DC41 /* BlogForSelfListContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogForSelfListContainer.swift; sourceTree = "<group>"; };
 		800D9F6E21EA56B60036DC41 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		8029F8772230994A006E1E14 /* GetBookmarkedPostsTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkedPostsTask.swift; sourceTree = "<group>"; };
+		8029F87A22309B8C006E1E14 /* AddBookmarkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkTask.swift; sourceTree = "<group>"; };
+		8029F87C22309DDF006E1E14 /* RemoveBookmarkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveBookmarkTask.swift; sourceTree = "<group>"; };
+		8029F87E2230A183006E1E14 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		8030898D21EF98E4008D81DD /* NsfwBlogBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NsfwBlogBlock.xib; sourceTree = "<group>"; };
 		8030898F21EF990D008D81DD /* NsfwBlogBLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NsfwBlogBLock.swift; sourceTree = "<group>"; };
 		8030899121EF9E44008D81DD /* AdultOnlyBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdultOnlyBlock.xib; sourceTree = "<group>"; };
@@ -344,6 +352,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8029F87922309B72006E1E14 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				8029F87A22309B8C006E1E14 /* AddBookmarkTask.swift */,
+				8029F87C22309DDF006E1E14 /* RemoveBookmarkTask.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
 		8030899921EFB60C008D81DD /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +488,7 @@
 				808A20DC21F1672900F69A86 /* FollowingController.swift */,
 				808A20E721F28DFF00F69A86 /* CreateBlogViewController.swift */,
 				80A188BA2210A9BB00F3B01B /* SettingsController.swift */,
+				8029F87E2230A183006E1E14 /* BookmarksViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -634,6 +652,7 @@
 				CDDD2C74955008AA580B4268 /* GetPostsForHubTask.swift */,
 				CDDD2553207A73084401CE29 /* PostCreateTask.swift */,
 				80FBBB8F222F08E500B155D2 /* GetPostsForSearchTask.swift */,
+				8029F8772230994A006E1E14 /* GetBookmarkedPostsTask.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -641,6 +660,7 @@
 		CDDD246928DED1512E524E22 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8029F87922309B72006E1E14 /* Bookmark */,
 				80DC61B921EBE9BA00B79E4F /* Download */,
 				80AFA5D821E448D70072A227 /* Blog */,
 				CDDD267E87CFF9820F0A8C8F /* Auth */,
@@ -1083,6 +1103,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8029F87F2230A183006E1E14 /* BookmarksViewController.swift in Sources */,
 				80C6D65021E197C1008675BC /* TimeUtils.swift in Sources */,
 				80C6D64D21E19576008675BC /* AccountAuthentication.swift in Sources */,
 				80AFA5D521E444960072A227 /* UpdateAccountTask.swift in Sources */,
@@ -1090,6 +1111,7 @@
 				CDDD246E77840A1E52DE7BFB /* AppDelegate.swift in Sources */,
 				80EB1A0621E1C4FD000A51A2 /* Post.swift in Sources */,
 				80AFA5CE21E428D20072A227 /* AuthController.swift in Sources */,
+				8029F87D22309DDF006E1E14 /* RemoveBookmarkTask.swift in Sources */,
 				8078783221E3E6130011BF9D /* TokenRefreshTask.swift in Sources */,
 				807098ED221F113600F087E1 /* PostCreateContainer.swift in Sources */,
 				808A20DD21F1672900F69A86 /* FollowingController.swift in Sources */,
@@ -1141,6 +1163,8 @@
 				CDDD2162E9FF00B6ADEC0F4B /* UpdateBlogTask.swift in Sources */,
 				808A20E821F28DFF00F69A86 /* CreateBlogViewController.swift in Sources */,
 				807C047221ECFC4F00AF1FAE /* BlogViewController.swift in Sources */,
+				8029F87B22309B8C006E1E14 /* AddBookmarkTask.swift in Sources */,
+				8029F8782230994A006E1E14 /* GetBookmarkedPostsTask.swift in Sources */,
 				80AFA5E121E50D410072A227 /* HubController.swift in Sources */,
 				803089A421EFB968008D81DD /* PostTextContainer.swift in Sources */,
 				CDDD2AEEF6BA25EF15A5FCB3 /* GetBlogViewTask.swift in Sources */,

@@ -21,7 +21,7 @@ class ExploreViewController: UIViewController, TaskCallback {
         .type(.auto),
         .blackOverlayColor(UIColor(red:0.12, green:0.15, blue:0.21, alpha:0.6))
     ]
-    fileprivate var texts = ["Your Blogs", "Following", "Settings"]
+    fileprivate var texts = ["Your Blogs", "Following", "Bookmarks", "Settings"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +53,9 @@ extension ExploreViewController: UITableViewDelegate {
             ViewUtils().goToFollowing(view: self, anim: true)
             break
         case 2:
+            ViewUtils().goToBookmarks(view: self, anim: true)
+            break
+        case 3:
             ViewUtils().goToSettings(view: self, anim: true)
             break
         default:

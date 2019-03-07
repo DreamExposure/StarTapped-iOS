@@ -11,7 +11,7 @@ import UIKit
 import SwiftyJSON
 import PopupDialog
 
-class PostImageContainer: PostContainerBase, TaskCallback {
+class PostImageContainer: PostContainerBase {
     //Post contents
     @IBOutlet weak var postImage: UIImageView!
     
@@ -94,9 +94,5 @@ class PostImageContainer: PostContainerBase, TaskCallback {
     
     override func fixTheStupid() {
         super.fixTheStupid()
-    }
-    
-    func onCallBack(status: NetworkCallStatus) {
-        //Can safely ignore, its just for downloading images.
     }
 }

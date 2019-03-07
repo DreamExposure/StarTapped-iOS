@@ -8,7 +8,7 @@ import UIKit
 import FRHyperLabel
 import TTGTagCollectionView
 
-class PostContainerBase: UIView, TTGTextTagCollectionViewDelegate {
+class PostContainerBase: UIView, TTGTextTagCollectionViewDelegate, TaskCallback {
     @IBOutlet weak var contentView: UIView!
     
     //Top bar
@@ -131,7 +131,11 @@ class PostContainerBase: UIView, TTGTextTagCollectionViewDelegate {
     }
 
     @IBAction func onBookmarkPostClick() {
-        //TODO: Handle bookmark click
+        if (post.isBookmarked()) {
+            RemoveBookmarkTask(callback: self, postId: post.getId()).execute()
+        } else {
+            AddBookmarkTask(callback: self, postId: post.getId()).execute()
+        }
     }
     
     func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTapTag tagText: String!, at index: UInt, selected: Bool, tagConfig config: TTGTextTagConfig!) {
@@ -174,5 +178,24 @@ class PostContainerBase: UIView, TTGTextTagCollectionViewDelegate {
         }
         
         self.tagDisplay.setTagAt(index, selected: false)
+    }
+    
+    func onCallBack(status: NetworkCallStatus) {
+        switch (status.getType()) {
+        case .BOOKMARK_ADD:
+            if status.isSuccess() {
+                post.setBookmarked(bookmarked: true)
+            }
+            self.controller.view.makeToast(status.getMessage())
+            break
+        case .BOOKMARK_REMOVE:
+            if status.isSuccess() {
+                post.setBookmarked(bookmarked: false)
+            }
+            self.controller.view.makeToast(status.getMessage())
+            break
+        default:
+            break
+        }
     }
 }
