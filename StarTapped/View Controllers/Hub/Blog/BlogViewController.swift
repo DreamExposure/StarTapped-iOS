@@ -231,7 +231,6 @@ class BlogViewController: UIViewController, UIScrollViewDelegate, TaskCallback {
 
     func refresh() {
         if !isRefreshing && !isGenerating && !blockOn {
-            //TODO: Possibly handle starting refresh animation...
             isRefreshing = true
             stopRequesting = false
 

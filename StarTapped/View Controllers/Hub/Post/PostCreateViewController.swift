@@ -37,6 +37,8 @@ class PostCreateController: UIViewController, UIImagePickerControllerDelegate, M
 
     fileprivate var currentPicker: String = "None"
     
+    fileprivate var loadingAlert: UIAlertController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +58,7 @@ class PostCreateController: UIViewController, UIImagePickerControllerDelegate, M
     
     @IBAction func onBackButtonClicked(_ sender: UIButton) {
         //Go to previous view...
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func blogSelectButtonClicked(_ sender: UIButton) {
@@ -88,6 +90,16 @@ class PostCreateController: UIViewController, UIImagePickerControllerDelegate, M
         } else {
             task = PostCreateTask(callback: self, post: post)
         }
+        
+        //Show loading alert...
+        loadingAlert = UIAlertController(title: "Creating Post", message: "Please wait while we create your post...", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+        
+        loadingAlert.view.addSubview(loadingIndicator)
+        self.present(loadingAlert, animated: true, completion: nil)
         
         task.execute()
     }
@@ -159,11 +171,14 @@ class PostCreateController: UIViewController, UIImagePickerControllerDelegate, M
             }
             break
         case .POST_CREATE:
+            self.loadingAlert.dismiss(animated: true, completion: nil)
             if status.isSuccess() {
-                self.view.makeToast("Success!")
-                self.dismiss(animated: true, completion: nil)
+                //self.view.makeToast("Success!")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.navigationController?.popViewController(animated: true)
+                }
             } else {
-                self.view.makeToast(status.getMessage())
+                self.view.makeToast("Error: \(status.getMessage())")
             }
             break
         default:
