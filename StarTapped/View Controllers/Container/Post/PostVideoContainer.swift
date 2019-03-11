@@ -83,9 +83,4 @@ class PostVideoContainer: PostContainerBase {
 
         super.configureUrlButtons()
     }
-    
-    override func fixTheStupid() {
-
-        super.fixTheStupid()
-    }
 }

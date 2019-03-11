@@ -91,8 +91,4 @@ class PostImageContainer: PostContainerBase {
         
         self.controller.present(popup, animated: true, completion: nil)
     }
-    
-    override func fixTheStupid() {
-        super.fixTheStupid()
-    }
 }

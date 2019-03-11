@@ -173,7 +173,7 @@ class PostCreateController: UIViewController, UIImagePickerControllerDelegate, M
         case .POST_CREATE:
             self.loadingAlert.dismiss(animated: true, completion: nil)
             if status.isSuccess() {
-                //self.view.makeToast("Success!")
+                self.view.makeToast("Success!")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.navigationController?.popViewController(animated: true)
                 }

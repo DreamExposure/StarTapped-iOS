@@ -79,8 +79,4 @@ class PostAudioContainer: PostContainerBase {
 
         super.configureUrlButtons()
     }
-    
-    override func fixTheStupid() {
-        super.fixTheStupid();
-    }
 }

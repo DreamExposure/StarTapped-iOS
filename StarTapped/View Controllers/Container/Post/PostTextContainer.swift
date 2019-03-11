@@ -71,9 +71,5 @@ class PostTextContainer: PostContainerBase {
 
         super.configureUrlButtons()
     }
-    
-    override func fixTheStupid() {
-        super.fixTheStupid()
-    }
 }
 

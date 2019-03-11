@@ -526,6 +526,7 @@ PODS:
   - SDWebImage/GIF (4.4.3):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - SwiftEventBus (3.0.1)
   - SwiftMoment (0.7)
   - SwiftyJSON (4.2.0)
   - Toast-Swift (4.0.1)
@@ -545,6 +546,7 @@ DEPENDENCIES:
   - RevealingSplashView
   - SDWebImage
   - SDWebImage/GIF
+  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `3.0.1`)
   - SwiftMoment
   - SwiftyJSON (~> 4.0)
   - Toast-Swift (~> 4.0.0)
@@ -577,6 +579,16 @@ SPEC REPOS:
     - TTGTagCollectionView
     - "UITextView+Placeholder"
 
+EXTERNAL SOURCES:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+    :tag: 3.0.1
+
+CHECKOUT OPTIONS:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+    :tag: 3.0.1
+
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
@@ -596,12 +608,13 @@ SPEC CHECKSUMS:
   ReCaptcha: bc0a66b13541f4ac749389c6e3c918117956a9e8
   RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  SwiftEventBus: 87ccaeceff91b748775e37751ae3a81ec815b3d5
   SwiftMoment: dc6dd27012e267819104cbb03f74ff9192dd0b42
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   TTGTagCollectionView: be3f47f2df1e4cef7e596cb64cac1532bb6b5904
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: c2c6daaaa3aa855b55829eea27b2f974d2328458
+PODFILE CHECKSUM: 8200872090e418f1aa10f0fdf888f9327746a1e0
 
 COCOAPODS: 1.6.0.beta.2

@@ -20,6 +20,7 @@ target 'StarTapped' do
   pod 'PopupDialog', '~> 0.9'
   pod 'TTGTagCollectionView'
   pod 'UITextView+Placeholder'
+  pod 'SwiftEventBus', :tag => '3.0.1', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
 end
 
 target 'StarTappedTests' do

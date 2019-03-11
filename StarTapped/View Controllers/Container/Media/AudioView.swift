@@ -63,6 +63,7 @@ class AudioView: UIView {
     func pause() {
         player?.pause()
     }
+    
     func stop() {
         player?.pause()
         player?.seek(to: CMTime.zero)
