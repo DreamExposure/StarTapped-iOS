@@ -72,6 +72,13 @@ class PostContainerBase: UIView, TTGTextTagCollectionViewDelegate, TaskCallback 
         if (parent != nil) {
             blogUrlSecond.targetBlogId = parent?.getOriginBlog().getBlogId()
         }
+        
+        //Configure bookmark button....
+        if (post.isBookmarked()) {
+            bookmarkPost.tintColor = ViewUtils().hexStringToUIColor(hex: "#b5532d")
+        } else {
+            bookmarkPost.tintColor = ViewUtils().hexStringToUIColor(hex: "#1F2635")
+        }
     }
     
     func configureTags() {
@@ -132,8 +139,10 @@ class PostContainerBase: UIView, TTGTextTagCollectionViewDelegate, TaskCallback 
 
     @IBAction func onBookmarkPostClick() {
         if (post.isBookmarked()) {
+            bookmarkPost.tintColor = ViewUtils().hexStringToUIColor(hex: "#1F2635")
             RemoveBookmarkTask(callback: self, postId: post.getId()).execute()
         } else {
+            bookmarkPost.tintColor = ViewUtils().hexStringToUIColor(hex: "#b5532d")
             AddBookmarkTask(callback: self, postId: post.getId()).execute()
         }
     }

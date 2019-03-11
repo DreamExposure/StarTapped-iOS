@@ -120,12 +120,13 @@
                         <action selector="onSourceBlogClick" destination="-1" eventType="touchUpInside" id="99u-Mn-Sjj"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXU-oi-x7W">
+                <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXU-oi-x7W">
                     <rect key="frame" x="313" y="488" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="7ye-iv-FtQ"/>
                         <constraint firstAttribute="height" constant="30" id="REr-ko-gTf"/>
                     </constraints>
+                    <color key="tintColor" red="0.1215686275" green="0.14901960780000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" image="bookmark_48pt"/>
                     <connections>
                         <action selector="onBookmarkPostClick" destination="-1" eventType="touchUpInside" id="FA0-s9-7xN"/>
