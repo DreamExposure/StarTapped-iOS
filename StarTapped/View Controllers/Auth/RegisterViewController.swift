@@ -12,7 +12,7 @@ import Toast_Swift
 import ReCaptcha
 import SwiftyJSON
 
-class RegisterViewController: UIViewController, TaskCallback {
+class RegisterViewController: UIViewController, UITextFieldDelegate, TaskCallback {
     
     let recaptcha = try? ReCaptcha()
     
@@ -26,12 +26,16 @@ class RegisterViewController: UIViewController, TaskCallback {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        username.delegate = self
+        email.delegate = self
+        password.delegate = self
+        retypePassword.delegate = self
         
         setupReCaptcha()
     }
     
     @IBAction
-    func onRegisterButtonClick(button: UIButton) {
+    func onRegisterButtonClick() {
         let usernameText = username.text ?? ""
         let emailText = email.text ?? ""
         let birthdate = birthday.date
@@ -94,5 +98,22 @@ class RegisterViewController: UIViewController, TaskCallback {
             
             rt.execute()
         }
+    }
+    
+    func textFieldShouldReturn(_ text: UITextField) -> Bool {
+        if text == username {
+            text.resignFirstResponder()
+            email.becomeFirstResponder()
+        } else if text == email {
+            //User needs to enter birthday now...
+            text.endEditing(true)
+        } else if text == password {
+            text.resignFirstResponder()
+            retypePassword.becomeFirstResponder()
+        } else if text == retypePassword {
+            text.endEditing(true)
+            //User can now confirm everything and register.
+        }
+        return true
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 import Toast_Swift
 import SwiftyJSON
 
-class SettingsController: UIViewController {
+class SettingsController: UIViewController, TaskCallback {
     
     @IBOutlet weak var toolbar: UIToolbar!
     
@@ -26,5 +26,28 @@ class SettingsController: UIViewController {
     
     @IBAction func onAccountSettingsClick() {
         ViewUtils().goToAccountSettings(view: self, anim: true)
+    }
+    
+    @IBAction func onLogoutButtonClick() {
+        let lt = LogoutTask(callback: self)
+        
+        lt.execute()
+    }
+    
+    func onCallBack(status: NetworkCallStatus) {
+        switch (status.getType()) {
+        case .AUTH_LOGOUT:
+            if (status.isSuccess()) {
+                Settings().deleteAuthentication()
+                Settings().deleteAccount()
+                
+                ViewUtils().goToAuth(view: self, anim: true)
+            } else {
+                self.view.makeToast(status.getMessage())
+            }
+        default:
+            //Unsupported action
+            break
+        }
     }
 }

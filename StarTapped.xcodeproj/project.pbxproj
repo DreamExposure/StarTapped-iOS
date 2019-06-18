@@ -892,7 +892,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
+				Base,
 			);
 			mainGroup = CDDD257D38F2D87DE89A5F50;
 			productRefGroup = CDDD2932F03FB80C29F53A72 /* Products */;

@@ -12,7 +12,7 @@ import Toast_Swift
 import ReCaptcha
 import SwiftyJSON
 
-class SignInViewController: UIViewController, TaskCallback {
+class SignInViewController: UIViewController, UITextFieldDelegate, TaskCallback {
     
     let recaptcha = try? ReCaptcha()
     
@@ -25,10 +25,12 @@ class SignInViewController: UIViewController, TaskCallback {
         super.viewDidLoad()
         
         setupReCaptcha()
+        email.delegate = self
+        password.delegate = self
     }
     
     @IBAction
-    func onSignInButtonClick(button: UIButton) {
+    func onSignInButtonClick() {
         //Handle sign in call
         let emailString = email.text ?? ""
         let passString = password.text ?? ""
@@ -78,5 +80,17 @@ class SignInViewController: UIViewController, TaskCallback {
             
             lt.execute()
         }
+    }
+    
+    func textFieldShouldReturn(_ text: UITextField) -> Bool {
+        if text == email {
+            text.resignFirstResponder()
+            password.becomeFirstResponder()
+        } else if text == password {
+            //stop editing and sign in
+            text.endEditing(true)
+            self.onSignInButtonClick()
+        }
+        return true
     }
 }
