@@ -1,6 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '12.1'
 use_frameworks!
+inhibit_all_warnings!
 
 target 'StarTapped' do
   pod 'SwiftyJSON', '~> 4.0'

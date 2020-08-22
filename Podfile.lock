@@ -554,7 +554,7 @@ DEPENDENCIES:
   - "UITextView+Placeholder"
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
     - DynamicBlurView
@@ -615,6 +615,6 @@ SPEC CHECKSUMS:
   TTGTagCollectionView: be3f47f2df1e4cef7e596cb64cac1532bb6b5904
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: 8200872090e418f1aa10f0fdf888f9327746a1e0
+PODFILE CHECKSUM: 4251d6c5a8ef300cf0faa914cc258aac6fc8293b
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.9.3

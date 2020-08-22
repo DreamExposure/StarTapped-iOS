@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 
 public extension UIView {
-    public class func fromNib(nibNameOrNil: String? = nil) -> Self {
+    class func fromNib(nibNameOrNil: String? = nil) -> Self {
         return fromNib(nibNameOrNil: nibNameOrNil, type: self)
     }
     
-    public class func fromNib<T : UIView>(nibNameOrNil: String? = nil, type: T.Type) -> T {
+    class func fromNib<T : UIView>(nibNameOrNil: String? = nil, type: T.Type) -> T {
         let v: T? = fromNib(nibNameOrNil: nibNameOrNil, type: T.self)
         return v!
     }
     
-    public class func fromNib<T : UIView>(nibNameOrNil: String? = nil, type: T.Type) -> T? {
+    class func fromNib<T : UIView>(nibNameOrNil: String? = nil, type: T.Type) -> T? {
         var view: T?
         let name: String
         if let nibName = nibNameOrNil {
@@ -37,11 +37,11 @@ public extension UIView {
         return view
     }
     
-    public class var nibName: String {
+    class var nibName: String {
         let name = "\(self)".components(separatedBy: ".").first ?? ""
         return name
     }
-    public class var nib: UINib? {
+    class var nib: UINib? {
         if let _ = Bundle.main.path(forResource: nibName, ofType: "nib") {
             return UINib(nibName: nibName, bundle: nil)
         } else {

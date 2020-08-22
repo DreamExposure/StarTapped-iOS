@@ -35,7 +35,7 @@ class GetBlogViewTask: NetworkTask {
                     case .success(_):
                         if response.result.value != nil {
                             //Get body
-                            var json: JSON = JSON(response.result.value!)
+                            let json: JSON = JSON(response.result.value!)
                             let success = NetworkUtils().determineSuccess(code: code)
 
                             let status = NetworkCallStatus(failure: false, success: success, type: TaskType.BLOG_GET_VIEW).setCode(code: code).setBody(body: json).setMessage(message: json["message"].stringValue)
