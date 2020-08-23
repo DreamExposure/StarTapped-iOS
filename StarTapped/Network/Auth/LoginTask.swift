@@ -23,7 +23,7 @@ class LoginTask: NetworkTask {
     }
 
     func execute() {
-        let headers = [
+        let headers: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
         
@@ -33,14 +33,14 @@ class LoginTask: NetworkTask {
             "gcap": gcap
         ]
 
-        Alamofire.request("https://api.startapped.com/v1/account/login", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+        AF.request("https://api.startapped.com/v1/account/login", method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { response in
                     let code: Int = (response.response?.statusCode)!
                     switch (response.result) {
                     case .success(_):
-                        if response.result.value != nil {
+                        if response.value != nil {
                             //Get body
-                            let json: JSON = JSON(response.result.value!)
+                            let json: JSON = JSON(response.value!)
                             let success = NetworkUtils().determineSuccess(code: code)
 
                             let status = NetworkCallStatus(failure: false, success: success, type: TaskType.AUTH_LOGIN).setCode(code: code).setBody(body: json).setMessage(message: json["message"].stringValue)
@@ -50,7 +50,7 @@ class LoginTask: NetworkTask {
                         break
                     case .failure(_):
                         //This is an internal error, NOT a 400 or 500 status code.
-                        print("Failure : \(String(describing: response.result.error))")
+                        print("Failure : \(String(describing: response.error))")
 
                         let status = NetworkCallStatus(failure: true, success: false, type: TaskType.AUTH_LOGIN)
 
