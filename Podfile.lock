@@ -1,12 +1,12 @@
 PODS:
-  - Alamofire (4.8.0)
-  - AlamofireImage (3.5.0):
-    - Alamofire (~> 4.8)
-  - DynamicBlurView (3.0.1)
+  - Alamofire (5.2.2)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
+  - DynamicBlurView (4.1.0)
   - FLAnimatedImage (1.0.12)
   - FRHyperLabel (1.0.4)
-  - Guitar (0.5.0)
-  - KeychainSwift (13.0.0)
+  - Guitar (1.1.2)
+  - KeychainSwift (19.0.0)
   - MaterialComponents (73.0.0):
     - MaterialComponents/ActivityIndicator (= 73.0.0)
     - "MaterialComponents/ActivityIndicator+ColorThemer (= 73.0.0)"
@@ -513,12 +513,12 @@ PODS:
     - MotionInterchange (~> 1.6)
   - MotionInterchange (1.6.0)
   - MotionTransitioning (5.0.0)
-  - Popover (1.2.2)
-  - PopupDialog (0.9.2):
-    - DynamicBlurView (~> 3.0.1)
-  - ReCaptcha (1.4.2):
-    - ReCaptcha/Core (= 1.4.2)
-  - ReCaptcha/Core (1.4.2)
+  - Popover (1.3.0)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
+  - ReCaptcha (1.5.0):
+    - ReCaptcha/Core (= 1.5.0)
+  - ReCaptcha/Core (1.5.0)
   - RevealingSplashView (0.6.0)
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
@@ -526,30 +526,30 @@ PODS:
   - SDWebImage/GIF (4.4.3):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
-  - SwiftEventBus (3.0.1)
+  - SwiftEventBus (5.0.0)
   - SwiftMoment (0.7)
-  - SwiftyJSON (4.2.0)
-  - Toast-Swift (4.0.1)
+  - SwiftyJSON (5.0.0)
+  - Toast-Swift (5.0.1)
   - TTGTagCollectionView (1.11.0)
   - "UITextView+Placeholder (1.2.1)"
 
 DEPENDENCIES:
-  - Alamofire (~> 4.8.0)
-  - AlamofireImage (~> 3.5)
+  - Alamofire (~> 5.2.2)
+  - AlamofireImage (~> 4.1.0)
   - FRHyperLabel
-  - Guitar
-  - KeychainSwift (~> 13.0)
+  - Guitar (from `https://github.com/ArtSabintsev/Guitar.git`, branch `master`)
+  - KeychainSwift (~> 19.0.0)
   - MaterialComponents
-  - Popover
-  - PopupDialog (~> 0.9)
-  - ReCaptcha
-  - RevealingSplashView
+  - Popover (~> 1.3.0)
+  - PopupDialog (~> 1.1.1)
+  - ReCaptcha (~> 1.5.0)
+  - RevealingSplashView (~> 0.6.0)
   - SDWebImage
   - SDWebImage/GIF
-  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `3.0.1`)
+  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `5.0.1`)
   - SwiftMoment
-  - SwiftyJSON (~> 4.0)
-  - Toast-Swift (~> 4.0.0)
+  - SwiftyJSON (~> 5.0)
+  - Toast-Swift (~> 5.0.1)
   - TTGTagCollectionView
   - "UITextView+Placeholder"
 
@@ -560,7 +560,6 @@ SPEC REPOS:
     - DynamicBlurView
     - FLAnimatedImage
     - FRHyperLabel
-    - Guitar
     - KeychainSwift
     - MaterialComponents
     - MDFInternationalization
@@ -580,41 +579,47 @@ SPEC REPOS:
     - "UITextView+Placeholder"
 
 EXTERNAL SOURCES:
+  Guitar:
+    :branch: master
+    :git: https://github.com/ArtSabintsev/Guitar.git
   SwiftEventBus:
     :git: https://github.com/cesarferreira/SwiftEventBus.git
-    :tag: 3.0.1
+    :tag: 5.0.1
 
 CHECKOUT OPTIONS:
+  Guitar:
+    :commit: 9e7ecf4b84d08016355255f6a7c0443a483f498d
+    :git: https://github.com/ArtSabintsev/Guitar.git
   SwiftEventBus:
     :git: https://github.com/cesarferreira/SwiftEventBus.git
-    :tag: 3.0.1
+    :tag: 5.0.1
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
-  DynamicBlurView: b1df5415f9bd31897549e5d7077e5ec120a4d636
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FRHyperLabel: f4a127d5f8ffb211040554615e93f936d5a576a6
-  Guitar: 84256d4716829d44c0c5f1c029bd8c146bdcc957
-  KeychainSwift: 23d6c16cbc33f20fafa30c3d783241b4b87d998c
+  Guitar: 881c5434ba126bdae2812b46b506e5d5b26b30de
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   MaterialComponents: 5ee94fadd206902ffa318ba5adfd3c9c8c799000
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
-  Popover: 21e357f86d45c8d9e29a41a4adbca3664d6e511f
-  PopupDialog: f4bb461bf70ff422be0b56656566424ee9273080
-  ReCaptcha: bc0a66b13541f4ac749389c6e3c918117956a9e8
+  Popover: 10e1d9528f81d9504df984b7b3f491292bc1822d
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
+  ReCaptcha: 40ae1dc390fd5837267674b9a6ae0978abb5eeeb
   RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
-  SwiftEventBus: 87ccaeceff91b748775e37751ae3a81ec815b3d5
+  SwiftEventBus: b30f617a6aca5a9336464b4d3f5931034762f2d5
   SwiftMoment: dc6dd27012e267819104cbb03f74ff9192dd0b42
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
-  Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   TTGTagCollectionView: be3f47f2df1e4cef7e596cb64cac1532bb6b5904
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: 4251d6c5a8ef300cf0faa914cc258aac6fc8293b
+PODFILE CHECKSUM: 0da1f80700d81b4b6516669bf6a3b84be0328f35
 
 COCOAPODS: 1.9.3
